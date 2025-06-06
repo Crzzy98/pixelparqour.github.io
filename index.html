@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pixel Parkour - Professional software solutions for web and mobile applications. Custom development services for businesses of all sizes.">
+    <meta name="robots" content="index, follow">
     <title>Pixel Parkour - Software Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -11,7 +13,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
-            color: #90EE90; /* Light green text color */
+            color: #7FDD7F; /* Slightly darker green text color */
         }
         /* Ensure the main content area has some padding */
         main {
@@ -20,7 +22,7 @@
         /* Specific styling for the banner text */
         .banner-text {
             font-weight: 700; /* Bold */
-            color: #90EE90; /* Light green color */
+            color: #7FDD7F; /* Slightly darker green color */
         }
         /* Override Tailwind classes for dark theme */
         .bg-white {
@@ -30,16 +32,87 @@
             background-color: #2a2a2a !important; /* Darker gray for sections */
         }
         .text-gray-800 {
-            color: #90EE90 !important; /* Light green for headings */
+            color: #7FDD7F !important; /* Slightly darker green for headings */
         }
         .text-gray-700 {
-            color: #90EE90 !important; /* Light green for body text */
+            color: #7FDD7F !important; /* Slightly darker green for body text */
         }
         .bg-gray-800 {
             background-color: #0a0a0a !important; /* Very dark for footer */
         }
         .text-white {
-            color: #90EE90 !important; /* Light green for footer text */
+            color: #7FDD7F !important; /* Slightly darker green for footer text */
+        }
+        /* Make images bigger with responsive scaling */
+        .content-image {
+            width: clamp(400px, 8vw + 400px, 1000px) !important;  /* Scales with viewport */
+            height: auto !important;           /* Maintains proportions */
+            max-width: 80% !important;         /* Never wider than 80% of container */
+            margin: 2rem auto !important;      /* Centers with reasonable margin */
+            object-fit: contain !important;    /* Ensures it fits properly */
+        }
+        /* Responsive text scaling */
+        .responsive-text-lg {
+            font-size: clamp(1.125rem, 2vw, 2rem) !important;
+        }
+        .responsive-text-xl {
+            font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+        }
+        .responsive-text-2xl {
+            font-size: clamp(1.5rem, 3vw, 3rem) !important;
+        }
+        .responsive-text-3xl {
+            font-size: clamp(1.875rem, 4vw, 4rem) !important;
+        }
+        /* Center content in sections */
+        .section-content {
+            text-align: center;
+        }
+        /* Clean layout with proper text/image positioning */
+        .crafting-container-left,
+        .crafting-container-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Desktop: Side-by-side layout */
+        @media (min-width: 768px) {
+            .crafting-container-left,
+            .crafting-container-right {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 3rem;
+            }
+
+            .text-content,
+            .image-content {
+                flex: 1;
+            }
+
+            /* Web Solutions: Text left, Image right */
+            .crafting-container-left:first-of-type .text-content {
+                order: 1;
+            }
+            .crafting-container-left:first-of-type .image-content {
+                order: 2;
+            }
+
+            /* iOS: Image left, Text right */
+            .crafting-container-right .text-content {
+                order: 2;
+            }
+            .crafting-container-right .image-content {
+                order: 1;
+            }
+
+            /* Android: Text left, Image right */
+            .crafting-container-left:last-of-type .text-content {
+                order: 1;
+            }
+            .crafting-container-left:last-of-type .image-content {
+                order: 2;
+            }
         }
     </style>
 </head>
@@ -48,63 +121,63 @@
         <img src="images/pixel_logo_redone.svg" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
 </header>
 
-    <main class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow">
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
         <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2">About Us</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 responsive-text-3xl">About Us</h2>
+            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
                 At Pixel Parkour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of developing mobile and web applications for individuals and companies alike as we move into the next stage of the technical era. We are a team of highly skilled programmers with diverse backgrounds, dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools and software on the market and will create tailored project plans to suit your unique needs.
             </p>
         </section>
 
 
-        <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2">Crafting Your Dreams</h2>
-            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+        <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 responsive-text-3xl">Crafting Your Dreams</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-8 responsive-text-lg">
                 At Pixel Parkour, we transform your visions into robust, user-friendly digital experiences. Our expertise spans across various platforms, ensuring your project meets the highest standards of quality and innovation.
             </p>
+            <hr class="border-t-2 border-green-400 mb-12 mt-8">
 
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 border-b border-gray-200 last:border-b-0">
-
-                <div class="md:order-1 w-full md:w-1/2 md:pr-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Web Solutions</h3>
-                    <div class="md:order-2 w-full md:w-1/2 flex flex-col justify-end mb-4 md:mb-0">
-                    <img src="images/stock_web.jpg" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto">
-                    <p class="text-xs text-gray-400 mt-1 text-right">
-                        Photo by <a href="https://www.vecteezy.com/photo/9276525-digital-communication-and-virtual-technology-concept-web-3-0-hand-touch-globe-internet-business-concept-metaverse" target="_blank" class="hover:text-green-400 transition-colors">Khunkorn Laowisit</a> on Vecteezy
-                    </p>
-                </div>
-                    <p class="text-base leading-relaxed text-gray-700">
+            <div class="mb-8 pb-4 border-b border-gray-200 crafting-container-left">
+                <div class="text-content">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">Web Solutions</h3>
+                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         From dynamic e-commerce platforms to engaging corporate sites, we build responsive and high-performance web applications tailored to your business needs. We focus on modern frameworks and intuitive user interfaces to ensure a seamless experience across all devices.
                     </p>
                 </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="md:order-2 w-full md:w-1/2 md:pl-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">iOS App Development</h3>
-                    <div class="md:order-1 w-full md:w-1/2 flex flex-col justify-start mb-4 md:mb-0">
-                    <img src="images/stock_iphone.jpg" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto">
-                    <p class="text-xs text-gray-400 mt-1 text-left">
-                        Photo by <a href="https://www.vecteezy.com/photo/46432460-iphone-12-pro-max-with-wireless-charging" target="_blank" class="hover:text-green-400 transition-colors">Omar Faruk Mukut</a> on Vecteezy
+                <div class="image-content">
+                    <img src="images/stock_web.jpg" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
+                    <p class="text-xs text-gray-400 mt-1 text-center">
+                        Photo by <a href="https://www.vecteezy.com/photo/9276525-digital-communication-and-virtual-technology-concept-web-3-0-hand-touch-globe-internet-business-concept-metaverse" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Khunkorn Laowisit</a> on Vecteezy
                     </p>
                 </div>
-                    <p class="text-base leading-relaxed text-gray-700">
+            </div>
+
+            <div class="mb-8 pb-4 border-b border-gray-200 crafting-container-right">
+                <div class="text-content">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">iOS App Development</h3>
+                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         Bring your ideas to life on Apple's ecosystem. We design and develop native iOS applications that are both aesthetically pleasing and functionally robust, ensuring a top-tier experience for iPhone and iPad users.
                     </p>
                 </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 last:border-b-0">
-                <div class="md:order-1 w-full md:w-1/2 md:pr-8">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Android App Development</h3>
-                    <div class="md:order-2 w-full md:w-1/2 flex flex-col justify-end mb-4 md:mb-0">
-                    <img src="images/stock_android.jpg" alt="Android App Development" class="rounded-lg shadow-md max-w-full h-auto">
-                    <p class="text-xs text-gray-400 mt-1 text-right">
-                        Photo by <a href="https://www.vecteezy.com/photo/24715785-modern-office-desk-with-smart-phone-technology-generated-by-ai" target="_blank" class="hover:text-green-400 transition-colors">Andres Ramos</a> on Vecteezy
+                <div class="image-content">
+                    <img src="images/stock_iphone.jpg" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
+                    <p class="text-xs text-gray-400 mt-1 text-center">
+                        Photo by <a href="https://www.vecteezy.com/photo/46432460-iphone-12-pro-max-with-wireless-charging" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Omar Faruk Mukut</a> on Vecteezy
                     </p>
                 </div>
-                    <p class="text-base leading-relaxed text-gray-700">
+            </div>
+
+            <div class="mb-8 pb-4 crafting-container-left">
+                <div class="text-content">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">Android App Development</h3>
+                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         Reach a broader audience with custom Android applications. Our team crafts intuitive and powerful apps that are optimized for performance across the vast Android device landscape, delivering a seamless user experience.
+                    </p>
+                </div>
+                <div class="image-content">
+                    <img src="images/stock_android.jpg" alt="Android App Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
+                    <p class="text-xs text-gray-400 mt-1 text-center">
+                        Photo by <a href="https://www.vecteezy.com/photo/24715785-modern-office-desk-with-smart-phone-technology-generated-by-ai" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Andres Ramos</a> on Vecteezy
                     </p>
                 </div>
             </div>
