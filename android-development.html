@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pixel Parkour - Android App Development - Professional Android application development services for the vast Android ecosystem.">
+    <meta name="robots" content="index, follow">
+    <title>Android App Development - Pixel Parkour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Black background for the page */
+            color: #7FDD7F; /* Slightly darker green text color */
+        }
+        /* Ensure the main content area has some padding */
+        main {
+            padding: 1rem;
+        }
+        /* Specific styling for the banner text */
+        .banner-text {
+            font-weight: 700; /* Bold */
+            color: #7FDD7F; /* Slightly darker green color */
+        }
+        /* Override Tailwind classes for dark theme */
+        .bg-white {
+            background-color: #1a1a1a !important; /* Dark gray instead of white */
+        }
+        .bg-gray-50 {
+            background-color: #2a2a2a !important; /* Darker gray for sections */
+        }
+        .text-gray-800 {
+            color: #7FDD7F !important; /* Slightly darker green for headings */
+        }
+        .text-gray-700 {
+            color: #7FDD7F !important; /* Slightly darker green for body text */
+        }
+        .bg-gray-800 {
+            background-color: #0a0a0a !important; /* Very dark for footer */
+        }
+        .text-white {
+            color: #7FDD7F !important; /* Slightly darker green for footer text */
+        }
+        /* Large image placeholder styling */
+        .hero-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #333;
+            border: 2px dashed #7FDD7F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7FDD7F;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        /* Responsive text scaling */
+        .responsive-text-lg {
+            font-size: clamp(1.125rem, 2vw, 2rem) !important;
+        }
+        .responsive-text-xl {
+            font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+        }
+        .responsive-text-2xl {
+            font-size: clamp(1.5rem, 3vw, 3rem) !important;
+        }
+        .responsive-text-3xl {
+            font-size: clamp(1.875rem, 4vw, 4rem) !important;
+        }
+        /* Back button styling */
+        .back-button {
+            background-color: #7FDD7F;
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #6BC26B;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap">
+        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
+    </header>
+
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow" style="width: 95vw; min-width: 95vw;">
+        <div class="mb-6">
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl">Android App Development</h1>
+            
+            <!-- Large Image Placeholder -->
+            <div class="hero-image-placeholder">
+                <span>[ Android App Development Hero Image Placeholder ]</span>
+            </div>
+
+            <!-- Detailed Text Section -->
+            <div class="text-content space-y-6">
+                <div class="prose prose-lg max-w-none">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl">Powerful Android Applications for Global Reach</h2>
+                    <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
+                        Tap into the world's largest mobile platform with custom Android applications that reach billions of users worldwide. At Pixel Parkour, we create robust, scalable Android apps that perform seamlessly across the diverse Android device ecosystem. Our expertise in Google's development frameworks ensures your app delivers consistent performance from flagship devices to budget-friendly smartphones.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">What We Offer</h3>
+                    <ul class="space-y-4 text-lg text-gray-700 responsive-text-lg">
+                        <li><strong>Native Android Apps:</strong> Built with Kotlin and Java for optimal performance, utilizing the full power of the Android platform and Google's ecosystem.</li>
+                        <li><strong>Cross-Device Compatibility:</strong> Applications optimized for phones, tablets, wearables, and Android TV, ensuring your app works beautifully across all form factors.</li>
+                        <li><strong>Google Play Store Optimization:</strong> Complete guidance through the Play Store publishing process, including ASO (App Store Optimization) for maximum visibility.</li>
+                        <li><strong>Material Design Implementation:</strong> Modern, intuitive interfaces following Google's Material Design principles for consistent user experiences.</li>
+                        <li><strong>Google Services Integration:</strong> Seamless integration with Google Maps, Firebase, Google Pay, and other Google services to enhance functionality.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Technical Expertise</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
+                        We utilize the latest Android development tools and technologies to create exceptional mobile experiences:
+                    </p>
+                    <ul class="space-y-2 text-lg text-gray-700 responsive-text-lg mt-4">
+                        <li>• Kotlin and Java for robust application development</li>
+                        <li>• Jetpack Compose for modern, declarative UI development</li>
+                        <li>• Android Architecture Components (MVVM, Room, LiveData)</li>
+                        <li>• Firebase for backend services and real-time databases</li>
+                        <li>• Google ML Kit for machine learning capabilities</li>
+                        <li>• Android NDK for performance-critical applications</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Why Choose Our Android Development?</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Market Reach</h4>
+                            <p class="text-blue-800">Access to over 3 billion active Android devices worldwide, giving your app the largest possible audience and market potential.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Device Diversity</h4>
+                            <p class="text-blue-800">Optimized for the vast Android ecosystem, from premium flagship devices to affordable smartphones in emerging markets.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Flexible Deployment</h4>
+                            <p class="text-blue-800">Multiple distribution channels including Google Play Store, alternative app stores, and direct APK distribution for maximum flexibility.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Cost Effectiveness</h4>
+                            <p class="text-blue-800">Lower development and deployment costs with faster time-to-market, making Android ideal for startups and budget-conscious projects.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Development Process</h3>
+                    <ol class="space-y-4 text-lg text-gray-700 responsive-text-lg">
+                        <li><strong>1. Market Analysis & Planning:</strong> Research your target audience and competition while defining core features and Android-specific requirements.</li>
+                        <li><strong>2. UI/UX Design:</strong> Create intuitive designs following Material Design guidelines while maintaining your brand identity.</li>
+                        <li><strong>3. Development & Integration:</strong> Build your app using modern Android frameworks with extensive testing across multiple device configurations.</li>
+                        <li><strong>4. Quality Assurance:</strong> Comprehensive testing on various Android versions and device types to ensure optimal performance.</li>
+                        <li><strong>5. Play Store Launch:</strong> Prepare and submit your app to Google Play Store with ongoing support for updates and maintenance.</li>
+                    </ol>
+
+                    <div class="bg-gray-800 text-center p-8 rounded-lg mt-10">
+                        <h3 class="text-2xl font-bold text-white mb-4">Ready to Reach Billions of Android Users?</h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            Let's build your Android app and tap into the world's largest mobile platform.
+                        </p>
+                        <a href="index.html#contact-us" class="bg-green-400 hover:bg-green-500 text-black font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                            Get Started Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+        <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

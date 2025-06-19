@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pixel Parkour - Web Solutions - Professional web development services including e-commerce platforms, corporate websites, and custom web applications.">
+    <meta name="robots" content="index, follow">
+    <title>Web Solutions - Pixel Parkour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Black background for the page */
+            color: #7FDD7F; /* Slightly darker green text color */
+        }
+        /* Ensure the main content area has some padding */
+        main {
+            padding: 1rem;
+        }
+        /* Specific styling for the banner text */
+        .banner-text {
+            font-weight: 700; /* Bold */
+            color: #7FDD7F; /* Slightly darker green color */
+        }
+        /* Override Tailwind classes for dark theme */
+        .bg-white {
+            background-color: #1a1a1a !important; /* Dark gray instead of white */
+        }
+        .bg-gray-50 {
+            background-color: #2a2a2a !important; /* Darker gray for sections */
+        }
+        .text-gray-800 {
+            color: #7FDD7F !important; /* Slightly darker green for headings */
+        }
+        .text-gray-700 {
+            color: #7FDD7F !important; /* Slightly darker green for body text */
+        }
+        .bg-gray-800 {
+            background-color: #0a0a0a !important; /* Very dark for footer */
+        }
+        .text-white {
+            color: #7FDD7F !important; /* Slightly darker green for footer text */
+        }
+        /* Large image placeholder styling */
+        .hero-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #333;
+            border: 2px dashed #7FDD7F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7FDD7F;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        /* Responsive text scaling */
+        .responsive-text-lg {
+            font-size: clamp(1.125rem, 2vw, 2rem) !important;
+        }
+        .responsive-text-xl {
+            font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+        }
+        .responsive-text-2xl {
+            font-size: clamp(1.5rem, 3vw, 3rem) !important;
+        }
+        .responsive-text-3xl {
+            font-size: clamp(1.875rem, 4vw, 4rem) !important;
+        }
+        /* Back button styling */
+        .back-button {
+            background-color: #7FDD7F;
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #6BC26B;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap">
+        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
+    </header>
+
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow" style="width: 95vw; min-width: 95vw;">
+        <div class="mb-6">
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl">Web Solutions</h1>
+            
+            <!-- Large Image Placeholder -->
+            <div class="hero-image-placeholder">
+                <span>[ Web Solutions Hero Image Placeholder ]</span>
+            </div>
+
+            <!-- Detailed Text Section -->
+            <div class="text-content space-y-6">
+                <div class="prose prose-lg max-w-none">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl">Comprehensive Web Development Services</h2>
+                    <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
+                        At Pixel Parkour, we specialize in creating dynamic, responsive, and high-performance web applications that drive business growth and enhance user engagement. Our web solutions are crafted with modern technologies and best practices to ensure your digital presence stands out in today's competitive landscape.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">What We Offer</h3>
+                    <ul class="space-y-4 text-lg text-gray-700 responsive-text-lg">
+                        <li><strong>E-commerce Platforms:</strong> Build robust online stores with secure payment processing, inventory management, and seamless user experiences that convert visitors into customers.</li>
+                        <li><strong>Corporate Websites:</strong> Professional business websites that establish credibility, showcase your brand, and effectively communicate your value proposition to potential clients.</li>
+                        <li><strong>Custom Web Applications:</strong> Tailored solutions built to address your specific business requirements, from customer portals to internal management systems.</li>
+                        <li><strong>Responsive Design:</strong> Ensure your website looks and functions perfectly across all devices - desktop, tablet, and mobile - with our mobile-first approach.</li>
+                        <li><strong>Content Management Systems:</strong> Easy-to-use CMS solutions that allow you to update and manage your website content without technical expertise.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Technical Expertise</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
+                        We leverage cutting-edge technologies and frameworks to deliver exceptional web solutions:
+                    </p>
+                    <ul class="space-y-2 text-lg text-gray-700 responsive-text-lg mt-4">
+                        <li>• Modern JavaScript frameworks (React, Vue.js, Angular)</li>
+                        <li>• Backend technologies (Node.js, Python, PHP)</li>
+                        <li>• Database solutions (MySQL, PostgreSQL, MongoDB)</li>
+                        <li>• Cloud hosting and deployment (AWS, Google Cloud, Azure)</li>
+                        <li>• Progressive Web Apps (PWAs) for enhanced mobile experience</li>
+                        <li>• Search Engine Optimization (SEO) best practices</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Why Choose Our Web Solutions?</h3>                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Performance Optimized</h4>
+                            <p class="text-blue-800">Fast loading times and optimized performance ensure excellent user experience and better search engine rankings.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Scalable Architecture</h4>
+                            <p class="text-blue-800">Built to grow with your business, our solutions can handle increased traffic and expanded functionality.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Security First</h4>
+                            <p class="text-blue-800">Industry-standard security practices protect your data and your users' information from potential threats.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                            <h4 class="font-semibold text-blue-800 mb-2">Ongoing Support</h4>
+                            <p class="text-blue-800">Comprehensive maintenance and support services to keep your website running smoothly and up-to-date.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Development Process</h3>
+                    <ol class="space-y-4 text-lg text-gray-700 responsive-text-lg">
+                        <li><strong>1. Discovery & Planning:</strong> We work closely with you to understand your goals, target audience, and technical requirements.</li>
+                        <li><strong>2. Design & Prototyping:</strong> Create wireframes and mockups to visualize the user interface and user experience before development begins.</li>
+                        <li><strong>3. Development & Testing:</strong> Build your website using agile methodologies with regular testing to ensure quality and functionality.</li>
+                        <li><strong>4. Launch & Optimization:</strong> Deploy your website and optimize for performance, SEO, and user experience.</li>
+                        <li><strong>5. Maintenance & Support:</strong> Provide ongoing support, updates, and enhancements to keep your website current and effective.</li>
+                    </ol>
+
+                    <div class="bg-gray-800 text-center p-8 rounded-lg mt-10">
+                        <h3 class="text-2xl font-bold text-white mb-4">Ready to Transform Your Web Presence?</h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            Let's discuss how our web solutions can help your business grow and succeed online.
+                        </p>
+                        <a href="index.html#contact-us" class="bg-green-400 hover:bg-green-500 text-black font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                            Get Started Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+        <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
