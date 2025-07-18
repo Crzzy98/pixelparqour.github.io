@@ -9,11 +9,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Add TechnoBoard font declaration for header text */
+        @font-face {
+            font-family: 'TechnoBoard';
+            src: url('fonts/techno_board/TechnoBoard.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* Add Technoid font declaration */
+        @font-face {
+            font-family: 'Technoid';
+            src: url('fonts/technoid/TECHNOID.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Add Karnivore Light font declaration */
+        @font-face {
+            font-family: 'Karnivore-Light';
+            src: url('fonts/Karnivore-Lite/KARNIVOL.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* Custom styles for the Inter font and general body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
             color: #7FDD7F; /* Slightly darker green text color */
+        }
+        
+        /* Technoid font styling for headers */
+        .technoid-header {
+            font-family: 'Technoid', 'Inter', sans-serif !important;
+            font-weight: normal !important;
+        }
+        /* Karnivore Light font styling for service headers */
+        .karnivore-header {
+            font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
+            font-weight: normal !important;
+            letter-spacing: 1px !important;
+        }
+        /* TechnoBoard font styling for logo header text with distinctive styling */
+        .header-text {
+            font-family: 'TechnoBoard', 'Inter', sans-serif !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            font-size: 3em !important;
+            line-height: 1.4 !important;
         }
         /* Ensure the main content area has some padding */
         main {
@@ -71,6 +119,20 @@
         .section-content {
             text-align: center;
         }
+        /* Header responsive layout */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            header > div {
+                margin: 0.5rem 0 !important;
+            }
+            header img {
+                max-width: 80vw !important;
+                height: 300px !important;
+            }
+        }
         /* Clean layout with proper text/image positioning */
         .crafting-container-left,
         .crafting-container-right {
@@ -117,30 +179,192 @@
                 order: 2;
             }
         }
+        /* Navigation styles */
+        .navbar {
+            display: none;
+        }
+        /* Desktop navigation bar */
+        .desktop-navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .desktop-navbar nav {
+            display: flex;
+            gap: 2rem;
+        }
+        .desktop-navbar a {
+            color: #7FDD7F;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .desktop-navbar a:hover {
+            background-color: #7FDD7F;
+            color: #1a1a1a;
+            transform: translateY(-2px) scale(1.5);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #7FDD7F;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            overflow-x: visible;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #7FDD7F;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 0.375rem;
+            margin: 0.5rem 1rem;
+            position: relative;
+            transform: translateX(0);
+            z-index: 1001;
+        }
+        .sidenav a:hover {
+            background-color: #7FDD7F;
+            color: #1a1a1a;
+            transform: translateX(-33.33%);
+            box-shadow: 0 4px 8px rgba(127, 221, 127, 0.3);
+            z-index: 1002;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0 20px !important;
+                background-color: #1a1a1a !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .header-text {
+                display: none !important;
+            }
+            .desktop-navbar {
+                display: none !important;
+            }
+        }
+        
+        /* Legal footer styling */
+        .legal-footer {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+            background-color: #1a1a1a;
+        }
+        .legal-footer a {
+            color: #7FDD7F;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .legal-footer a:hover {
+            color: #6BC26B;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap">
-        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
+    <!-- Mobile Navigation -->
+    <nav class="navbar">
+        <div class="flex items-center">
+            <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 60px;">
+        </div>
+        <div class="hamburger" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="#about-us" onclick="closeNav()">About Us</a>
+        <a href="#crafting-dreams" onclick="closeNav()">Our Services</a>
+        <a href="#contact-us" onclick="closeNav()">Contact</a>
+        <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
+        <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
+        <a href="android-development.html" onclick="closeNav()">Android Development</a>
+    </div>
+
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Crafting Software<br>Developing Dreams
+            </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4">
+            <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 50vw;">
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Business and Personal<br>Software Solutions
+            </h1>
+        </div>
 </header>
+
+    <!-- Desktop Navigation Bar -->
+    <div class="desktop-navbar">
+        <nav>
+            <a href="#about-us">About Us</a>
+            <a href="#crafting-dreams">Our Services</a>
+            <a href="web-solutions.html">Web Solutions</a>
+            <a href="ios-development.html">iOS Development</a>
+            <a href="android-development.html">Android Development</a>
+            <a href="#contact-us">Contact</a>
+        </nav>
+    </div>
 
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
         <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 responsive-text-3xl">About Us</h2>
-            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 border-b-2 border-green-400 pb-2 responsive-text-3xl karnivore-header">About Us</h2>
+            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-4 md:mb-6 lg:mb-8 xl:mb-10">
                 At Pixel Parkour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of developing mobile and web applications for individuals and companies alike as we move into the next stage of the technical era. We are a team of highly skilled programmers with diverse backgrounds, dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools and software on the market and will create tailored project plans to suit your unique needs.
             </p>
         </section>
 
 
         <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 responsive-text-3xl">Develop Your Dreams</h2>
-            <p class="text-lg leading-relaxed text-gray-700 mb-8 responsive-text-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 border-b-2 border-green-400 pb-2 responsive-text-3xl karnivore-header">Develop Your Dreams</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-6 md:mb-8 lg:mb-10 xl:mb-12 responsive-text-lg">
                 At Pixel Parkour, we transform your visions into robust, user-friendly digital experiences. Our expertise spans across various platforms, ensuring your project meets the highest standards of quality and innovation.
             </p>
             <hr class="border-t-2 border-green-400 mb-12 mt-8">            <div class="mb-8 pb-4 border-b border-gray-200 crafting-container-left">
                 <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">Web Solutions</h3>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">Web Solutions</h3>
                     <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         From dynamic e-commerce platforms to engaging corporate sites, we build responsive and high-performance web applications tailored to your business needs. We focus on modern frameworks and intuitive user interfaces to ensure a seamless experience across all devices.
                     </p>
@@ -156,7 +380,7 @@
                 </div>
             </div>            <div class="mb-8 pb-4 border-b border-gray-200 crafting-container-right">
                 <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">iOS App Development</h3>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">iOS App Development</h3>
                     <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         Bring your ideas to life on Apple's ecosystem. We design and develop native iOS applications that are both aesthetically pleasing and functionally robust, ensuring a top-tier experience for iPhone and iPad users.
                     </p>
@@ -172,7 +396,7 @@
                 </div>
             </div>            <div class="mb-8 pb-4 crafting-container-left">
                 <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl">Android App Development</h3>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">Android App Development</h3>
                     <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
                         Reach a broader audience with custom Android applications. Our team crafts intuitive and powerful apps that are optimized for performance across the vast Android device landscape, delivering a seamless user experience.
                     </p>
@@ -190,7 +414,7 @@
         </section>
 
         <section id="contact-us" class="p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2">Get in Touch</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 karnivore-header">Get in Touch</h2>
             <p class="text-lg leading-relaxed text-gray-700 mb-4">
                 We'd love to hear from you! Reach out to discuss your software needs and schedule a consultation.
             </p>
@@ -225,6 +449,28 @@
 
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
         <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
     </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Close sidenav when clicking outside
+        window.onclick = function(event) {
+            var sidenav = document.getElementById("mySidenav");
+            if (event.target == sidenav) {
+                closeNav();
+            }
+        }
+    </script>
 </body>
 </html>
