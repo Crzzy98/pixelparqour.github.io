@@ -55,6 +55,51 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
             color: #7FDD7F; /* Slightly darker green text color */
+            cursor: none; /* Hide default cursor */
+        }
+        
+        /* Hide default cursor on all elements */
+        * {
+            cursor: none !important;
+        }
+        
+        /* Custom cursor overlay */
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 192px;
+            height: 190px;
+            background-image: url('images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -40%);
+            animation: pulsate 1.875s ease-in-out infinite;
+        }
+        
+        /* Pulsate animation for cursor */
+        @keyframes pulsate {
+            0% {
+                filter: brightness(1) saturate(1);
+            }
+            50% {
+                filter: brightness(1.8) saturate(0.6);
+            }
+            100% {
+                filter: brightness(1) saturate(1);
+            }
+        }
+        
+        /* Hide cursor on mobile devices */
+        @media (max-width: 768px) {
+            .custom-cursor {
+                display: none !important;
+            }
+            body, * {
+                cursor: auto !important;
+            }
         }
         
         /* Technoid font styling for headers */
@@ -152,6 +197,7 @@
             color: #7FDD7F;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 0.75rem 1.5rem;
@@ -199,7 +245,7 @@
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 30px;
             color: #7FDD7F;
             display: block;
             transition: all 0.3s ease;
@@ -272,6 +318,9 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
     <!-- Mobile Navigation -->
     <nav class="navbar">
         <div class="flex items-center">
@@ -461,6 +510,26 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+        
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.getElementById('customCursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Hide cursor when mouse leaves the window
+            document.addEventListener('mouseleave', function() {
+                cursor.style.display = 'none';
+            });
+            
+            // Show cursor when mouse enters the window
+            document.addEventListener('mouseenter', function() {
+                cursor.style.display = 'block';
+            });
+        });
     </script>
 </body>
 </html>
