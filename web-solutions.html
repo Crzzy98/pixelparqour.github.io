@@ -15,6 +15,20 @@
     <meta name="description" content="Pixel Parqour - Web Solutions - Professional web development services including e-commerce platforms, corporate websites, and custom web applications.">
     <meta name="robots" content="index, follow">
     <title>Web Solutions - Pixel Parqour</title>
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="fonts/techno_board/TechnoBoard.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="images/pixel_logo.png" as="image">
+    <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -358,9 +372,9 @@
                 Crafting Software<br>Developing Dreams
             </h1>
         </div>
-        <div class="flex-shrink-0 mx-4">
+        <div class="flex-shrink-0 mx-4 logo-container">
             <a href="index.html">
-                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 432px; max-width: 50vw;">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
             </a>
         </div>
         <div class="flex-1 text-center">
