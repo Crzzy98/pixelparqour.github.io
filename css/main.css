@@ -93,10 +93,9 @@ body {
 
 /* Typography Styles */
 .header-text {
-    font-family: 'TechnoBoard', 'Inter', sans-serif !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
+    font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: 1px !important;
     font-size: 3em !important;
     line-height: 1.4 !important;
 }
