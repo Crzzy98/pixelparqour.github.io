@@ -31,311 +31,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Add TechnoBoard font declaration for header text */
-        @font-face {
-            font-family: 'TechnoBoard';
-            src: url('fonts/techno_board/TechnoBoard.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        /* Add Technoid font declaration */
-        @font-face {
-            font-family: 'Technoid';
-            src: url('fonts/technoid/TECHNOID.TTF') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
 
-        /* Add Karnivore Light font declaration */
-        @font-face {
-            font-family: 'Karnivore-Light';
-            src: url('fonts/Karnivore-Lite/KARNIVOL.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* Custom styles for the Inter font and general body styling */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000; /* Black background for the page */
-            color: #7FDD7F; /* Slightly darker green text color */
-            cursor: none; /* Hide default cursor */
-        }
-        
-        /* Hide default cursor on all elements */
-        * {
-            cursor: none !important;
-        }
-        
-        /* Custom cursor overlay */
-        .custom-cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 192px;
-            height: 190px;
-            background-image: url('images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -40%);
-            animation: pulsate 1.875s ease-in-out infinite;
-        }
-        
-        /* Pulsate animation for cursor */
-        @keyframes pulsate {
-            0% {
-                filter: brightness(1) saturate(1);
-            }
-            50% {
-                filter: brightness(1.8) saturate(0.6);
-            }
-            100% {
-                filter: brightness(1) saturate(1);
-            }
-        }
-        
-        /* Hide cursor on mobile devices */
-        @media (max-width: 768px) {
-            .custom-cursor {
-                display: none !important;
-            }
-            body, * {
-                cursor: auto !important;
-            }
-        }
-        
-        /* Technoid font styling for headers */
-        .technoid-header {
-            font-family: 'Technoid', 'Inter', sans-serif !important;
-            font-weight: normal !important;
-        }
-        /* Karnivore Light font styling for service headers */
-        .karnivore-header {
-            font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
-            font-weight: normal !important;
-            letter-spacing: 1px !important;
-        }
-        /* TechnoBoard font styling for logo header text with distinctive styling */
-        .header-text {
-            font-family: 'TechnoBoard', 'Inter', sans-serif !important;
-            font-weight: bold !important;
-            text-transform: uppercase !important;
-            letter-spacing: 2px !important;
-            font-size: 3em !important;
-            line-height: 1.4 !important;
-        }
-        /* Ensure the main content area has some padding */
-        main {
-            padding: 1rem;
-        }
-        /* Specific styling for the banner text */
-        .banner-text {
-            font-weight: 700; /* Bold */
-            color: #7FDD7F; /* Slightly darker green color */
-        }
-        /* Override Tailwind classes for dark theme */
-        .bg-white {
-            background-color: #1a1a1a !important; /* Dark gray instead of white */
-        }
-        .bg-gray-50 {
-            background-color: #2a2a2a !important; /* Darker gray for sections */
-        }
-        .text-gray-800 {
-            color: #7FDD7F !important; /* Slightly darker green for headings */
-        }
-        .text-gray-700 {
-            color: #7FDD7F !important; /* Slightly darker green for body text */
-        }
-        .bg-gray-800 {
-            background-color: #0a0a0a !important; /* Very dark for footer */
-        }
-        .text-white {
-            color: #7FDD7F !important; /* Slightly darker green for footer text */
-        }        /* Hero image container and styling */
-        .hero-image-container {
-            width: 100%;
-            margin: 2rem 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(127, 221, 127, 0.2);
-        }
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-            border-radius: 8px;
-        }
-        /* Responsive text scaling */
-        .responsive-text-lg {
-            font-size: clamp(1.125rem, 2vw, 2rem) !important;
-        }
-        .responsive-text-xl {
-            font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important;
-        }
-        .responsive-text-2xl {
-            font-size: clamp(1.5rem, 3vw, 3rem) !important;
-        }
-        .responsive-text-3xl {
-            font-size: clamp(1.875rem, 4vw, 4rem) !important;
-        }
-        /* Header responsive layout */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column !important;
-                text-align: center !important;
-            }
-            header > div {
-                margin: 0.5rem 0 !important;
-            }
-            header img {
-                max-width: 80vw !important;
-                height: 300px !important;
-            }
-        }
-        /* Desktop Navigation Bar */
-        .desktop-navbar {
-            display: block;
-            background-color: #1a1a1a;
-            padding: 1rem 2rem;
-            border-bottom: 2px solid #7FDD7F;
-        }
-        .desktop-navbar nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-        }
-        .desktop-navbar a {
-            color: #7FDD7F;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .desktop-navbar a:hover {
-            background-color: #7FDD7F;
-            color: #1a1a1a;
-            transform: translateY(-2px) scale(1.5);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: #7FDD7F;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        .navbar {
-            display: none;
-            background-color: #1a1a1a;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #7FDD7F;
-        }
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            right: 0;
-            background-color: #1a1a1a;
-            overflow-x: visible;
-            transition: 0.3s;
-            padding-top: 60px;
-        }
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 30px;
-            color: #7FDD7F;
-            display: block;
-            transition: all 0.3s ease;
-            border-radius: 0.375rem;
-            margin: 0.5rem 1rem;
-            position: relative;
-            transform: translateX(0);
-            z-index: 1001;
-        }
-        .sidenav a:hover {
-            background-color: #7FDD7F;
-            color: #1a1a1a;
-            transform: translateX(-33.33%);
-            box-shadow: 0 4px 8px rgba(127, 221, 127, 0.3);
-            z-index: 1002;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .desktop-navbar {
-                display: none !important;
-            }
-            .navbar {
-                display: flex !important;
-            }
-            .hamburger {
-                display: flex !important;
-            }
-            .header-text {
-                display: none !important;
-            }
-        }
-        
-        /* Back button styling */
-        .back-button {
-            background-color: #7FDD7F;
-            color: #000;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #6BC26B;
-            transform: translateY(-2px);
-        }
-        
-        /* Legal footer styling */
-        .legal-footer {
-            text-align: center;
-            padding: 1rem 0;
-            border-top: 1px solid #7FDD7F;
-            margin-top: 2rem;
-            background-color: #1a1a1a;
-        }
-        .legal-footer a {
-            color: #7FDD7F;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .legal-footer a:hover {
-            color: #6BC26B;
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Custom Cursor -->
@@ -368,7 +64,7 @@
 
     <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
         <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
                 Crafting Software<br>Developing Dreams
             </h1>
         </div>
@@ -378,7 +74,7 @@
             </a>
         </div>
         <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
                 Business and Personal<br>Software Solutions
             </h1>
         </div>
@@ -410,21 +106,21 @@
             <!-- Header Hero Image -->
             <div class="hero-image-container">
                 <img src="images/web_info.jpg" alt="Web Solutions - Professional Web Development Services" class="hero-image">
-                <p class="text-xs text-gray-400 mt-2 text-center">
-                    Image provided by <a href="https://www.vecteezy.com/free-photos/web-development" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Vecteezy</a>
-                </p>
+                    <p class="image-accreditation">
+                        Image provided by <a href="https://www.vecteezy.com/free-photos/web-development" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Vecteezy</a>
+                    </p>
             </div>
 
             <!-- Detailed Text Section -->
             <div class="text-content space-y-6">
                 <div class="prose prose-lg max-w-none">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl technoid-header">Comprehensive Web Development Services</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl karnivore-header">Comprehensive Web Development Services</h2>
                     <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
                         At Pixel Parqour, we specialize in creating dynamic, responsive, and high-performance web applications that drive business growth and enhance user engagement. Our web solutions are crafted with modern technologies and best practices to ensure your digital presence stands out in today's competitive landscape.
                     </p>
 
                     <hr class="border-t-2 border-green-400 my-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">What We Offer</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl karnivore-header">What We Offer</h3>
                     <ul class="space-y-4 text-lg text-gray-700 responsive-text-lg">
                         <li><strong>E-commerce Platforms:</strong> Build robust online stores with secure payment processing, inventory management, and seamless user experiences that convert visitors into customers.</li>
                         <li><strong>Corporate Websites:</strong> Professional business websites that establish credibility, showcase your brand, and effectively communicate your value proposition to potential clients.</li>
@@ -434,7 +130,7 @@
                     </ul>
 
                     <hr class="border-t-2 border-green-400 my-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Technical Expertise</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl karnivore-header">Our Technical Expertise</h3>
                     <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
                         We leverage cutting-edge technologies and frameworks to deliver exceptional web solutions:
                     </p>
@@ -448,27 +144,27 @@
                     </ul>
 
                     <hr class="border-t-2 border-green-400 my-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Why Choose Our Web Solutions?</h3>                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl karnivore-header">Why Choose Our Web Solutions?</h3>                    <div class="grid md:grid-cols-2 gap-6 mt-6">
                         <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Performance Optimized</h4>
+                            <h4 class="font-semibold text-blue-800 mb-2 karnivore-header">Performance Optimized</h4>
                             <p class="text-blue-800">Fast loading times and optimized performance ensure excellent user experience and better search engine rankings.</p>
                         </div>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Scalable Architecture</h4>
+                            <h4 class="font-semibold text-blue-800 mb-2 karnivore-header">Scalable Architecture</h4>
                             <p class="text-blue-800">Built to grow with your business, our solutions can handle increased traffic and expanded functionality.</p>
                         </div>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Security First</h4>
+                            <h4 class="font-semibold text-blue-800 mb-2 karnivore-header">Security First</h4>
                             <p class="text-blue-800">Industry-standard security practices protect your data and your users' information from potential threats.</p>
                         </div>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Ongoing Support</h4>
+                            <h4 class="font-semibold text-blue-800 mb-2 karnivore-header">Ongoing Support</h4>
                             <p class="text-blue-800">Comprehensive maintenance and support services to keep your website running smoothly and up-to-date.</p>
                         </div>
                     </div>
 
                     <hr class="border-t-2 border-green-400 my-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl">Our Development Process</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-8 mb-4 responsive-text-xl karnivore-header">Our Development Process</h3>
                     <ol class="space-y-4 text-lg text-gray-700 responsive-text-lg">
                         <li><strong>1. Discovery & Planning:</strong> We work closely with you to understand your goals, target audience, and technical requirements.</li>
                         <li><strong>2. Design & Prototyping:</strong> Create wireframes and mockups to visualize the user interface and user experience before development begins.</li>
@@ -478,7 +174,7 @@
                     </ol>
 
                     <div class="bg-gray-800 text-center p-8 rounded-lg mt-10">
-                        <h3 class="text-2xl font-bold text-white mb-4">Ready to Transform Your Web Presence?</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4 karnivore-header">Ready to Transform Your Web Presence?</h3>
                         <p class="text-lg text-gray-300 mb-6">
                             Let's discuss how our web solutions can help your business grow and succeed online.
                         </p>

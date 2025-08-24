@@ -96,7 +96,7 @@ body {
     font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
     font-weight: normal !important;
     letter-spacing: 1px !important;
-    font-size: 3em !important;
+    font-size: 1.5em !important;
     line-height: 1.4 !important;
 }
 
@@ -109,6 +109,7 @@ body {
     font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
     font-weight: normal !important;
     letter-spacing: 1px !important;
+    font-size: 1.5em !important;
 }
 
 /* Text Size Overrides */
@@ -225,7 +226,8 @@ main {
 
 .back-button:hover {
     background-color: var(--secondary-green);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.5);
+    font-size: 1.5em;
 }
 
 /* Navigation Styles */
@@ -233,26 +235,32 @@ main {
     display: none;
 }
 
+/* Add margin below header and above navigation */
+header {
+    margin-bottom: 2rem;
+}
+
 .desktop-navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--card-bg);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 1rem;
 }
 
 .desktop-navbar nav {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .desktop-navbar a {
     color: var(--primary-green);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.4rem;
-    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -382,8 +390,8 @@ main {
 }
 
 .logo-img {
-    height: 432px;
-    max-width: 50vw;
+    height: 324px;
+    max-width: 37.5vw;
     width: auto;
     object-fit: contain;
     display: block;
@@ -421,6 +429,31 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+/* Image accreditation text: smallest size, always consistent */
+.image-accreditation {
+    font-size: 0.65rem !important;
+    color: #b0b0b0 !important;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .image-accreditation {
+        font-size: 0.55rem !important;
+    }
+}
+
+/* Reduce non-header text size for mobile */
+@media (max-width: 768px) {
+    body, p, li, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-gray-800, .text-gray-700, .text-gray-600, .text-white, .banner-text, .section-content, .content-image {
+        font-size: 80% !important;
+    }
+    /* Exclude logo header and subheaders */
+    .karnivore-header, .header-text {
+        font-size: inherit !important;
+    }
 }
 
 /* Desktop: Side-by-side layout */
