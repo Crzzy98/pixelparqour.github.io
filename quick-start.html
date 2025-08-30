@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+            /* Make submit button text much brighter on hover */
+            button[type="submit"]:hover {
+                color: #fff700 !important;
+                text-shadow: 0 0 8px #fff700, 0 0 16px #fff700;
+            }
+            #tierTitle {
+                line-height: 3.5rem;
+            }
+            /* Make all form text black */
+            form, form * {
+                color: #111827 !important; /* Tailwind gray-900 (almost black) */
+            }
+            /* Make form background same as page bg */
+            form.bg-green-50 {
+                background-color: #f9fafb !important; /* Tailwind bg-gray-50 */
+            }
+            /* Always show standard mouse cursor on this page */
+            html, body, *, *:hover {
+                cursor: auto !important;
+            }
+            /* Underline and center all subheaders (h2) in the form */
+            form h2 {
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+                text-align: center;
+            }
+        </style>
+    <meta charset="UTF-8">
+    <title>Pixel Parqour Quick Start</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Get tier from URL and set page title and form select
+      document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        const tier = params.get('tier') || 'basic';
+        const tierMap = {
+          basic: 'Basic',
+          standard: 'Standard',
+          premium: 'Premium'
+        };
+    document.title = `Pixel Parqour Quick Start: ${tierMap[tier] || 'Basic'}`;
+    document.getElementById('tierTypeGold').textContent = tierMap[tier] || 'Basic';
+    document.getElementById('tier').value = tier;
+      });
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-3xl w-full">
+        <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-16 w-16">
+            <h1 class="text-3xl font-bold text-center karnivore-header m-0 p-0" style="line-height: 3.5rem;">
+                <span style="color: #15803d;">Pixel Parqour Quick Start: </span>
+                <span id="tierTypeGold" style="color: #15803d;">Basic</span>
+            </h1>
+            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-16 w-16">
+        </div>
+    <form action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+    <p class="text-xs text-gray-500 mb-4 text-center">An email will be sent to our team. We will review your requirements and reach out to you in 1-2 business days with the next steps.</p>
+            <!-- General Info -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">General Info</h2>
+            <div>
+                <label for="fullName" class="block font-semibold mb-1">Full Name:</label>
+                <input type="text" id="fullName" name="Full Name" required class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="businessName" class="block font-semibold mb-1">Business/Entity Name (if available):</label>
+                <input type="text" id="businessName" name="Business/Entity Name" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="email" class="block font-semibold mb-1">Email Address:</label>
+                <input type="email" id="email" name="Email" required class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="phone" class="block font-semibold mb-1">Phone Number (optional):</label>
+                <input type="tel" id="phone" name="Phone" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <!-- Project Basics -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Project Basics</h2>
+            <div>
+                <label for="projectName" class="block font-semibold mb-1">Project / Website / App Name (if known):</label>
+                <input type="text" id="projectName" name="Project Name" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="projectDescription" class="block font-semibold mb-1">Short Project Description:</label>
+                <textarea id="projectDescription" name="Project Description" class="w-full p-2 rounded border border-gray-300"></textarea>
+            </div>
+            <div>
+                <label for="primaryGoal" class="block font-semibold mb-1">Primary Goal of the Project:</label>
+                <input type="text" id="primaryGoal" name="Primary Goal" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="tier" class="block font-semibold mb-1">Requested Tier:</label>
+                <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300">
+                  <option value="basic">Basic</option>
+                  <option value="standard">Standard</option>
+                  <option value="premium">Premium</option>
+                </select>
+            </div>
+            <!-- Timeline & Budget -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Timeline & Budget</h2>
+            <div>
+                <label for="deadline" class="block font-semibold mb-1">Requested Deadline / Target Launch Date:</label>
+                <input type="date" id="deadline" name="Deadline" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <div>
+                <label for="budget" class="block font-semibold mb-1">Do you have a budget range in mind?</label>
+                <select id="budget" name="Budget Range" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="budgetDetails" class="block font-semibold mb-1">If Yes, please specify:</label>
+                <input type="text" id="budgetDetails" name="Budget Details" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <!-- Features & Requirements -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Features & Requirements</h2>
+            <div>
+                <label for="solutionType" class="block font-semibold mb-1">Which type of solution are you interested in?</label>
+                <select id="solutionType" name="Solution Type" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="single-page">Single-page site / Landing page (Basic)</option>
+                  <option value="multi-page">Multi-page business app or dashboard (Standard)</option>
+                  <option value="full-stack">Full-stack web + mobile solution (Premium)</option>
+                </select>
+            </div>
+            <div>
+                <label for="mustHave" class="block font-semibold mb-1">Must-have features:</label>
+                <textarea id="mustHave" name="Must-have Features" class="w-full p-2 rounded border border-gray-300"></textarea>
+            </div>
+            <div>
+                <label for="techStack" class="block font-semibold mb-1">Preferred Tech Stack (if any):</label>
+                <input type="text" id="techStack" name="Preferred Tech Stack" class="w-full p-2 rounded border border-gray-300">
+            </div>
+            <!-- Hosting & Deployment -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Hosting & Deployment</h2>
+            <div>
+                <label for="hosting" class="block font-semibold mb-1">Do you already have hosting/domain set up?</label>
+                <select id="hosting" name="Hosting" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="not-sure">Not sure</option>
+                </select>
+            </div>
+            <div>
+                <label for="cloudProvider" class="block font-semibold mb-1">Preferred Cloud Provider:</label>
+                                <select id="cloudProvider" name="Cloud Provider" class="w-full p-2 rounded border border-gray-300">
+                                    <option value="">--Select--</option>
+                                    <option value="aws">AWS</option>
+                                    <option value="azure">Azure</option>
+                                    <option value="no-preference">No Preference</option>
+                                </select>
+            </div>
+            <!-- Design & Content -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Design & Content</h2>
+            <div>
+                <label for="branding" class="block font-semibold mb-1">Do you already have branding?</label>
+                <select id="branding" name="Branding" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="contentHelp" class="block font-semibold mb-1">Do you need help with content?</label>
+                <select id="contentHelp" name="Content Help" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Post-Launch & Support -->
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">Post-Launch & Support</h2>
+            <div>
+                <label for="maintenance" class="block font-semibold mb-1">Do you need ongoing support/maintenance?</label>
+                <select id="maintenance" name="Ongoing Support" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="maybe">Maybe</option>
+                </select>
+            </div>
+            <div>
+                <label for="training" class="block font-semibold mb-1">Do you need consulting/training for your team?</label>
+                <select id="training" name="Consulting/Training" class="w-full p-2 rounded border border-gray-300">
+                  <option value="">--Select--</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="mt-6 px-10 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

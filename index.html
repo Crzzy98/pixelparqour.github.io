@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        /* Increase line height for modal header */
+        #quickStartModal h3.text-3xl {
+            line-height: 3.5rem;
+        }
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNGRLSS5SE"></script>
     <script>
@@ -175,7 +179,7 @@
                     <strong>How to Get Started:</strong>
                 </p>
                 <p class="text-base text-blue-800 mb-2">
-                    Please send us a short description of your project idea, and one of our consultants will be in contact with you within 5 business days to discuss your project and begin drafting a project plan.
+                    Please send us a short description of your project idea. An email will be sent to our team, and one of our consultants will review your requirements and reach out to you in 1-2 business days with the next steps.
                 </p>
                 <p class="text-base text-blue-800">
                     We specialize in creating plans to fit any person or business's financial and digital needs.
@@ -199,6 +203,171 @@
     </main>
 
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm max-w-6xl w-[96rem] mx-auto mt-16 mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center flex items-center justify-center gap-4">
+            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
+            Quick Start Packages
+            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
+        </h2>
+        <div class="mb-4">
+            <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
+        </div>
+        <p class="text-lg leading-relaxed text-gray-700 mb-4 text-center">
+            Try one of our quick start options to get your project off the ground in a flash! A consultant will be in contact with you in 1-2 business days.
+        </p>
+        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+            <p class="text-base text-blue-800 mb-2 text-center">
+                <strong>Choose a prebuilt tier to match your needs and budget. Click below to view options.</strong>
+            </p>
+        </div>
+        <div class="flex justify-center">
+                <button id="openQuickStartModal" class="px-16 py-6 bg-green-600 text-white font-semibold text-2xl rounded shadow hover:bg-green-700 transition">View Options</button>
+        </div>
+    </section>
+
+    <!-- Quick Start Modal -->
+    <div id="quickStartModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[85vw] lg:w-[85vw] p-8 relative">
+            <button id="closeQuickStartModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+                <h3 class="text-3xl font-bold mb-6 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start Tiers</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Basic Tier -->
+                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
+                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Basic</h4>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
+                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Single-page website or landing page</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Responsive design, contact form, basic SEO</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Hosting setup on AWS S3 or Azure</li>
+            <style>
+            /* Improved modal tier box layout: white containers stretch, price stays above button, no overlap */
+            #quickStartModal .grid {
+                align-items: stretch;
+            }
+            #quickStartModal .border.rounded-lg.p-4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+                min-height: 480px;
+            }
+            #quickStartModal .bg-green-50 {
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 320px;
+            }
+                #quickStartModal .font-bold.text-green-700.text-2xl {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    min-height: 2.5rem;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    background: #fff;
+                    z-index: 2;
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    line-height: 3.2rem;
+                }
+            #quickStartModal .learnMoreBtn {
+                margin-top: 2rem !important;
+            }
+            @media (max-width: 900px) {
+                #quickStartModal .grid {
+                    grid-template-columns: 1fr !important;
+                }
+                #quickStartModal .border.rounded-lg.p-4 {
+                    min-height: 0 !important;
+                }
+                #quickStartModal .bg-green-50 {
+                    min-height: 0 !important;
+                }
+            }
+            @media (max-width: 600px) {
+                #quickStartModal .border.rounded-lg.p-4 {
+                    min-height: 0 !important;
+                    padding: 1rem !important;
+                }
+                #quickStartModal .bg-green-50 {
+                    min-height: 0 !important;
+                    padding: 1rem !important;
+                }
+                #quickStartModal ul.text-blue-800 {
+                    min-height: 0 !important;
+                    font-size: 1rem !important;
+                }
+                        #quickStartModal .font-bold.text-green-700.text-2xl {
+                            margin-top: 1rem !important;
+                            margin-bottom: 1rem !important;
+                            font-size: 1.25rem !important;
+                            min-height: 1.5rem !important;
+                    line-height: 2.7rem !important;
+                        }
+                #quickStartModal .learnMoreBtn {
+                    margin-top: 1rem !important;
+                }
+            }
+            </style>
+                        </ul>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $299</div>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="basic">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                </div>
+                <!-- Standard Tier -->
+                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
+                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Standard</h4>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
+                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Multi-page web app or business site</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>React (v18) or Angular (v17), TypeScript</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Node.js backend, MongoDB or SQL Server</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Deployment on AWS or Azure</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>User authentication and dashboard</li>
+                        </ul>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $999</div>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="standard">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                </div>
+                <!-- Premium Tier -->
+                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
+                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Premium</h4>
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
+                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Full-stack solution: mobile & web</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>React Native, Next.js, .NET, C#</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Dockerized microservices, CI/CD, analytics, cloud scaling (AWS/Azure)</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Consulting, testing, 3 months support</li>
+                        </ul>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $2499</div>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="premium">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal open/close logic
+        document.getElementById('openQuickStartModal').onclick = function() {
+            document.getElementById('quickStartModal').classList.remove('hidden');
+        };
+        document.getElementById('closeQuickStartModal').onclick = function() {
+            document.getElementById('quickStartModal').classList.add('hidden');
+        };
+        // Learn More buttons
+        document.querySelectorAll('.learnMoreBtn').forEach(function(btn) {
+            btn.onclick = function() {
+                window.location.href = 'quick-start.html?tier=' + btn.getAttribute('data-tier');
+            };
+        });
+    </script>
         <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
         <div class="legal-footer">
             <a href="terms-of-service.html">Legal</a>

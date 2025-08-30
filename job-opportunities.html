@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Pixel Parqour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <!-- Mobile Navigation -->
+    <nav class="navbar">
+        <div class="flex items-center">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="hamburger" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html" onclick="closeNav()">Home</a>
+        <a href="index.html#about-us" onclick="closeNav()">About Us</a>
+        <a href="index.html#crafting-dreams" onclick="closeNav()">Our Services</a>
+        <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
+        <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
+        <a href="android-development.html" onclick="closeNav()">Android Development</a>
+        <a href="index.html#contact-us" onclick="closeNav()">Contact</a>
+    </div>
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
+                Join Our Team<br>at Pixel Parqour
+            </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
+                Careers
+            </h1>
+        </div>
+    </header>
+    <!-- Desktop Navigation Bar -->
+    <div class="desktop-navbar">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#about-us">About Us</a>
+            <a href="index.html#crafting-dreams">Our Services</a>
+            <a href="web-solutions.html">Web Solutions</a>
+            <a href="ios-development.html">iOS Development</a>
+            <a href="android-development.html">Android Development</a>
+            <a href="index.html#contact-us">Contact</a>
+        </nav>
+    </div>
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow" style="width: 95vw; min-width: 95vw;">
+    <!-- No current job or internship opportunities. -->
+    </main>
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+        <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.getElementById('customCursor');
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            document.addEventListener('mouseleave', function() {
+                cursor.style.display = 'none';
+            });
+            document.addEventListener('mouseenter', function() {
+                cursor.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
