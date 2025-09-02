@@ -205,7 +205,7 @@
             document.getElementById("mySidenav").style.width = "0";
         }
 
-        // Close sidenav when clicking outside
+        
         window.onclick = function(event) {
             var sidenav = document.getElementById("mySidenav");
             if (event.target == sidenav) {
@@ -213,7 +213,7 @@
             }
         }
         
-        // Custom cursor functionality
+        
         document.addEventListener('DOMContentLoaded', function() {
             const cursor = document.getElementById('customCursor');
             
@@ -222,12 +222,12 @@
                 cursor.style.top = e.clientY + 'px';
             });
             
-            // Hide cursor when mouse leaves the window
+            
             document.addEventListener('mouseleave', function() {
                 cursor.style.display = 'none';
             });
             
-            // Show cursor when mouse enters the window
+            
             document.addEventListener('mouseenter', function() {
                 cursor.style.display = 'block';
             });
