@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
+    <meta charset="UTF-8">
+    <title>Our Services - Pixel Parqour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
+                Services
+            </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
+                Business and Personal<br>Software Solutions
+            </h1>
+        </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html#about-us" onclick="closeNav()">About Us</a>
+        <a href="services.html" onclick="closeNav()">Our Services</a>
+        <a href="index.html#contact-us" onclick="closeNav()">Contact</a>
+        <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
+        <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
+        <a href="android-development.html" onclick="closeNav()">Android Development</a>
+    </div>
+    <div class="desktop-navbar">
+        <nav>
+            <a href="index.html#about-us">About Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="web-solutions.html">Web Solutions</a>
+            <a href="ios-development.html">iOS Development</a>
+            <a href="android-development.html">Android Development</a>
+            <a href="index.html#contact-us">Contact</a>
+        </nav>
+    </div>
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-4xl w-full" style="min-width:80vw;">
+    <h1 class="font-bold text-green-700 mb-8 text-center karnivore-header" style="font-size:8rem;line-height:1;">Services</h1>
+
+    <section class="mb-10 p-6 bg-white rounded-lg shadow-sm">
+            <div class="bg-white p-4 rounded-lg mb-6">
+                <div style="border: 4px solid #fff; border-radius: 1rem; padding: 2rem; background:transparent; text-align:center; margin-bottom:1.5rem;">
+                    <p class="text-lg text-green-700 font-bold text-center mb-4" style="font-size:4.5rem;">
+                        At <span class="pulsate-white">Pixel Parqour</span>, we combine <span class="font-bold text-green-700">20+ years of industry expertise</span> with the latest technology to deliver high-quality, affordable solutions for your business or personal projects.
+                    </p>
+                    <p class="text-lg text-white text-center mb-2">
+                        We offer a wide range of services tailored to your needs, ensuring quality and affordability at every step.
+                    </p>
+                </div>
+            </div>
+            <ul class="list-disc list-inside text-white text-lg mb-6 bg-white p-4 rounded-lg" style="overflow:visible;">
+                <li class="mb-4"><span class="font-bold text-green-700">Project Planning & Development:</span> We help with every step of the mobile and web development process, from initial concept and planning to deployment and ongoing support.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">AI & Generative Tools:</span> Intimate understanding and integration of the latest AI tools, including generative AI, to help you leverage the best technology for your needs.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Comprehensive Project Planning:</span> From the ground up, we offer consultation and planning for every stage of the development process.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Custom Data Encryption:</span> In-house developed encryption algorithms for extra sensitive data storage and peace of mind.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Project Hosting:</span> Secure, scalable hosting using industry leaders AWS and Azure.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Premade Templates:</span> Rapid development with a library of premade templates for websites and apps.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Concept & Content Creation:</span> Creative assistance for content and design, guiding you toward industry standards while letting your vision flourish.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Security, Testing & Scalability:</span> Rigorous security practices, thorough testing, and a focus on scalable solutions for future growth.</li>
+                <li class="mb-4"><span class="font-bold text-green-700">Free Pricing Reassessment:</span> If you receive a contract and quote, we’ll log your project and notify you if a price drop occurs for any quoted service or software—so you can renegotiate and save.</li>
+            </ul>
+            <p class="text-lg text-gray-700 mb-6 text-center">
+                Our team is passionate about helping you achieve your goals. The combination of our services, a slew of other unincorporated offerings, and personal expertise allows us to bring dreams into reality. Use one of our quick start templates located via the home page or contact us directly at <a href="mailto:projects@pixelparqour.net" class="text-green-700 underline">projects@pixelparqour.net</a> to get started right away!
+            </p>
+            <p class="text-lg text-green-700 font-bold text-center mb-4">
+                We can't wait for you to join us on this journey!
+            </p>
+        </section>
+    </main>
+    <footer class="bg-white text-black p-4 text-center mt-8">
+        <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.getElementById('customCursor');
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            document.addEventListener('mouseleave', function() {
+                cursor.style.display = 'none';
+            });
+            document.addEventListener('mouseenter', function() {
+                cursor.style.display = 'block';
+            });
+        });
+    </script>
+</html>

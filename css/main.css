@@ -1,3 +1,15 @@
+/* Pulsate white animation for Pixel Parqour text */
+.pulsate-white {
+    color: #fff !important;
+    animation: pulsateWhite 2.5s ease-in-out infinite;
+    text-shadow: 0 0 20px #fff, 0 0 40px #7FDD7F;
+}
+
+@keyframes pulsateWhite {
+    0% { filter: brightness(1) saturate(1); text-shadow: 0 0 20px #fff, 0 0 40px #7FDD7F; }
+    50% { filter: brightness(3) saturate(1); text-shadow: 0 0 40px #fff, 0 0 80px #7FDD7F; }
+    100% { filter: brightness(1) saturate(1); text-shadow: 0 0 20px #fff, 0 0 40px #7FDD7F; }
+}
 /* Pixel Parqour - Main Stylesheet */
 /* Optimized external CSS for better performance and maintainability */
 
@@ -63,8 +75,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -40%);
+    z-index: 99999;
+    transform: translate(-50%, -50%);
     animation: pulsate var(--animation-duration) ease-in-out infinite;
 }
 
@@ -109,7 +121,6 @@ body {
     font-family: 'Karnivore-Light', 'Inter', sans-serif !important;
     font-weight: normal !important;
     letter-spacing: 1px !important;
-    font-size: 1.5em !important;
 }
 
 /* Text Size Overrides */
@@ -174,7 +185,7 @@ main {
 }
 
 .text-white {
-    color: var(--primary-green) !important;
+    color: #fff !important;
 }
 
 /* Hero Image Styles */
