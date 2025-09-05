@@ -76,7 +76,7 @@ body {
     background-repeat: no-repeat;
     pointer-events: none;
     z-index: 99999;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     animation: pulsate var(--animation-duration) ease-in-out infinite;
 }
 
