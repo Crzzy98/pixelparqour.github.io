@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-TNGRLSS5SE');
     </script>
     <meta charset="UTF-8">
@@ -15,429 +14,159 @@
     <meta name="description" content="Pixel Parqour - Professional software solutions for web and mobile applications. Custom development services for businesses of all sizes.">
     <meta name="robots" content="index, follow">
     <title>Pixel Parqour - Software Solutions</title>
-    
-    <!-- Preconnect to external domains for faster loading -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/main.css" as="style">
-    <link rel="preload" href="fonts/techno_board/TechnoBoard.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="images/pixel_logo.png" as="image">
-    <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
-    
-    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col relative">
+
     <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor"></div>
-    
+    <div id="customCursor" class="fixed w-4 h-4 bg-green-400 rounded-full pointer-events-none z-50"></div>
+
     <!-- Mobile Navigation -->
-    <nav class="navbar">
-        <div class="flex items-center">
-            <a href="index.html">
-                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 60px;">
-            </a>
-        </div>
-        <div class="hamburger" onclick="openNav()">
-            <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span>
-            <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span>
-            <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span>
-        </div>
+    <nav class="flex items-center justify-between bg-white shadow-md px-4 py-2 md:hidden">
+        <a href="index.html">
+            <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="h-10 object-contain">
+        </a>
+        <button id="hamburgerBtn" class="flex flex-col justify-between h-6 w-6 cursor-pointer z-50">
+            <span class="block h-0.5 w-full bg-green-400"></span>
+            <span class="block h-0.5 w-full bg-green-400"></span>
+            <span class="block h-0.5 w-full bg-green-400"></span>
+        </button>
     </nav>
 
     <!-- Side Navigation -->
-    <div id="mySidenav" class="sidenav">
-    <a href="#about-us" onclick="closeNav()">About Us</a>
-    <a href="services.html" onclick="closeNav()">Our Services</a>
-    <a href="#contact-us" onclick="closeNav()">Contact</a>
-    <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
-    <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
-    <a href="android-development.html" onclick="closeNav()">Android Development</a>
+    <div id="mobileSidenav" class="fixed top-0 left-0 h-full w-0 bg-gray-900 text-white overflow-x-hidden transition-all duration-300 z-40 flex flex-col pt-16">
+        <a href="#about-us" class="px-6 py-2 text-sm" onclick="closeNav()">About Us</a>
+        <a href="services.html" class="px-6 py-2 text-sm" onclick="closeNav()">Our Services</a>
+        <a href="#contact-us" class="px-6 py-2 text-sm" onclick="closeNav()">Contact</a>
+        <a href="web-solutions.html" class="px-6 py-2 text-sm" onclick="closeNav()">Web Solutions</a>
+        <a href="ios-development.html" class="px-6 py-2 text-sm" onclick="closeNav()">iOS Development</a>
+        <a href="android-development.html" class="px-6 py-2 text-sm" onclick="closeNav()">Android Development</a>
     </div>
 
-    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
-        <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
-                Crafting Software<br>Developing Dreams
-            </h1>
+    <!-- Header -->
+    <header class="bg-white shadow-md py-2 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center text-sm font-bold text-gray-800">Crafting Software<br>Developing Dreams</div>
+        <div class="flex-shrink-0 mx-2">
+            <a href="index.html"><img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="h-8"></a>
         </div>
-        <div class="flex-shrink-0 mx-4 logo-container">
-            <a href="index.html">
-                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
-            </a>
-        </div>
-        <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
-                Business and Personal<br>Software Solutions
-            </h1>
-        </div>
-</header>
+        <div class="flex-1 text-center text-sm font-bold text-gray-800">Business and Personal<br>Software Solutions</div>
+    </header>
 
-    <!-- Desktop Navigation Bar -->
-    <div class="desktop-navbar">
-        <nav>
-            <a href="#about-us">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="web-solutions.html">Web Solutions</a>
-            <a href="ios-development.html">iOS Development</a>
-            <a href="android-development.html">Android Development</a>
-            <a href="#contact-us">Contact</a>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex justify-center bg-white shadow-sm py-1">
+        <nav class="flex gap-4 text-xs md:text-sm">
+            <a href="#about-us" class="hover:text-green-400">About Us</a>
+            <a href="services.html" class="hover:text-green-400">Services</a>
+            <a href="web-solutions.html" class="hover:text-green-400">Web Solutions</a>
+            <a href="ios-development.html" class="hover:text-green-400">iOS Development</a>
+            <a href="android-development.html" class="hover:text-green-400">Android Development</a>
+            <a href="#contact-us" class="hover:text-green-400">Contact</a>
         </nav>
     </div>
 
-    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
-        <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <div class="flex items-center justify-center gap-4 mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="inline-block h-32 w-32" style="margin-right:2.5rem;">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 responsive-text-3xl karnivore-header">About Us</h2>
-                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="inline-block h-32 w-32" style="transform: scaleX(-1); margin-left:2.5rem;">
+    <!-- Main Content -->
+    <main class="mx-auto mt-4 p-2 bg-white rounded-lg shadow-lg flex-grow text-center w-[95vw] min-w-[95vw]">
+        <!-- About Us Section -->
+        <section id="about-us" class="mb-4 p-4 bg-gray-50 rounded-lg shadow-sm">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="h-16 w-16 mr-10">
+                <h2 class="text-xl font-bold text-gray-800">About Us</h2>
+                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="h-16 w-16 ml-10 -scale-x-100">
             </div>
-            <div class="mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-                <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
-            </div>
-            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-                At Pixel Parqour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of developing mobile and web applications for individuals and companies alike as we move into the next stage of the technical era. We are a team of highly skilled programmers with diverse backgrounds, dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools and software on the market and will create tailored project plans to suit your unique needs.
+            <hr class="border-t-2 border-green-400 mx-auto w-[95%] mb-2">
+            <p class="text-sm text-gray-700 leading-relaxed">
+                At Pixel Parqour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of developing mobile and web applications for individuals and companies alike. We are a team of highly skilled programmers dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools and software on the market and will create tailored project plans to suit your unique needs.
             </p>
         </section>
 
-
-        <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 responsive-text-3xl karnivore-header">Develop Your Dreams</h2>
-            <div class="mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-                <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
-            </div>
-            <p class="text-lg leading-relaxed text-gray-700 mb-6 md:mb-8 lg:mb-10 xl:mb-12 responsive-text-lg">
+        <!-- Crafting Dreams Section -->
+        <section id="crafting-dreams" class="mb-4 p-4 bg-gray-50 rounded-lg shadow-sm">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">Develop Your Dreams</h2>
+            <hr class="border-t-2 border-green-400 mx-auto w-[95%] mb-2">
+            <p class="text-sm text-gray-700 leading-relaxed mb-2">
                 At Pixel Parqour, we transform your visions into robust, user-friendly digital experiences. Our expertise spans across various platforms, ensuring your project meets the highest standards of quality and innovation.
             </p>
-            <hr class="border-t-2 border-green-400 mb-12 mt-8">            <div class="mb-8 pb-4 border-b border-green-400 crafting-container-left">
-                <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">Web Solutions</h3>
-                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
-                        From dynamic e-commerce platforms to engaging corporate sites, we build responsive and high-performance web applications tailored to your business needs. We focus on modern frameworks and intuitive user interfaces to ensure a seamless experience across all devices.
-                    </p>
-                    <a href="web-solutions.html" class="inline-block mt-4 bg-green-400 hover:bg-green-500 text-black font-semibold py-2 px-4 rounded transition-colors duration-300">
-                        Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" />
+
+            <!-- Example of Web Solutions Card -->
+            <div class="flex flex-col md:flex-row items-center gap-2 mb-2">
+                <div class="text-left flex-1">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Web Solutions</h3>
+                    <p class="text-sm text-gray-700">From dynamic e-commerce platforms to engaging corporate sites, we build responsive and high-performance web applications tailored to your business needs.</p>
+                    <a href="web-solutions.html" class="inline-block mt-1 bg-green-400 hover:bg-green-500 text-black font-semibold py-1 px-2 rounded transition-colors duration-300 text-xs">
+                        Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block h-4 w-4 ml-1">
                     </a>
                 </div>
-                <div class="image-content">
-                    <img src="images/stock_web.jpg" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
-                    <p class="text-xs text-gray-400 mt-1 text-center">
-                        Photo by <a href="https://www.vecteezy.com/photo/9276525-digital-communication-and-virtual-technology-concept-web-3-0-hand-touch-globe-internet-business-concept-metaverse" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Khunkorn Laowisit</a> on Vecteezy
-                    </p>
-                </div>
-            </div>            <div class="mb-8 pb-4 border-b border-green-400 crafting-container-right">
-                <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">iOS App Development</h3>
-                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
-                        Bring your ideas to life on Apple's ecosystem. We design and develop native iOS applications that are both aesthetically pleasing and functionally robust, ensuring a top-tier experience for iPhone and iPad users.
-                    </p>
-                    <a href="ios-development.html" class="inline-block mt-4 bg-green-400 hover:bg-green-500 text-black font-semibold py-2 px-4 rounded transition-colors duration-300">
-                        Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" />
-                    </a>
-                </div>
-                <div class="image-content">
-                    <img src="images/stock_iphone.jpg" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
-                    <p class="text-xs text-gray-400 mt-1 text-center" style="font-size: 0.0625em;">
-                        Photo by <a href="https://www.vecteezy.com/photo/46432460-iphone-12-pro-max-with-wireless-charging" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Omar Faruk Mukut</a> on Vecteezy
-                    </p>
-                </div>
-            </div>            <div class="mb-8 pb-4 crafting-container-left">
-                <div class="text-content">
-                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 responsive-text-2xl karnivore-header">Android App Development</h3>
-                    <p class="text-base leading-relaxed text-gray-700 responsive-text-lg">
-                        Reach a broader audience with custom Android applications. Our team crafts intuitive and powerful apps that are optimized for performance across the vast Android device landscape, delivering a seamless user experience.
-                    </p>
-                    <a href="android-development.html" class="inline-block mt-4 bg-green-400 hover:bg-green-500 text-black font-semibold py-2 px-4 rounded transition-colors duration-300">
-                        Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" />
-                    </a>
-                </div>
-                <div class="image-content">
-                    <img src="images/stock_android.jpg" alt="Android App Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
-                    <p class="text-xs text-gray-400 mt-1 text-center">
-                        Photo by <a href="https://www.vecteezy.com/photo/24715785-modern-office-desk-with-smart-phone-technology-generated-by-ai" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Andres Ramos</a> on Vecteezy
+                <div class="flex-shrink-0">
+                    <img src="images/stock_web.jpg" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto">
+                    <p class="text-[0.5rem] text-gray-400 mt-1 text-center">
+                        Photo by <a href="https://www.vecteezy.com/photo/9276525-digital-communication-and-virtual-technology-concept-web-3-0-hand-touch-globe-internet-business-concept-metaverse" target="_blank" class="hover:text-green-400">Khunkorn Laowisit</a>
                     </p>
                 </div>
             </div>
         </section>
-
     </main>
+
     <!-- Careers Section -->
-    <section class="p-6 bg-gray-50 rounded-lg shadow-sm mx-auto mt-16 mb-12 w-full" style="min-width:75vw;max-width:1200px;">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center">Careers at Pixel Parqour</h2>
-        <div class="mb-4">
-            <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
+    <section class="p-4 bg-gray-50 rounded-lg shadow-sm mx-auto mt-8 mb-4 w-full max-w-3xl">
+        <h2 class="text-xl font-bold text-gray-800 mb-2 text-center">Careers at Pixel Parqour</h2>
+        <hr class="border-t-2 border-green-400 mx-auto w-[95%] mb-2">
+        <div class="bg-green-50 border-l-4 border-green-400 p-2 mb-2 text-center text-sm text-blue-800">
+            At Pixel Parqour, we offer exciting career opportunities for passionate individuals...
         </div>
-        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-            <p class="text-base text-blue-800 mb-2 text-center">
-                At Pixel Parqour, we offer exciting career opportunities for passionate individuals. Whether you're looking to build your portfolio, learn about the tech industry firsthand, or further your career, we have a place for you!
-            </p>
-            <p class="text-base text-blue-800 mb-2 text-center">
-                We offer <span class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to gain real-world experience and jumpstart their careers. Interns can build their portfolio, learn from industry professionals, and make valuable connections.
-            </p>
-            <p class="text-base text-blue-800 text-center">
-                We also have opportunities for <span class="font-semibold text-green-700">software developers</span> with expertise in areas such as security, AI, microservice architecture, mobile development, and game development. If you're interested in a software position, email <a href="mailto:jobs@pixelparqour.net" class="text-blue-700 underline">jobs@pixelparqour.net</a>.
-            </p>
-        </div>
-        <div class="flex justify-center mt-8">
-            <a href="job-opportunities.html" class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition"><span class="text-xl sm:text-3xl">Learn More</span> <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></a>
+        <div class="flex justify-center mt-2">
+            <a href="job-opportunities.html" class="px-4 py-2 bg-green-600 text-white font-bold text-sm rounded hover:bg-green-700 transition flex items-center gap-1">
+                Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="h-4 w-4 ml-1">
+            </a>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
-    <!-- Quick Start Section -->
-    <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm w-full max-w-3xl mx-auto mt-16 mb-10">
-    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center flex items-center justify-center gap-4" style="line-height: 1.4;">
-            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
-            Quick Start Packages
-            <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
-        </h2>
-        <div class="mb-4">
-            <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
-        </div>
-        <p class="text-lg leading-relaxed text-gray-700 mb-4 text-center">
-            Try one of our quick start options to get your project off the ground in a flash! A consultant will be in contact with you in 1-2 business days.
-        </p>
-        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-            <p class="text-base text-blue-800 mb-2 text-center">
-                <strong>Choose a prebuilt tier to match your needs and budget. Click below to view options.</strong>
-            </p>
-        </div>
-        <div class="flex justify-center">
-                <button id="openQuickStartModal" class="px-16 py-6 bg-green-600 text-white font-semibold text-2xl rounded shadow hover:bg-green-700 transition"><span class="text-2xl sm:text-6xl">View Options</span> <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></button>
-        </div>
-    </section>
-<!-- Get in Touch section moved to just before footer -->
-    <section id="contact-us" class="p-6 bg-gray-50 rounded-lg shadow-sm mt-16 mb-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header">Get in Touch</h2>
-        <div class="mb-4">
-            <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
-        </div>
-        <p class="text-lg leading-relaxed text-gray-700 mb-4">
-            We'd love to hear from you! Reach out to discuss your software needs and schedule a consultation.
-        </p>
-        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-            <p class="text-base text-blue-800 mb-2">
-                <strong>How to Get Started:</strong>
-            </p>
-            <p class="text-base text-blue-800 mb-2">
-                Please send us a short description of your project idea. An email will be sent to our team, and one of our consultants will review your requirements and reach out to you in 1-2 business days with the next steps.
-            </p>
-            <p class="text-base text-blue-800">
-                We specialize in creating plans to fit any person or business's financial and digital needs.
-            </p>
-        </div>
-        <div class="space-y-4">
-            <div class="flex items-center">
-                <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <div>
-                    <p class="text-sm text-gray-600 font-medium">Email</p>
-                    <a href="mailto:pixel.support@pixelparqour.net" class="text-lg text-gray-700 hover:text-green-400 transition-colors">
-                        support@pixelparqour.net
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Quick Start Modal -->
-    <div id="quickStartModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[85vw] lg:w-[85vw] p-8 relative" style="max-height: 90vh; overflow-y: auto;">
-            <button id="closeQuickStartModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-                <h3 class="text-3xl font-bold mb-12 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start Tiers</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Basic Tier -->
-                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Basic</h4>
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
-                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Single-page website or landing page</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>HTML5, CSS3, JavaScript (ES6+)</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Responsive design, contact form, basic SEO</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Hosting setup on AWS S3 or Azure</li>
-            <style>
-            @media (max-width: 768px) {
-                #quickStartModal .bg-white.rounded-lg.shadow-xl {
-                    max-width: 98vw !important;
-                    width: 98vw !important;
-                    max-height: 90vh !important;
-                    overflow-y: auto !important;
-                }
-            }
-            /* Improved modal tier box layout: white containers stretch, price stays above button, no overlap */
-            #quickStartModal .grid {
-                align-items: stretch;
-            }
-            #quickStartModal .border.rounded-lg.p-4 {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                height: 100%;
-                min-height: 480px;
-            }
-            #quickStartModal .bg-green-50 {
-                flex: 1 1 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                min-height: 320px;
-            }
-                #quickStartModal .font-bold.text-green-700.text-2xl {
-                    margin-top: 2rem;
-                    margin-bottom: 2rem;
-                    min-height: 2.5rem;
-                    font-size: 1.5rem;
-                    text-align: center;
-                    background: #fff;
-                    z-index: 2;
-                    position: relative;
-                    display: block;
-                    width: 100%;
-                    line-height: 3.2rem;
-                }
-            #quickStartModal .learnMoreBtn {
-                margin-top: 2rem !important;
-            }
-            @media (max-width: 900px) {
-                #quickStartModal .grid {
-                    grid-template-columns: 1fr !important;
-                }
-                #quickStartModal .border.rounded-lg.p-4 {
-                    min-height: 0 !important;
-                }
-                #quickStartModal .bg-green-50 {
-                    min-height: 0 !important;
-                }
-            }
-            @media (max-width: 600px) {
-                #quickStartModal .border.rounded-lg.p-4 {
-                    min-height: 0 !important;
-                    padding: 1rem !important;
-                }
-                #quickStartModal .bg-green-50 {
-                    min-height: 0 !important;
-                    padding: 1rem !important;
-                }
-                #quickStartModal ul.text-blue-800 {
-                    min-height: 0 !important;
-                    font-size: 1rem !important;
-                }
-                        #quickStartModal .font-bold.text-green-700.text-2xl {
-                            margin-top: 1rem !important;
-                            margin-bottom: 1rem !important;
-                            font-size: 1.25rem !important;
-                            min-height: 1.5rem !important;
-                    line-height: 2.7rem !important;
-                        }
-                #quickStartModal .learnMoreBtn {
-                    margin-top: 1rem !important;
-                }
-            }
-            </style>
-                        </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$299</span></div>
-                    </div>
-                    <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="basic">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
-                </div>
-                <!-- Standard Tier -->
-                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Standard</h4>
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8 w-full flex-1 flex flex-col" style="min-height: 680px;">
-                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Multi-page web app or business site</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>React (v18) or Angular (v17), TypeScript</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Node.js backend, MongoDB or SQL Server</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Deployment on AWS or Azure</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>User authentication and dashboard</li>
-                        </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$999</span></div>
-                    </div>
-                    <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="standard">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
-                </div>
-                <!-- Premium Tier -->
-                <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Premium</h4>
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
-                        <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Full-stack solution: mobile & web</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>React Native, Next.js, .NET, C#</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Dockerized microservices, CI/CD, analytics, cloud scaling (AWS/Azure)</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Consulting, testing, 3 months support</li>
-                        </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$2499</span></div>
-                    </div>
-                    <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="premium">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        
-        document.getElementById('openQuickStartModal').onclick = function() {
-            document.getElementById('quickStartModal').classList.remove('hidden');
-        };
-        document.getElementById('closeQuickStartModal').onclick = function() {
-            document.getElementById('quickStartModal').classList.add('hidden');
-        };
-        
-        document.querySelectorAll('.learnMoreBtn').forEach(function(btn) {
-            btn.onclick = function() {
-                window.location.href = 'quick-start.html?tier=' + btn.getAttribute('data-tier');
-            };
-        });
-    </script>
-        <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
-        <div class="legal-footer">
-            <a href="terms-of-service.html">Legal</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-2 text-center mt-4">
+        <p class="text-xs">&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="flex justify-center gap-2 text-xs mt-1">
+            <a href="terms-of-service.html" class="hover:text-green-400">Legal</a>
+            <a href="privacy-policy.html" class="hover:text-green-400">Privacy Policy</a>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
+        const hamburger = document.getElementById('hamburgerBtn');
+        const sidenav = document.getElementById('mobileSidenav');
+
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            sidenav.style.width = "200px";
         }
 
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            sidenav.style.width = "0";
         }
 
-        
-        window.onclick = function(event) {
-            var sidenav = document.getElementById("mySidenav");
-            if (event.target == sidenav) {
+        hamburger.addEventListener('click', () => {
+            if (sidenav.style.width === "200px") {
                 closeNav();
+            } else {
+                openNav();
             }
-        }
-        
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.getElementById('customCursor');
-            
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            
-            document.addEventListener('mouseleave', function() {
-                cursor.style.display = 'none';
-            });
-            
-            
-            document.addEventListener('mouseenter', function() {
-                cursor.style.display = 'block';
-            });
         });
+
+        document.querySelectorAll('#mobileSidenav a').forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+
+        // Custom cursor
+        const cursor = document.getElementById('customCursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.addEventListener('mouseleave', () => cursor.style.display = 'none');
+        document.addEventListener('mouseenter', () => cursor.style.display = 'block');
     </script>
 </body>
 </html>
