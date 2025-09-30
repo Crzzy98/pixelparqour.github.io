@@ -1,4 +1,5 @@
 /* Pulsate white animation for Pixel Parqour text */
+
 .pulsate-white {
     color: #fff !important;
     animation: pulsateWhite 2.5s ease-in-out infinite;
@@ -50,6 +51,11 @@
     --cursor-height: 190px;
     --animation-duration: 1.875s;
 }
+    @media (max-width: 600px) {
+        body, body * {
+            font-size: 2em !important;
+        }
+    }
 
 /* Base Styles */
 body {
@@ -475,6 +481,36 @@ header {
         align-items: flex-start;
         gap: 3rem;
     }
+
+@media (max-width: 500px) {
+    .navbar, .desktop-navbar nav {
+        font-size: 0.85em !important;
+        padding: 0 8px !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, a, .karnivore-header {
+        font-size: 1em !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar, .desktop-navbar nav {
+        font-size: 0.7em !important;
+        padding: 0 4px !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, a, .karnivore-header {
+        font-size: 0.85em !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .navbar, .desktop-navbar nav {
+        font-size: 0.6em !important;
+        padding: 0 2px !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, a, .karnivore-header {
+        font-size: 0.7em !important;
+    }
+}
 
     .text-content,
     .image-content {

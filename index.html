@@ -82,7 +82,7 @@
     <div class="desktop-navbar">
         <nav>
             <a href="#about-us">About Us</a>
-            <a href="services.html">Our Services</a>
+            <a href="services.html">Services</a>
             <a href="web-solutions.html">Web Solutions</a>
             <a href="ios-development.html">iOS Development</a>
             <a href="android-development.html">Android Development</a>
@@ -92,7 +92,11 @@
 
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
         <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 responsive-text-3xl karnivore-header">About Us</h2>
+            <div class="flex items-center justify-center gap-4 mb-4 md:mb-6 lg:mb-8 xl:mb-10">
+                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="inline-block h-32 w-32" style="margin-right:2.5rem;">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 responsive-text-3xl karnivore-header">About Us</h2>
+                <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" class="inline-block h-32 w-32" style="transform: scaleX(-1); margin-left:2.5rem;">
+            </div>
             <div class="mb-4 md:mb-6 lg:mb-8 xl:mb-10">
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
@@ -138,7 +142,7 @@
                 </div>
                 <div class="image-content">
                     <img src="images/stock_iphone.jpg" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto content-image">
-                    <p class="text-xs text-gray-400 mt-1 text-center">
+                    <p class="text-xs text-gray-400 mt-1 text-center" style="font-size: 0.0625em;">
                         Photo by <a href="https://www.vecteezy.com/photo/46432460-iphone-12-pro-max-with-wireless-charging" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">Omar Faruk Mukut</a> on Vecteezy
                     </p>
                 </div>
@@ -180,14 +184,14 @@
             </p>
         </div>
         <div class="flex justify-center mt-8">
-            <a href="job-opportunities.html" class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></a>
+            <a href="job-opportunities.html" class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition"><span class="text-xl sm:text-3xl">Learn More</span> <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></a>
         </div>
     </section>
 
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
     <!-- Quick Start Section -->
     <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm w-full max-w-3xl mx-auto mt-16 mb-10">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center flex items-center justify-center gap-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center flex items-center justify-center gap-4" style="line-height: 1.4;">
             <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
             Quick Start Packages
             <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-24 w-24">
@@ -204,7 +208,7 @@
             </p>
         </div>
         <div class="flex justify-center">
-                <button id="openQuickStartModal" class="px-16 py-6 bg-green-600 text-white font-semibold text-2xl rounded shadow hover:bg-green-700 transition">View Options</button>
+                <button id="openQuickStartModal" class="px-16 py-6 bg-green-600 text-white font-semibold text-2xl rounded shadow hover:bg-green-700 transition"><span class="text-2xl sm:text-6xl">View Options</span> <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></button>
         </div>
     </section>
 <!-- Get in Touch section moved to just before footer -->
@@ -245,7 +249,7 @@
     <div id="quickStartModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[85vw] lg:w-[85vw] p-8 relative" style="max-height: 90vh; overflow-y: auto;">
             <button id="closeQuickStartModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-                <h3 class="text-3xl font-bold mb-6 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start Tiers</h3>
+                <h3 class="text-3xl font-bold mb-12 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start Tiers</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Basic Tier -->
                 <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
@@ -336,7 +340,7 @@
             }
             </style>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $299</div>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$299</span></div>
                     </div>
                     <div class="flex-grow"></div>
                     <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="basic">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
@@ -344,7 +348,7 @@
                 <!-- Standard Tier -->
                 <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
                     <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Standard</h4>
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8 w-full flex-1 flex flex-col" style="min-height: 680px;">
                         <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Multi-page web app or business site</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>React (v18) or Angular (v17), TypeScript</li>
@@ -352,7 +356,7 @@
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Deployment on AWS or Azure</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>User authentication and dashboard</li>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $999</div>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$999</span></div>
                     </div>
                     <div class="flex-grow"></div>
                     <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="standard">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
@@ -367,7 +371,7 @@
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Dockerized microservices, CI/CD, analytics, cloud scaling (AWS/Azure)</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Consulting, testing, 3 months support</li>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $2499</div>
+                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$2499</span></div>
                     </div>
                     <div class="flex-grow"></div>
                     <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="premium">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
