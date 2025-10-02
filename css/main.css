@@ -1,3 +1,42 @@
+/* Extra margin below Starting price label */
+.starting-price-label {
+    margin-bottom: 1.2em !important;
+    display: block;
+}
+
+/* Confirm modal text white and responsive size for all forms */
+#confirmModal h2, #confirmModal p {
+    color: #fff !important;
+}
+@media (max-width: 700px) {
+    #confirmModal h2, #confirmModal p {
+        font-size: 1.3em !important;
+    }
+}
+/* Hide desktop navbar and show hamburger menu at small widths */
+@media (max-width: 600px) {
+    .desktop-navbar {
+        display: none !important;
+    }
+    .navbar {
+        display: flex !important;
+    }
+    .hamburger {
+        display: block !important;
+    }
+}
+
+@media (min-width: 601px) {
+    .desktop-navbar {
+        display: block !important;
+    }
+    .navbar {
+        display: none !important;
+    }
+    .hamburger {
+        display: none !important;
+    }
+}
 /* Center navbar buttons and make text bold */
 .navbar-btns-centered {
     justify-content: center !important;
