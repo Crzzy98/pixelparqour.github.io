@@ -12,6 +12,16 @@
 <body class="min-h-screen flex flex-col">
     <!-- Custom Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
+    <script>
+    // Custom Cursor Logic
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+    </script>
     <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">

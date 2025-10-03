@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <style>
+    <style>
             /* Make submit button text much brighter on hover */
             button[type="submit"]:hover {
                 color: #fff700 !important;
@@ -27,6 +27,14 @@
                 text-decoration: underline;
                 text-underline-offset: 0.2em;
                 text-align: center;
+            }
+            /* Double text size for mobile in tiers section */
+            @media (max-width: 700px) {
+                .quickstart-header,
+                .quickstart-desc,
+                .quickstart-options {
+                    font-size: 2em !important;
+                }
             }
         </style>
     <meta charset="UTF-8">
@@ -68,7 +76,7 @@
     <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-3xl w-full">
         <div class="flex items-center justify-center gap-4 mb-8">
             <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16">
-            <h1 class="text-3xl font-bold text-center karnivore-header m-0 p-0" style="line-height: 3.5rem;">
+            <h1 class="text-3xl md:text-3xl font-bold text-center karnivore-header m-0 p-0 quickstart-header sm:text-8xl" style="line-height: 3.5rem;">
                 <span style="color: #15803d;">Pixel Parqour Quick Start: </span>
                 <span id="tierTypeGold" style="color: #15803d;">Basic</span>
             </h1>
@@ -76,7 +84,7 @@
         </div>
     <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
     <form id="quickStartForm" action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
-    <p class="text-xs text-gray-500 mb-4 text-center">Thank you for applying! <br>An email will be sent to our team. We will review your profile and reach out to you in 1-2 business days with the next steps.</p>
+    <p class="text-xs sm:text-4xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for applying! <br>An email will be sent to our team. We will review your profile and reach out to you in 1-2 business days with the next steps.</p>
             <!-- General Info -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">General Info</h2>
             <div>
@@ -110,12 +118,12 @@
                 <input type="text" id="primaryGoal" name="Primary Goal" class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
-                <label for="tier" class="block font-semibold mb-1">Requested Tier:</label>
-                <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300">
-                  <option value="basic">Basic</option>
-                  <option value="standard">Standard</option>
-                  <option value="premium">Premium</option>
-                </select>
+                            <label for="tier" class="block font-semibold mb-1 quickstart-options text-base sm:text-2xl">Requested Tier:</label>
+                            <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300 quickstart-options text-base sm:text-2xl">
+                                <option value="basic" class="sm:text-2xl text-base">Basic</option>
+                                <option value="standard" class="sm:text-2xl text-base">Standard</option>
+                                <option value="premium" class="sm:text-2xl text-base">Premium</option>
+                            </select>
             </div>
             <!-- Timeline & Budget -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Timeline & Budget</h2>
