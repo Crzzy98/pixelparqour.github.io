@@ -1,3 +1,12 @@
+/* Double Botpress chat icon size */
+.bp-widget-btn, .bp-widget-button {
+    width: 240px !important;
+    height: 240px !important;
+    min-width: 240px !important;
+    min-height: 240px !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+}
 /* Hiscox logo hover effect */
 .hiscox-logo-hover:hover {
     transform: scale(1.18);
