@@ -1,3 +1,20 @@
+/* Hiscox logo hover effect */
+.hiscox-logo-hover:hover {
+    transform: scale(1.18);
+    z-index: 2;
+}
+/* Glowing pulsate effect for Healthy Tech Vision header */
+.healthy-tech-glow {
+    color: #7FDD7F !important;
+    text-shadow: 0 0 16px #7FDD7F, 0 0 32px #7FDD7F, 0 0 48px #fff;
+    animation: healthyTechPulsate 5s ease-in-out infinite;
+}
+
+@keyframes healthyTechPulsate {
+    0% { filter: brightness(1) saturate(1); text-shadow: 0 0 16px #7FDD7F, 0 0 32px #7FDD7F, 0 0 48px #fff; }
+    50% { filter: brightness(2) saturate(1.2); text-shadow: 0 0 32px #7FDD7F, 0 0 64px #7FDD7F, 0 0 96px #fff; }
+    100% { filter: brightness(1) saturate(1); text-shadow: 0 0 16px #7FDD7F, 0 0 32px #7FDD7F, 0 0 48px #fff; }
+}
 /* Extra margin below Starting price label */
 .starting-price-label {
     margin-bottom: 1.2em !important;

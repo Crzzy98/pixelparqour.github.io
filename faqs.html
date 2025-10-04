@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQs - Pixel Parqour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-dropdown {
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .faq-dropdown:hover {
+            background: #e6ffe6;
+        }
+        .faq-arrow {
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .faq-open .faq-arrow {
+            transform: rotate(90deg);
+        }
+        .faq-answer {
+            display: none;
+            padding: 1rem 0 1.5rem 0;
+            color: #222;
+        }
+        .faq-open .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+    <div class="custom-cursor" id="customCursor"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+    </script>
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">FAQs</h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Business and Personal<br>Software Solutions</h1>
+        </div>
+    </header>
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-4xl w-full" style="min-width:80vw;">
+        <h1 class="font-bold text-green-700 mb-4 text-center karnivore-header" style="font-size:3rem;line-height:1;">Frequently Asked Questions</h1>
+        <hr class="border-t-4 border-green-400 mx-auto mb-8" style="width: 60%;">
+        <div id="faq-list">
+            <!-- FAQ items -->
+        </div>
+    </main>
+    <footer class="bg-white text-black p-4 text-center mt-8">
+        <a href="index.html#contact-us" class="font-bold text-green-700">Contact Us</a>
+    </footer>
+    <script>
+    // FAQ data
+    const faqs = [
+        {
+            question: "How much does a project cost?",
+            answer: "Pricing is tailored to your needs. We offer free pricing reassessment and affordable solutions for both business and personal projects. For a quote, contact <a href='mailto:projects@pixelparqour.net' class='text-green-700 underline'>projects@pixelparqour.net</a>."
+        },
+        {
+            question: "Do you use AI in your solutions?",
+            answer: "Yes! We integrate the latest AI and generative tools to help you leverage technology for your needs. Our team has intimate understanding and experience with AI integration."
+        },
+        {
+            question: "Can I get a custom data encryption algorithm?",
+            answer: "Absolutely. We provide custom data encryption algorithms, combining proven formulas with our own implementations. Contact <a href='mailto:projects@pixelparqour.net' class='text-green-700 underline'>projects@pixelparqour.net</a> to learn more."
+        },
+        {
+            question: "Is my project insured?",
+            answer: "Pixel Parqour is insured by Hiscox Insurance, a leader in cyber insurance. Your project is protected against data loss, property damage, lost business revenue, media liability, and cyber crime."
+        },
+        {
+            question: "What platforms do you develop for?",
+            answer: "We offer web, iOS, and Android development, as well as hosting and template solutions."
+        },
+        {
+            question: "How do I start a project?",
+            answer: "Use our quick start templates on the home page or contact <a href='mailto:projects@pixelparqour.net' class='text-green-700 underline'>projects@pixelparqour.net</a> to get started right away!"
+        },
+        {
+            question: "I have a general question not listed here.",
+            answer: "For general questions, please contact <a href='mailto:support@pixelparqour.net' class='text-green-700 underline'>support@pixelparqour.net</a>."
+        }
+    ];
+    // Render FAQ items
+    const faqList = document.getElementById('faq-list');
+    faqs.forEach((faq, idx) => {
+        const item = document.createElement('div');
+        item.className = 'faq-item bg-gray-100 rounded-lg shadow p-4 mb-4';
+        item.innerHTML = `
+            <div class="faq-dropdown flex items-center justify-between" onclick="toggleFaq(${idx})">
+                <span class="font-bold text-green-700 text-lg">${faq.question}</span>
+                <span class="faq-arrow text-green-700 text-2xl">&#9654;</span>
+            </div>
+            <div class="faq-answer text-gray-800 text-base"></div>
+        `;
+        faqList.appendChild(item);
+    });
+    // FAQ toggle logic
+    function toggleFaq(idx) {
+        const items = document.querySelectorAll('.faq-item');
+        const item = items[idx];
+        item.classList.toggle('faq-open');
+        const answerDiv = item.querySelector('.faq-answer');
+        if (item.classList.contains('faq-open')) {
+            answerDiv.innerHTML = faqs[idx].answer;
+        } else {
+            answerDiv.innerHTML = '';
+        }
+    }
+    </script>
+</body>
+</html>
