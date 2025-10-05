@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributions - Pixel Parqour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/13/00/20250913002639-6H3O1YNC.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+    <div class="custom-cursor" id="customCursor"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+    </script>
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Attributions</h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Business and Personal<br>Software Solutions</h1>
+        </div>
+    </header>
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-4xl w-full" style="min-width:80vw;">
+        <div class="mb-6">
+            <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
+        </div>
+        <h1 class="font-bold text-green-700 mb-4 text-center karnivore-header" style="font-size:2.5rem;line-height:1;">Attributions</h1>
+        <hr class="border-t-4 border-green-400 mx-auto mb-8" style="width: 60%;">
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl karnivore-header">Images</h2>
+            <ul class="list-disc list-inside text-gray-700 text-lg mb-4" id="attribution-images">
+                <!-- URLs to be added here -->
+            </ul>
+        </section>
+    </main>
+    <footer class="bg-white text-black p-4 text-center mt-8">
+        <p class="text-green-700">&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="faqs.html" class="font-bold text-green-700">FAQs</a>
+        </div>
+    </footer>
+</body>
+</html>
