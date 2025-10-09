@@ -6,6 +6,8 @@
     <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-TNGRLSS5SE'); </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy: Only allow scripts from self and trusted CDNs -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.botpress.cloud https://files.bpcontent.cloud https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*; connect-src 'self' https://*; frame-src https://cdn.botpress.cloud;">
     <meta name="description"
         content="Pixel Parqour - Professional software solutions for web and mobile applications. Custom development services for businesses of all sizes.">
     <meta name="robots" content="index, follow">
@@ -41,17 +43,21 @@
         <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
             <div class="flex items-center"> <a href="index.html"> <img src="images/pixel_logo.png" alt="Pixel Parqour Logo"
                         class="w-auto object-contain" style="height: 60px;"> </a> </div>
-            <div class="hamburger" onclick="openNav()"> <span
+            <div class="hamburger" id="hamburgerMenu"> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
         </div>
     </nav> <!-- Side Navigation -->
-    <div id="mySidenav" class="sidenav"> <a href="#about-us" onclick="closeNav()">About Us</a> <a href="services.html"
-            onclick="closeNav()">Our Services</a> <a href="#contact-us" onclick="closeNav()">Contact</a> <a
-            href="web-solutions.html" onclick="closeNav()">Web Solutions</a> <a href="ios-development.html"
-            onclick="closeNav()">iOS Development</a> <a href="android-development.html" onclick="closeNav()">Android
-            Development</a> <a href="job-opportunities.html" onclick="closeNav()">Careers</a> </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="#about-us" class="sidenav-link">About Us</a>
+        <a href="services.html" class="sidenav-link">Our Services</a>
+        <a href="#contact-us" class="sidenav-link">Contact</a>
+        <a href="web-solutions.html" class="sidenav-link">Web Solutions</a>
+        <a href="ios-development.html" class="sidenav-link">iOS Development</a>
+        <a href="android-development.html" class="sidenav-link">Android Development</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
+    </div>
     <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center;">
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header"> Crafting
@@ -407,12 +413,19 @@
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
         }
-
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-
-        
+        // Move inline handlers to JS
+        document.addEventListener('DOMContentLoaded', function() {
+            var hamburger = document.getElementById('hamburgerMenu');
+            if (hamburger) {
+                hamburger.addEventListener('click', openNav);
+            }
+            document.querySelectorAll('.sidenav-link').forEach(function(link) {
+                link.addEventListener('click', closeNav);
+            });
+        });
         window.onclick = function(event) {
             var sidenav = document.getElementById("mySidenav");
             if (event.target == sidenav) {
