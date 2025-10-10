@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNGRLSS5SE"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-TNGRLSS5SE'); </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy: Only allow scripts from self and trusted CDNs -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.botpress.cloud https://files.bpcontent.cloud https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*; connect-src 'self' https://*; frame-src https://cdn.botpress.cloud;">
+    <meta name="description" content="Pixel Parqour - Healthy Tech Vision - Our commitment to developing technology that enhances personal well-being and healthier lifestyles.">
+    <meta name="robots" content="index, follow">
+    <title>Healthy Tech Vision - Pixel Parqour</title>
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Preload critical resources -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/13/00/20250913002639-6H3O1YNC.js" defer></script>
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="fonts/techno_board/TechnoBoard.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="images/pixel_logo.png" as="image">
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Mobile Navigation -->
+    <script>
+    // Custom Cursor Logic
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+    </script>
+    
+    <nav class="navbar" style="background: #222; margin-bottom: 12px; position: static; width: 100vw; max-width: 100vw; margin-left: 0; margin-right: 0;">
+        <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <div class="flex items-center"> 
+                <a href="index.html"> 
+                    <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 60px;"> 
+                </a> 
+            </div>
+            <div class="hamburger" id="hamburgerMenu"> 
+                <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> 
+                <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> 
+                <span style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> 
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html" class="sidenav-link">Home</a>
+        <a href="index.html#about-us" class="sidenav-link">About Us</a>
+        <a href="index.html#crafting-dreams" class="sidenav-link">Our Services</a>
+        <a href="index.html#contact-us" class="sidenav-link">Contact</a>
+        <a href="web-solutions.html" class="sidenav-link">Web Solutions</a>
+        <a href="ios-development.html" class="sidenav-link">iOS Development</a>
+        <a href="android-development.html" class="sidenav-link">Android Development</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
+    </div>
+
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center;">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Healthy Tech</h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container"> 
+            <a href="index.html"> 
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img"> 
+            </a> 
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Vision</h1>
+        </div>
+    </header>
+
+    <div class="desktop-navbar" style="width: 100vw; background: #222; margin: 0 auto 12px auto;">
+        <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto;">
+            <nav class="flex justify-center items-center gap-4 navbar-btns-centered" style="height: 100%; text-align: center;">
+                <a href="index.html" class="font-bold">Home</a>
+                <a href="index.html#about-us" class="font-bold">About Us</a>
+                <a href="services.html" class="font-bold">Services</a>
+                <a href="web-solutions.html" class="font-bold">Web Solutions</a>
+                <a href="ios-development.html" class="font-bold">iOS Development</a>
+                <a href="android-development.html" class="font-bold">Android Development</a>
+                <a href="job-opportunities.html" class="font-bold">Careers</a>
+                <a href="index.html#contact-us" class="font-bold">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
+        
+        <!-- Hero Section -->
+        <section class="mb-10 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg shadow-sm">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 karnivore-header">Our Healthy Tech Vision</h2>
+            <div class="mb-6">
+                <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
+            </div>
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                At Pixel Parqour, we envision a future where technology serves not just business needs, but actively contributes to 
+                human well-being, health, and prosperity. Our commitment extends beyond traditional software development to create 
+                meaningful solutions that enhance quality of life.
+            </p>
+        </section>
+
+        <!-- Mission Statement -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm border">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 karnivore-header">Our Mission</h3>
+            <p class="text-base text-gray-700 mb-6">
+                To bridge the gap between cutting-edge technology and personal wellness by developing innovative applications 
+                that empower individuals to lead healthier, more balanced, and financially secure lives.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                    <h4 class="font-bold text-green-700 mb-2">🎯 Our Goal</h4>
+                    <p class="text-sm text-gray-600">
+                        Create technology solutions that make healthy living accessible, engaging, and sustainable for everyone.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                    <h4 class="font-bold text-blue-700 mb-2">🌟 Our Vision</h4>
+                    <p class="text-sm text-gray-600">
+                        A world where technology enhances human potential and contributes to overall life satisfaction.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HealthTech Suite Details -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 karnivore-header">HealthTech Suite: Coming Soon</h3>
+            
+            <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                <!-- Fitness & Wellness -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                    <div class="text-4xl mb-4">💪</div>
+                    <h4 class="text-xl font-bold text-green-700 mb-3">Fitness & Wellness Platform</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Personalized workout plans and tracking</li>
+                        <li>• Real-time health metrics monitoring</li>
+                        <li>• AI-powered fitness recommendations</li>
+                        <li>• Social challenges and community support</li>
+                        <li>• Integration with wearable devices</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 italic">Launch: Q2 2025</p>
+                </div>
+
+                <!-- Mental Health -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h4 class="text-xl font-bold text-blue-700 mb-3">Mental Wellness Hub</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Guided meditation and mindfulness tools</li>
+                        <li>• Stress level monitoring and alerts</li>
+                        <li>• Mood tracking and pattern analysis</li>
+                        <li>• Professional mental health resources</li>
+                        <li>• Crisis support and emergency contacts</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 italic">Launch: Q3 2025</p>
+                </div>
+
+                <!-- Financial Literacy -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold text-purple-700 mb-3">Financial Wellness Advisor</h4>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li>• Smart spending habits analysis</li>
+                        <li>• Investment portfolio guidance</li>
+                        <li>• Budgeting and savings goals</li>
+                        <li>• Financial literacy education</li>
+                        <li>• Retirement and future planning</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 italic">Launch: Q4 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Approach -->
+        <section class="mb-10 p-6 bg-white rounded-lg shadow-sm border">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 karnivore-header">Our Technology Approach</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">🔒 Privacy First</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        All health and personal data is encrypted and stored securely. Users maintain full control 
+                        over their information with transparent privacy policies.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">🤖 AI-Powered Insights</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Advanced machine learning algorithms provide personalized recommendations while 
+                        maintaining user privacy and data security.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">📱 Cross-Platform</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Seamless experience across web, mobile, and wearable devices with real-time 
+                        synchronization and offline capabilities.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">🌐 Community Driven</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Built with community feedback and continuous improvement based on user needs 
+                        and scientific research.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mb-10 p-6 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">Join Our Vision</h3>
+            <p class="text-base mb-6">
+                Be part of the healthy technology revolution. Whether you're interested in beta testing, 
+                partnerships, or investment opportunities, we'd love to hear from you.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact-us" class="bg-white text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition">
+                    Get In Touch
+                </a>
+                <a href="quick-start.html" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 transition">
+                    Start Your Project
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 text-center py-4 mt-8">
+        <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="faqs.html" class="font-bold text-green-400">FAQs</a> |
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        // Move inline handlers to JS
+        document.addEventListener('DOMContentLoaded', function() {
+            var hamburger = document.getElementById('hamburgerMenu');
+            if (hamburger) {
+                hamburger.addEventListener('click', openNav);
+            }
+            document.querySelectorAll('.sidenav-link').forEach(function(link) {
+                link.addEventListener('click', closeNav);
+            });
+        });
+        window.onclick = function(event) {
+            var sidenav = document.getElementById("mySidenav");
+            if (event.target == sidenav) {
+                closeNav();
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.getElementById('customCursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            document.addEventListener('mouseleave', function() {
+                cursor.style.display = 'none';
+            });
+            
+            document.addEventListener('mouseenter', function() {
+                cursor.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
