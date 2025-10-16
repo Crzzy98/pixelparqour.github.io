@@ -126,7 +126,64 @@
     color: #111 !important;
     box-shadow: 0 4px 24px rgba(127,221,127,0.15);
 }
-@media (min-width: 1200px) {
+/* Responsive navbar sizing for different screen widths */
+@media (min-width: 1980px) {
+    .desktop-navbar nav a,
+    .navbar a,
+    .navbar span,
+    .navbar button,
+    .navbar img {
+        font-size: 2em !important;
+        padding: 1em 2em !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, li, .karnivore-header, .technoid-header, .responsive-text-lg, .responsive-text-2xl, .responsive-text-3xl {
+        font-size: 200% !important;
+    }
+    .logo-img {
+        height: 120px !important;
+        width: auto !important;
+    }
+    .navbar img {
+        height: 120px !important;
+        width: auto !important;
+    }
+}
+
+/* Reduced navbar size for screens between 1980px and 1237px */
+@media (min-width: 1237px) and (max-width: 1979px) {
+    .desktop-navbar nav a,
+    .navbar a {
+        font-size: 1em !important;
+        padding: 0.5em 1em !important;
+    }
+    .navbar img,
+    .logo-img {
+        height: 60px !important;
+        width: auto !important;
+    }
+    /* Header text sizes reduced by half */
+    header h1 {
+        font-size: 0.75rem !important;
+    }
+    @media (min-width: 1400px) {
+        header h1 {
+            font-size: 1rem !important;
+        }
+    }
+    @media (min-width: 1600px) {
+        header h1 {
+            font-size: 1.125rem !important;
+        }
+    }
+    /* Mobile navbar hamburger and logo sizes */
+    .hamburger span {
+        width: 12px !important;
+        height: 1.5px !important;
+        margin: 1.5px 0 !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1236px) {
     .desktop-navbar nav a,
     .navbar a,
     .navbar span,
@@ -161,6 +218,34 @@
     .navbar a {
         font-size: 1em !important;
         padding: 0.6em 1em !important;
+    }
+}
+
+/* Specific navbar size reduction for 792.16px width - 2/3 current size */
+@media (max-width: 792.16px) {
+    .desktop-navbar nav a,
+    .navbar a {
+        font-size: 0.67em !important;
+        padding: 0.4em 0.67em !important;
+    }
+    .navbar img,
+    .logo-img {
+        height: 40px !important;
+        width: auto !important;
+    }
+    /* Header text sizes reduced to 2/3 */
+    header h1 {
+        font-size: 0.67rem !important;
+    }
+    /* Mobile navbar hamburger sizes reduced to 2/3 */
+    .hamburger span {
+        width: 8px !important;
+        height: 1px !important;
+        margin: 1px 0 !important;
+    }
+    /* Desktop navbar gaps reduced to 2/3 */
+    .navbar-btns-centered {
+        gap: 0.33rem !important;
     }
 }
 
