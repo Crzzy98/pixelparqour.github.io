@@ -36,6 +36,15 @@
 <body class="min-h-screen flex flex-col">
     <!-- Custom Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Pixel Chat Square -->
+    <div id="pixelChatContainer" class="pixel-chat-container">
+        <!-- Chat Icon (will be created by Botpress, this is for hover detection) -->
+        <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+        
+        <!-- Pixel Chat Square Image -->
+        <div id="pixelChatSquare" class="pixel-chat-square"></div>
+    </div>
 
     <!-- Mobile Navigation -->
     <script>
@@ -376,6 +385,88 @@
 
             document.addEventListener('mouseenter', function () {
                 cursor.style.display = 'block';
+            });
+            
+            // Pixel Chat Square Functionality
+            const chatContainer = document.getElementById('pixelChatContainer');
+            const chatSquare = document.getElementById('pixelChatSquare');
+            const chatHoverZone = document.getElementById('chatIconHover');
+            const closeChatBtn = document.getElementById('closeChatSquare');
+            let isSquareVisible = false;
+            
+            // Function to show chat square
+            function showChatSquare() {
+                if (!isSquareVisible) {
+                    chatSquare.classList.add('show');
+                    isSquareVisible = true;
+                }
+            }
+            
+            // Function to hide chat square
+            function hideChatSquare() {
+                if (isSquareVisible) {
+                    chatSquare.classList.remove('show');
+                    isSquareVisible = false;
+                }
+            }
+            
+            // Wait for Botpress to load and position hover zone over chat icon
+            function positionHoverZone() {
+                const bpChatIcon = document.querySelector('#bp-web-widget-icon, [data-testid="widget-icon"], .bpw-floating-button, .bp-widget-icon');
+                if (bpChatIcon) {
+                    const rect = bpChatIcon.getBoundingClientRect();
+                    chatHoverZone.style.width = (rect.width * 1.2) + 'px';
+                    chatHoverZone.style.height = (rect.height * 1.2) + 'px';
+                    chatHoverZone.style.bottom = '20px';
+                    chatHoverZone.style.right = '20px';
+                    console.log('Chat icon found and hover zone positioned');
+                } else {
+                    // Fallback positioning if chat icon not found
+                    console.log('Chat icon not found, retrying...');
+                    setTimeout(positionHoverZone, 1000);
+                }
+            }
+            
+            // Initialize hover zone positioning with multiple attempts
+            setTimeout(positionHoverZone, 1000);
+            setTimeout(positionHoverZone, 3000);
+            setTimeout(positionHoverZone, 5000);
+            
+            // Hover events for chat square
+            if (chatHoverZone) {
+                chatHoverZone.addEventListener('mouseenter', function() {
+                    showChatSquare();
+                });
+                
+                chatHoverZone.addEventListener('click', function() {
+                    if (isSquareVisible) {
+                        hideChatSquare();
+                    } else {
+                        showChatSquare();
+                    }
+                });
+            }
+            
+            // Click outside to close chat square
+            document.addEventListener('click', function(e) {
+                if (isSquareVisible && 
+                    !chatContainer.contains(e.target) && 
+                    !chatHoverZone.contains(e.target)) {
+                    hideChatSquare();
+                }
+            });
+            
+            // Close button functionality
+            if (closeChatBtn) {
+                closeChatBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    hideChatSquare();
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                setTimeout(positionHoverZone, 100);
             });
         });
     </script>

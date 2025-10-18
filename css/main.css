@@ -340,6 +340,98 @@ body {
     animation: pulsate var(--animation-duration) ease-in-out infinite;
 }
 
+/* Pixel Chat Square Styles */
+.pixel-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 998; /* Just below Botpress chat icon */
+    pointer-events: none; /* Allow clicks to pass through to chat icon */
+}
+
+.chat-icon-hover-zone {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 999;
+    cursor: pointer;
+    pointer-events: auto; /* Enable interactions */
+    background: transparent;
+}
+
+.pixel-chat-square {
+    position: absolute;
+    bottom: 75px; /* Position above the chat icon */
+    right: 0;
+    width: 160px; /* Increased by 1/3 from 120px */
+    height: 160px;
+    background-image: url('../images/icons/Pixel_chat_square.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX(calc(100% + 20px)); /* Start completely off-screen */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: auto; /* Enable interactions */
+    opacity: 0;
+    filter: drop-shadow(0 8px 25px rgba(34, 197, 94, 0.3));
+}
+
+.pixel-chat-square.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Hide the old chat content since we're using the image */
+.chat-header,
+.chat-content {
+    display: none;
+}
+
+/* Responsive Design for Chat Square */
+@media (max-width: 768px) {
+    .pixel-chat-square {
+        width: 133px; /* Increased by 1/3 from 100px */
+        height: 133px;
+        bottom: 85px;
+        right: 10px;
+    }
+    
+    .chat-icon-hover-zone {
+        width: 50px;
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .pixel-chat-container {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pixel-chat-square {
+        width: 120px; /* Increased by 1/3 from 90px */
+        height: 120px;
+        bottom: 75px;
+        right: 5px;
+    }
+    
+    .chat-icon-hover-zone {
+        width: 45px;
+        height: 45px;
+        bottom: 5px;
+        right: 5px;
+    }
+    
+    .pixel-chat-container {
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
 /* Pulsate animation for cursor */
 @keyframes pulsate {
     0% {
