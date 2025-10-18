@@ -297,6 +297,38 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Digital-Tech';
+    src: url('../fonts/digital-tech-font/Digitaltech-rm0K.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neo-Tech';
+    src: url('../fonts/neo-tech-font/NeoTech-Ea8y9.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spac3-Tech';
+    src: url('../fonts/spac3-tech-font/Spac3Tech-Dg7E.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Watatsuki-Tech';
+    src: url('../fonts/watatsuki-tech-sans-font/WatatsukiTechSans-GOJxA.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* CSS Custom Properties for Theme Colors */
 :root {
     --primary-green: #7FDD7F;
@@ -474,6 +506,50 @@ body {
     font-weight: normal !important;
     letter-spacing: 1px !important;
 }
+
+.digital-tech-header {
+    font-family: 'Digital-Tech', 'Inter', sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: 2px !important;
+}
+
+.neo-tech-header {
+    font-family: 'Neo-Tech', 'Inter', sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: 2px !important;
+}
+
+.spac3-tech-header {
+    font-family: 'Spac3-Tech', 'Inter', sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: 2px !important;
+}
+
+.watatsuki-tech-header {
+    font-family: 'Watatsuki-Tech', 'Inter', sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: 2px !important;
+}
+
+/* Quick Start Header Underline */
+.quick-start-underline {
+    border: none;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255,215,0,1) 0%, rgba(127,221,127,1) 100%);
+    width: 60%;
+    margin: 0.5rem auto 1.25rem auto;
+    border-radius: 2px;
+    box-shadow: 0 6px 18px rgba(127,221,127,0.12);
+}
+
+@media (max-width: 768px) {
+    .quick-start-underline {
+        width: 80%;
+        height: 3px;
+        margin-bottom: 1rem;
+    }
+}
+
 
 /* Text Size Overrides */
 p, li {

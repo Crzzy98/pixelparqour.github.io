@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNGRLSS5SE"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-TNGRLSS5SE'); </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy: Only allow scripts from self and trusted CDNs -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.botpress.cloud https://files.bpcontent.cloud https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*; connect-src 'self' https://*; frame-src https://cdn.botpress.cloud;">
+    <meta name="description"
+        content="Pixel Parqour - Detailed Pricing Breakdown - Transparent pricing for web development, mobile apps, and consulting services.">
+    <meta name="robots" content="index, follow">
+    <title>Pricing Breakdown - Pixel Parqour</title>
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Preload critical resources -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/13/00/20250913002639-6H3O1YNC.js" defer></script>
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="fonts/techno_board/TechnoBoard.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="images/pixel_logo.png" as="image">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Pixel Chat Square -->
+    <div id="pixelChatContainer" class="pixel-chat-container">
+        <!-- Chat Icon (will be created by Botpress, this is for hover detection) -->
+        <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+        
+        <!-- Pixel Chat Square Image -->
+        <div id="pixelChatSquare" class="pixel-chat-square"></div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <script>
+        // Custom Cursor Logic
+        document.addEventListener('mousemove', function (e) {
+            const cursor = document.getElementById('customCursor');
+            if (cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+    </script>
+
+    <nav class="navbar"
+        style="background: #222; margin-bottom: 6px; position: static; width: 100vw; max-width: 100vw; margin-left: 0; margin-right: 0;">
+        <div class="nav-inner"
+            style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="w-auto object-contain"
+                        style="height: 30px;">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburgerMenu">
+                <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
+                <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
+                <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html" class="sidenav-link">Home</a>
+        <a href="index.html#about-us" class="sidenav-link">About Us</a>
+        <a href="index.html#crafting-dreams" class="sidenav-link">Our Services</a>
+        <a href="index.html#contact-us" class="sidenav-link">Contact</a>
+        <a href="web-solutions.html" class="sidenav-link">Web Solutions</a>
+        <a href="ios-development.html" class="sidenav-link">iOS Development</a>
+        <a href="android-development.html" class="sidenav-link">Android Development</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
+    </div>
+
+    <header class="bg-white shadow-md py-2 flex items-center justify-center flex-wrap"
+        style="text-align:center; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+        <div class="flex-1 text-center">
+            <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 karnivore-header">Pricing</h1>
+        </div>
+        <div class="flex-shrink-0 mx-2 logo-container">
+            <a href="index.html">
+                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img" style="height: 25px;">
+            </a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 karnivore-header">Breakdown</h1>
+        </div>
+    </header>
+
+    <div class="desktop-navbar" style="width: 100vw; background: #222; margin: 0 auto 6px auto;">
+        <div class="nav-inner" style="width: 90vw; max-width: 90vw; margin: 0 auto;">
+            <nav class="flex justify-center items-center gap-0.5 lg:gap-1 xl:gap-1.5 navbar-btns-centered"
+                style="height: 100%; text-align: center;">
+                <a href="index.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Home</a>
+                <a href="index.html#about-us"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">About
+                    Us</a>
+                <a href="services.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Services</a>
+                <a href="web-solutions.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Web
+                    Solutions</a>
+                <a href="ios-development.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">iOS
+                    Development</a>
+                <a href="android-development.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Android
+                    Development</a>
+                <a href="job-opportunities.html"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Careers</a>
+                <a href="index.html#contact-us"
+                    class="font-semibold text-2xs lg:text-xs xl:text-sm px-0.5 lg:px-1 xl:px-1.5 py-0.5 hover:bg-gray-700 rounded transition">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center"
+        style="width: 95vw; min-width: 95vw;">
+
+        <!-- Hero Section -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <div class="flex items-center justify-center gap-8 mb-6">
+                <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="inline-block h-24 w-24"
+                    style="margin-right: 2rem;">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 digital-tech-header text-center mx-4">Detailed Pricing Breakdown</h2>
+                <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="inline-block h-24 w-24"
+                    style="transform: scaleX(-1); margin-left: 2rem;">
+            </div>
+            <div class="mb-6">
+                <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
+            </div>
+            <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                Transparent pricing for all our services. Our philosophy remains: <strong>"Dev needs to work with any budget and any team."</strong>
+                All prices are starting estimates - we'll work with your specific requirements and budget.
+            </p>
+        </section>
+
+        <!-- Quick Start Tiers Detailed -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 karnivore-header">Quick Start Package Pricing</h3>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                <!-- Starter Tier -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
+                    <div class="text-center mb-4">
+                        <h4 class="text-2xl font-bold text-green-700 karnivore-header">Starter</h4>
+                        <p class="text-sm text-gray-600 italic">Perfect for entrepreneurs & personal projects</p>
+                        <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                            <span class="text-3xl font-bold text-green-600">$899</span>
+                            <span class="text-gray-500"> - $1,899</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h5 class="font-bold text-gray-800 mb-3">What's Included:</h5>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li>• Single-page website or landing page</li>
+                            <li>• HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>• Responsive design for all devices</li>
+                            <li>• Contact form with email integration</li>
+                            <li>• Basic SEO optimization</li>
+                            <li>• 30 days support & updates</li>
+                        </ul>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Timeline:</h5>
+                        <p class="text-sm text-gray-600 mb-4">1-2 weeks delivery</p>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Best For:</h5>
+                        <p class="text-sm text-gray-600">Personal portfolios, simple business websites, landing pages</p>
+                    </div>
+                </div>
+
+                <!-- Growth Tier -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500">
+                    <div class="text-center mb-4">
+                        <h4 class="text-2xl font-bold text-blue-700 karnivore-header">Growth</h4>
+                        <p class="text-sm text-gray-600 italic">Ideal for growing businesses & startups</p>
+                        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                            <span class="text-3xl font-bold text-blue-600">$2,399</span>
+                            <span class="text-gray-500"> - $4,899</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h5 class="font-bold text-gray-800 mb-3">What's Included:</h5>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li>• Multi-page website (up to 10 pages)</li>
+                            <li>• Modern framework (React, Vue, or similar)</li>
+                            <li>• CMS integration (WordPress/Headless)</li>
+                            <li>• E-commerce capability</li>
+                            <li>• Database integration</li>
+                            <li>• Advanced SEO & analytics</li>
+                            <li>• 60 days support & updates</li>
+                        </ul>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Timeline:</h5>
+                        <p class="text-sm text-gray-600 mb-4">3-6 weeks delivery</p>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Best For:</h5>
+                        <p class="text-sm text-gray-600">Business websites, online stores, content-heavy sites</p>
+                    </div>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500">
+                    <div class="text-center mb-4">
+                        <h4 class="text-2xl font-bold text-purple-700 karnivore-header">Enterprise</h4>
+                        <p class="text-sm text-gray-600 italic">Complete solutions for established businesses</p>
+                        <div class="mt-4 p-3 bg-purple-50 rounded-lg">
+                            <span class="text-3xl font-bold text-purple-600">$5,999+</span>
+                            <span class="text-gray-500"> Custom Quote</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h5 class="font-bold text-gray-800 mb-3">What's Included:</h5>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li>• Custom web application</li>
+                            <li>• Advanced backend systems</li>
+                            <li>• API development & integrations</li>
+                            <li>• User authentication & roles</li>
+                            <li>• Advanced security features</li>
+                            <li>• Performance optimization</li>
+                            <li>• 90 days support & maintenance</li>
+                        </ul>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Timeline:</h5>
+                        <p class="text-sm text-gray-600 mb-4">6-12 weeks delivery</p>
+                        
+                        <h5 class="font-bold text-gray-800 mb-3">Best For:</h5>
+                        <p class="text-sm text-gray-600">Complex applications, enterprise systems, custom solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Development Pricing -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 karnivore-header">Mobile Development Pricing</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- iOS Development -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-400">
+                    <h4 class="text-xl font-bold text-blue-700 mb-4 karnivore-header">iOS Development</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                            <span class="font-medium">Simple App</span>
+                            <span class="font-bold text-blue-600">$3,999 - $7,999</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                            <span class="font-medium">Complex App</span>
+                            <span class="font-bold text-blue-600">$8,999 - $19,999</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                            <span class="font-medium">Enterprise App</span>
+                            <span class="font-bold text-blue-600">$20,000+</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">Includes App Store submission, 60 days support</p>
+                </div>
+
+                <!-- Android Development -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-400">
+                    <h4 class="text-xl font-bold text-green-700 mb-4 karnivore-header">Android Development</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span class="font-medium">Simple App</span>
+                            <span class="font-bold text-green-600">$3,499 - $6,999</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span class="font-medium">Complex App</span>
+                            <span class="font-bold text-green-600">$7,999 - $17,999</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span class="font-medium">Enterprise App</span>
+                            <span class="font-bold text-green-600">$18,000+</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">Includes Google Play submission, 60 days support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Services -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 karnivore-header">Additional Services & Consulting</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-yellow-400">
+                    <h4 class="font-bold text-gray-800 mb-2">Hourly Consultation</h4>
+                    <p class="text-2xl font-bold text-yellow-600 mb-2">$125/hr</p>
+                    <p class="text-sm text-gray-600">Technical consulting, code review, architecture planning</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-indigo-400">
+                    <h4 class="font-bold text-gray-800 mb-2">Maintenance & Support</h4>
+                    <p class="text-2xl font-bold text-indigo-600 mb-2">$199/mo</p>
+                    <p class="text-sm text-gray-600">Ongoing updates, bug fixes, security patches</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-400">
+                    <h4 class="font-bold text-gray-800 mb-2">Rush Delivery</h4>
+                    <p class="text-2xl font-bold text-red-600 mb-2">+50%</p>
+                    <p class="text-sm text-gray-600">Expedited timeline (when possible)</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-teal-400">
+                    <h4 class="font-bold text-gray-800 mb-2">UI/UX Design</h4>
+                    <p class="text-2xl font-bold text-teal-600 mb-2">$899+</p>
+                    <p class="text-sm text-gray-600">Custom design, wireframes, prototypes</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-orange-400">
+                    <h4 class="font-bold text-gray-800 mb-2">SEO Optimization</h4>
+                    <p class="text-2xl font-bold text-orange-600 mb-2">$599+</p>
+                    <p class="text-sm text-gray-600">Search engine optimization, analytics setup</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow border-l-4 border-pink-400">
+                    <h4 class="font-bold text-gray-800 mb-2">Training & Handoff</h4>
+                    <p class="text-2xl font-bold text-pink-600 mb-2">$299+</p>
+                    <p class="text-sm text-gray-600">Team training, documentation, knowledge transfer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mb-10 p-6 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
+            <p class="text-base mb-6">
+                All pricing is flexible and we work with your budget. Get a custom quote tailored to your specific needs.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact-us"
+                    class="bg-white text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition">
+                    Get Custom Quote
+                </a>
+                <a href="index.html#quick-start"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 transition">
+                    Choose Quick Start
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 text-center py-4 mt-8">
+        <p>&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="faqs.html" class="font-bold text-green-400">FAQs</a> |
+            <a href="terms-of-service.html">Legal</a> |
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        // Move inline handlers to JS
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburgerMenu');
+            if (hamburger) {
+                hamburger.addEventListener('click', openNav);
+            }
+            document.querySelectorAll('.sidenav-link').forEach(function (link) {
+                link.addEventListener('click', closeNav);
+            });
+        });
+        window.onclick = function (event) {
+            var sidenav = document.getElementById("mySidenav");
+            if (event.target == sidenav) {
+                closeNav();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.getElementById('customCursor');
+
+            document.addEventListener('mousemove', function (e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.addEventListener('mouseleave', function () {
+                cursor.style.display = 'none';
+            });
+
+            document.addEventListener('mouseenter', function () {
+                cursor.style.display = 'block';
+            });
+            
+            // Pixel Chat Square Functionality
+            const chatContainer = document.getElementById('pixelChatContainer');
+            const chatSquare = document.getElementById('pixelChatSquare');
+            const chatHoverZone = document.getElementById('chatIconHover');
+            const closeChatBtn = document.getElementById('closeChatSquare');
+            let isSquareVisible = false;
+            
+            // Function to show chat square
+            function showChatSquare() {
+                if (!isSquareVisible) {
+                    chatSquare.classList.add('show');
+                    isSquareVisible = true;
+                }
+            }
+            
+            // Function to hide chat square
+            function hideChatSquare() {
+                if (isSquareVisible) {
+                    chatSquare.classList.remove('show');
+                    isSquareVisible = false;
+                }
+            }
+            
+            // Wait for Botpress to load and position hover zone over chat icon
+            function positionHoverZone() {
+                const bpChatIcon = document.querySelector('#bp-web-widget-icon, [data-testid="widget-icon"], .bpw-floating-button, .bp-widget-icon');
+                if (bpChatIcon) {
+                    const rect = bpChatIcon.getBoundingClientRect();
+                    chatHoverZone.style.width = (rect.width * 1.2) + 'px';
+                    chatHoverZone.style.height = (rect.height * 1.2) + 'px';
+                    chatHoverZone.style.bottom = '20px';
+                    chatHoverZone.style.right = '20px';
+                    console.log('Chat icon found and hover zone positioned');
+                } else {
+                    // Fallback positioning if chat icon not found
+                    console.log('Chat icon not found, retrying...');
+                    setTimeout(positionHoverZone, 1000);
+                }
+            }
+            
+            // Initialize hover zone positioning with multiple attempts
+            setTimeout(positionHoverZone, 1000);
+            setTimeout(positionHoverZone, 3000);
+            setTimeout(positionHoverZone, 5000);
+            
+            // Hover events for chat square
+            if (chatHoverZone) {
+                chatHoverZone.addEventListener('mouseenter', function() {
+                    showChatSquare();
+                });
+                
+                chatHoverZone.addEventListener('click', function() {
+                    if (isSquareVisible) {
+                        hideChatSquare();
+                    } else {
+                        showChatSquare();
+                    }
+                });
+            }
+            
+            // Click outside to close chat square
+            document.addEventListener('click', function(e) {
+                if (isSquareVisible && 
+                    !chatContainer.contains(e.target) && 
+                    !chatHoverZone.contains(e.target)) {
+                    hideChatSquare();
+                }
+            });
+            
+            // Close button functionality
+            if (closeChatBtn) {
+                closeChatBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    hideChatSquare();
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                setTimeout(positionHoverZone, 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
