@@ -50,12 +50,12 @@
         const params = new URLSearchParams(window.location.search);
         const tier = params.get('tier') || 'basic';
         const tierMap = {
-          basic: 'Basic',
-          standard: 'Standard',
-          premium: 'Premium'
+          starter: 'Starter',
+          growth: 'Growth',
+          enterprise: 'Enterprise'
         };
-    document.title = `Pixel Parqour Quick Start: ${tierMap[tier] || 'Basic'}`;
-    document.getElementById('tierTypeGold').textContent = tierMap[tier] || 'Basic';
+    document.title = `Pixel Parqour Quick Start: ${tierMap[tier] || 'Starter'}`;
+    document.getElementById('tierTypeGold').textContent = tierMap[tier] || 'Starter';
     document.getElementById('tier').value = tier;
       });
     </script>
@@ -80,7 +80,7 @@
             <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16">
             <h1 class="text-3xl md:text-3xl font-bold text-center karnivore-header m-0 p-0 quickstart-header sm:text-8xl" style="line-height: 3.5rem;">
                 <span style="color: #15803d;">Pixel Parqour Quick Start: </span>
-                <span id="tierTypeGold" style="color: #15803d;">Basic</span>
+                <span id="tierTypeGold" style="color: #15803d;">Starter</span>
             </h1>
             <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16" style="transform: scaleX(-1);">
         </div>
@@ -122,9 +122,9 @@
             <div>
                             <label for="tier" class="block font-semibold mb-1 quickstart-options text-base sm:text-2xl">Requested Tier:</label>
                             <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300 quickstart-options text-base sm:text-2xl">
-                                <option value="basic" class="sm:text-2xl text-base">Basic</option>
-                                <option value="standard" class="sm:text-2xl text-base">Standard</option>
-                                <option value="premium" class="sm:text-2xl text-base">Premium</option>
+                                <option value="starter" class="sm:text-2xl text-base">Starter</option>
+                                <option value="growth" class="sm:text-2xl text-base">Growth</option>
+                                <option value="enterprise" class="sm:text-2xl text-base">Enterprise</option>
                             </select>
             </div>
             <!-- Timeline & Budget -->
@@ -151,9 +151,9 @@
                 <label for="solutionType" class="block font-semibold mb-1">Which type of solution are you interested in?</label>
                 <select id="solutionType" name="Solution Type" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
-                  <option value="single-page">Single-page site / Landing page (Basic)</option>
-                  <option value="multi-page">Multi-page business app or dashboard (Standard)</option>
-                  <option value="full-stack">Full-stack web + mobile solution (Premium)</option>
+                  <option value="single-page">Single-page site / Landing page (Starter)</option>
+                  <option value="multi-page">Multi-page business app or dashboard (Growth)</option>
+                  <option value="full-stack">Full-stack web + mobile solution (Enterprise)</option>
                 </select>
             </div>
             <div>
