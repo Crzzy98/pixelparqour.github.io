@@ -86,41 +86,49 @@
         </div>
     <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
     <form id="quickStartForm" action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+    <p class="text-xs text-green-600 mb-4 text-center">
+        Fields marked with <span class="text-red-500">*</span> are required. Entering more information speeds up the development process by helping us get you in contact with the right developers for your project sooner.
+    </p>
     <p class="text-xs sm:text-4xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for applying! <br>An email will be sent to our team. We will review your profile and reach out to you in 1-2 business days with the next steps.</p>
             <!-- General Info -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">General Info</h2>
             <div>
-                <label for="fullName" class="block font-semibold mb-1">Full Name:</label>
+                <label for="fullName" class="block font-semibold mb-1">Full Name <span class="text-red-500">*</span>:</label>
                 <input type="text" id="fullName" name="Full Name" required class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
-                <label for="businessName" class="block font-semibold mb-1">Business/Entity Name (if available):</label>
+                <label for="businessName" class="block font-semibold mb-1">Business/Entity Name:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="text" id="businessName" name="Business/Entity Name" class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
-                <label for="email" class="block font-semibold mb-1">Email Address:</label>
+                <label for="email" class="block font-semibold mb-1">Email Address <span class="text-red-500">*</span>:</label>
                 <input type="email" id="email" name="Email" required class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
-                <label for="phone" class="block font-semibold mb-1">Phone Number (optional):</label>
+                <label for="phone" class="block font-semibold mb-1">Phone Number:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="tel" id="phone" name="Phone" class="w-full p-2 rounded border border-gray-300">
             </div>
             <!-- Project Basics -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Project Basics</h2>
             <div>
-                <label for="projectName" class="block font-semibold mb-1">Project / Website / App Name (if known):</label>
+                <label for="projectName" class="block font-semibold mb-1">Project / Website / App Name:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="text" id="projectName" name="Project Name" class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
                 <label for="projectDescription" class="block font-semibold mb-1">Short Project Description:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <textarea id="projectDescription" name="Project Description" class="w-full p-2 rounded border border-gray-300"></textarea>
             </div>
             <div>
                 <label for="primaryGoal" class="block font-semibold mb-1">Primary Goal of the Project:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="text" id="primaryGoal" name="Primary Goal" class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
-                            <label for="tier" class="block font-semibold mb-1 quickstart-options text-base sm:text-2xl">Requested Tier:</label>
+                            <label for="tier" class="block font-semibold mb-1 quickstart-options text-base sm:text-2xl">Requested Tier <span class="text-red-500">*</span>:</label>
                             <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300 quickstart-options text-base sm:text-2xl">
                                 <option value="starter" class="sm:text-2xl text-base">Starter</option>
                                 <option value="growth" class="sm:text-2xl text-base">Growth</option>
@@ -131,10 +139,12 @@
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Timeline & Budget</h2>
             <div>
                 <label for="deadline" class="block font-semibold mb-1">Requested Deadline / Target Launch Date:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="date" id="deadline" name="Deadline" class="w-full p-2 rounded border border-gray-300">
             </div>
             <div>
                 <label for="budget" class="block font-semibold mb-1">Do you have a budget range in mind?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="budget" name="Budget Range" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>
@@ -143,12 +153,14 @@
             </div>
             <div>
                 <label for="budgetDetails" class="block font-semibold mb-1">If Yes, please specify:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="text" id="budgetDetails" name="Budget Details" class="w-full p-2 rounded border border-gray-300">
             </div>
             <!-- Features & Requirements -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Features & Requirements</h2>
             <div>
                 <label for="solutionType" class="block font-semibold mb-1">Which type of solution are you interested in?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="solutionType" name="Solution Type" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="single-page">Single-page site / Landing page (Starter)</option>
@@ -158,16 +170,19 @@
             </div>
             <div>
                 <label for="mustHave" class="block font-semibold mb-1">Must-have features:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <textarea id="mustHave" name="Must-have Features" class="w-full p-2 rounded border border-gray-300"></textarea>
             </div>
             <div>
-                <label for="techStack" class="block font-semibold mb-1">Preferred Tech Stack (if any):</label>
+                <label for="techStack" class="block font-semibold mb-1">Preferred Tech Stack:</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <input type="text" id="techStack" name="Preferred Tech Stack" class="w-full p-2 rounded border border-gray-300">
             </div>
             <!-- Hosting & Deployment -->
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Hosting & Deployment</h2>
             <div>
                 <label for="hosting" class="block font-semibold mb-1">Do you already have hosting/domain set up?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="hosting" name="Hosting" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>
@@ -177,6 +192,7 @@
             </div>
             <div>
                 <label for="cloudProvider" class="block font-semibold mb-1">Preferred Cloud Provider:</label>
+                <span class="text-xs text-gray-600">optional</span>
                                 <select id="cloudProvider" name="Cloud Provider" class="w-full p-2 rounded border border-gray-300">
                                     <option value="">--Select--</option>
                                     <option value="aws">AWS</option>
@@ -189,6 +205,7 @@
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Design & Content</h2>
             <div>
                 <label for="branding" class="block font-semibold mb-1">Do you already have branding?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="branding" name="Branding" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>
@@ -197,6 +214,7 @@
             </div>
             <div>
                 <label for="contentHelp" class="block font-semibold mb-1">Do you need help with content?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="contentHelp" name="Content Help" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>
@@ -207,6 +225,7 @@
             <h2 class="text-2xl font-bold text-blue-800 mb-2">Post-Launch & Support</h2>
             <div>
                 <label for="maintenance" class="block font-semibold mb-1">Do you need ongoing support/maintenance?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="maintenance" name="Ongoing Support" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>
@@ -216,6 +235,7 @@
             </div>
             <div>
                 <label for="training" class="block font-semibold mb-1">Do you need consulting/training for your team?</label>
+                <span class="text-xs text-gray-600">optional</span>
                 <select id="training" name="Consulting/Training" class="w-full p-2 rounded border border-gray-300">
                   <option value="">--Select--</option>
                   <option value="yes">Yes</option>

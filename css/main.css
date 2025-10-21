@@ -420,6 +420,26 @@ body {
     cursor: none;
 }
 
+/* Ensure no white backgrounds anywhere */
+* {
+    background-color: inherit;
+}
+
+/* Override any potential white backgrounds in containers */
+.container, .wrapper, section, div {
+    background-color: transparent;
+}
+
+/* Specific footer styling to prevent white */
+footer, footer * {
+    background-color: inherit !important;
+}
+
+/* Consistent navbar background for all sections */
+.bg-navbar-consistent {
+    background-color: #222 !important;
+}
+
 /* Hide default cursor on all elements */
 * {
     cursor: none !important;
@@ -1067,5 +1087,417 @@ header {
     }
     .crafting-container-left:last-of-type .image-content {
         order: 2;
+    }
+}
+
+/* Service Highlights Styles */
+.service-highlights {
+    padding: 3rem 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.service-highlight {
+    margin: 4rem 0;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    overflow: visible;
+    will-change: transform, opacity;
+}
+
+/* Text alignment based on slide direction - now centered */
+.service-highlight.slide-in-left .service-content {
+    text-align: center;
+}
+
+.service-highlight.slide-in-right .service-content {
+    text-align: center;
+}
+
+/* Progressive enhancement - show content if JavaScript fails */
+.no-js .service-highlight {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+@keyframes slideInFromLeftToCenter {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRightToCenter {
+    from {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.service-content {
+    max-width: 900px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+/* Service with icon layout */
+.service-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 100%;
+}
+
+.service-text {
+    flex: 1;
+    text-align: center;
+}
+
+.service-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-icon:hover {
+    transform: scale(1.1);
+}
+
+.service-icon-left {
+    order: -1;
+}
+
+.service-icon-right {
+    order: 1;
+}
+
+/* Left-aligned content for left slides - less centered */
+.service-highlight.slide-in-left .service-content {
+    margin-left: 10%;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+/* Right-aligned content for right slides - less centered */
+.service-highlight.slide-in-right .service-content {
+    margin-left: auto;
+    margin-right: 10%;
+    max-width: 80%;
+}
+
+.service-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #7FDD7F;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-family: 'Karnivore', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.service-description {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    max-width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Initial animation states - start off screen */
+.service-highlight.slide-in-left {
+    transform: translateX(-100vw);
+    opacity: 0;
+}
+
+.service-highlight.slide-in-right {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+/* Animated state - slide to center */
+.service-highlight.slide-in-left.animate {
+    transform: translateX(0);
+    opacity: 1;
+    animation: slideInFromLeftToCenter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.service-highlight.slide-in-right.animate {
+    transform: translateX(0);
+    opacity: 1;
+    animation: slideInFromRightToCenter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Ensure proper spacing */
+.service-highlight + .service-highlight {
+    margin-top: 4rem;
+}
+
+/* Custom icon animations */
+@keyframes pulseScale {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideLeftRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* Icon-specific animations */
+.piggybank-icon {
+    animation: pulseScale 3s ease-in-out infinite;
+}
+
+.ai-icon {
+    animation: rotateIcon 8s linear infinite;
+    width: 240px !important;
+    height: 240px !important;
+}
+
+.running-gold-icon {
+    animation: slideLeftRight 2s ease-in-out infinite;
+}
+
+.flexing-icon {
+    animation: pulseScale 2.5s ease-in-out infinite;
+}
+
+.lock-icon {
+    animation: rotateIcon 6s linear infinite;
+}
+
+/* Responsive design for service icons */
+@media (max-width: 768px) {
+    .service-with-icon {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .service-icon-left,
+    .service-icon-right {
+        order: 0;
+    }
+    
+    .service-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .service-highlight.slide-in-left .service-content,
+    .service-highlight.slide-in-right .service-content {
+        margin-left: 5%;
+        margin-right: 5%;
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-with-icon {
+        gap: 2rem;
+    }
+    
+    .service-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Meet Your Team Section Styles */
+.team-member-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+    padding: 2rem;
+}
+
+.team-member-container.fade-in-team.animate {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Fallback animation - auto-trigger after page load */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in-team {
+        animation: fadeInUp 1s ease-in-out 2s forwards;
+    }
+}
+
+.team-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #7FDD7F;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-photo:hover {
+    transform: scale(1.05);
+}
+
+.team-photo.fallback-image {
+    border-radius: 50%;
+    background-color: #f0f9ff;
+    padding: 1rem;
+}
+
+.team-member-name {
+    color: #7FDD7F;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-member-title {
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.get-started-btn {
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #7FDD7F;
+}
+
+.get-started-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(127, 221, 127, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for team section */
+@media (max-width: 768px) {
+    .team-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .team-member-name {
+        font-size: 1.5rem;
+    }
+    
+    .team-member-title {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive design for service highlights */
+@media (max-width: 768px) {
+    .service-title {
+        font-size: 2rem;
+    }
+    
+    .service-description {
+        font-size: 1.1rem;
+    }
+    
+    .service-highlight {
+        margin: 2rem 0;
+        padding: 1.5rem;
+    }
+    
+    .service-content {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+    
+    .service-highlight.slide-in-left .service-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        text-align: center;
+    }
+    
+    .service-highlight.slide-in-right .service-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .service-description {
+        font-size: 1rem;
+    }
+    
+    .service-highlight {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .service-content {
+        padding: 1rem;
+        max-width: 95%;
+    }
+    
+    /* Center align text on very small screens for readability */
+    .service-highlight.slide-in-left .service-content,
+    .service-highlight.slide-in-right .service-content {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .service-highlight.slide-in-left .service-title,
+    .service-highlight.slide-in-left .service-description,
+    .service-highlight.slide-in-right .service-title,
+    .service-highlight.slide-in-right .service-description {
+        text-align: center;
     }
 }
