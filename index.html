@@ -964,6 +964,11 @@
                 window.addEventListener('resize', function () {
                     setTimeout(positionHoverZone, 100);
                 });
+
+                // Auto-show chat square on page load
+                setTimeout(function () {
+                    showChatSquare();
+                }, 2000); // Show after 2 seconds to allow page to fully load
             });
 
             // Service Highlights Scroll Animation - Fixed Version

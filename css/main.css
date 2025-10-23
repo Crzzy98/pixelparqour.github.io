@@ -486,8 +486,8 @@ footer, footer * {
     position: absolute;
     bottom: 75px; /* Position above the chat icon */
     right: 0;
-    width: 160px; /* Increased by 1/3 from 120px */
-    height: 160px;
+    width: 320px; /* Doubled from 160px */
+    height: 320px; /* Doubled from 160px */
     background-image: url('../images/icons/Pixel_chat_square.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -513,8 +513,8 @@ footer, footer * {
 /* Responsive Design for Chat Square */
 @media (max-width: 768px) {
     .pixel-chat-square {
-        width: 133px; /* Increased by 1/3 from 100px */
-        height: 133px;
+        width: 266px; /* Doubled from 133px */
+        height: 266px; /* Doubled from 133px */
         bottom: 85px;
         right: 10px;
     }
@@ -534,8 +534,8 @@ footer, footer * {
 
 @media (max-width: 480px) {
     .pixel-chat-square {
-        width: 120px; /* Increased by 1/3 from 90px */
-        height: 120px;
+        width: 240px; /* Doubled from 120px */
+        height: 240px; /* Doubled from 120px */
         bottom: 75px;
         right: 5px;
     }
