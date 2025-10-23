@@ -1501,3 +1501,67 @@ header {
         text-align: center;
     }
 }
+
+/* Team Carousel Styles */
+.team-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.team-member-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member-slide.active {
+    opacity: 1;
+}
+
+.team-member-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #68D391;
+}
+
+.team-photo:hover {
+    border-color: #48BB78;
+}
+
+/* Responsive adjustments for team carousel */
+@media (max-width: 768px) {
+    .team-carousel-container {
+        height: 350px;
+    }
+    
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-carousel-container {
+        height: 300px;
+    }
+    
+    .team-photo {
+        width: 100px;
+        height: 100px;
+    }
+}

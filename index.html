@@ -273,14 +273,14 @@
             <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
         </div>
         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-            <p class="text-base text-blue-800 mb-2 text-center"> At Pixel Parqour, we offer exciting career
+            <p class="text-base text-white mb-2 text-center"> At Pixel Parqour, we offer exciting career
                 opportunities for passionate individuals. Whether you're looking to build your portfolio, learn about
                 the tech industry firsthand, or further your career, we have a place for you! </p>
-            <p class="text-base text-blue-800 mb-2 text-center"> We offer <span
+            <p class="text-base text-white mb-2 text-center"> We offer <span
                     class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to gain
                 real-world experience and jumpstart their careers. Interns can build their portfolio, learn from
                 industry professionals, and make valuable connections. </p>
-            <p class="text-base text-blue-800 text-center"> We also have opportunities for <span
+            <p class="text-base text-white text-center"> We also have opportunities for <span
                     class="font-semibold text-green-700">software developers</span> with expertise in areas such as
                 security, AI, microservice architecture, mobile development, and game development. If you're interested
                 in a software position, email <a href="mailto:jobs@pixelparqour.net"
@@ -402,9 +402,9 @@
                 your project off the ground in a flash! A consultant will be in contact with you in 1-2 business days.
             </p>
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-                <p class="text-base text-blue-800 mb-2 text-center"> <strong>Choose a prebuilt tier to match your needs
+                <p class="text-base text-white mb-2 text-center"> <strong>Choose a prebuilt tier to match your needs
                         and budget. Click below to view options.</strong> </p>
-                <p class="text-base text-blue-800 text-center italic"> "Dev needs to work with any budget and any team"
+                <p class="text-base text-white text-center italic"> "Dev needs to work with any budget and any team"
                 </p>
             </div>
             <div class="flex justify-center"> <button id="openQuickStartModal"
@@ -421,11 +421,11 @@
             <p class="text-lg leading-relaxed text-gray-700 mb-4"> We'd love to hear from you! Reach out to discuss your
                 software needs and schedule a consultation. </p>
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-                <p class="text-base text-blue-800 mb-2"> <strong>How to Get Started:</strong> </p>
-                <p class="text-base text-blue-800 mb-2"> Please send us a short description of your project idea. An
+                <p class="text-base text-white mb-2"> <strong>How to Get Started:</strong> </p>
+                <p class="text-base text-white mb-2"> Please send us a short description of your project idea. An
                     email will be sent to our team, and one of our consultants will review your requirements and reach
                     out to you in 1-2 business days with the next steps. </p>
-                <p class="text-base text-blue-800"> We specialize in creating plans to fit any person or business's
+                <p class="text-base text-white"> We specialize in creating plans to fit any person or business's
                     financial and digital needs. </p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
@@ -511,7 +511,7 @@
                             projects</p>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col"
                             style="min-height: 680px;">
-                            <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <ul class="text-white text-left text-xl space-y-2" style="min-height: 480px;">
                                 <li class="flex items-start"><span
                                         class="text-green-500 mr-2 mt-1">&#10003;</span>Single-page website or landing
                                     page</li>
@@ -572,7 +572,7 @@
                                             padding: 1rem !important;
                                         }
 
-                                        #quickStartModal ul.text-blue-800 {
+                                        #quickStartModal ul.text-white {
                                             min-height: 0 !important;
                                             font-size: 1rem !important;
                                         }
@@ -610,7 +610,7 @@
                             revenue</p>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8 w-full flex-1 flex flex-col"
                             style="min-height: 680px;">
-                            <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <ul class="text-white text-left text-xl space-y-2" style="min-height: 480px;">
                                 <li class="flex items-start"><span
                                         class="text-green-500 mr-2 mt-1">&#10003;</span>Multi-page web app or business
                                     site</li>
@@ -643,7 +643,7 @@
                             transformation</p>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col"
                             style="min-height: 680px;">
-                            <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
+                            <ul class="text-white text-left text-xl space-y-2" style="min-height: 480px;">
                                 <li class="flex items-start"><span
                                         class="text-green-500 mr-2 mt-1">&#10003;</span>Full-stack solution: mobile &
                                     web</li>
@@ -777,24 +777,50 @@
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
             
-            <div class="team-member-container fade-in-team" id="teamMember">
-                <div class="team-member-content text-center">
-                    <div class="team-photo-container mb-6">
-                        <img src="images/dev_headshots/haki_headshot.png" 
-                             alt="Badi-Haki Martin - FullStack Web Developer" 
-                             class="team-photo mx-auto rounded-full shadow-lg"
-                             onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
+            <div class="team-carousel-container" id="teamCarousel">
+                <!-- Team Member 1 - Badi-Haki Martin -->
+                <div class="team-member-slide active" data-member="1">
+                    <div class="team-member-content text-center">
+                        <div class="team-photo-container mb-6">
+                            <a href="https://www.badi-haki.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/dev_headshots/haki_headshot.png" 
+                                     alt="Badi-Haki Martin - FullStack Web Developer" 
+                                     class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+                                     onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
+                            </a>
+                        </div>
+                        <h3 class="team-member-name text-xs font-bold text-gray-800 mb-1 karnivore-header">
+                            Badi-Haki Martin
+                        </h3>
+                        <p class="team-member-title text-sm text-gray-600 mb-6">
+                            Full Stack Web Developer
+                        </p>
+                        <button id="teamGetStartedBtn" 
+                                class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Get Started Today!
+                        </button>
                     </div>
-                    <h3 class="team-member-name text-xs font-bold text-gray-800 mb-1 karnivore-header">
-                        Badi-Haki Martin
-                    </h3>
-                    <p class="team-member-title text-sm text-gray-600 mb-6">
-                        Full Stack Web Developer
-                    </p>
-                    <button id="teamGetStartedBtn" 
-                            class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        Get Started Today!
-                    </button>
+                </div>
+
+                <!-- Team Member 2 - Yohanes Yigizaw -->
+                <div class="team-member-slide" data-member="2">
+                    <div class="team-member-content text-center">
+                        <div class="team-photo-container mb-6">
+                            <img src="images/dev_headshots/yohanees_headshot.png" 
+                                 alt="Yohanes Yigizaw - Cyber Security Specialist" 
+                                 class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+                                 onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
+                        </div>
+                        <h3 class="team-member-name text-xs font-bold text-gray-800 mb-1 karnivore-header">
+                            Yohanes Yigizaw
+                        </h3>
+                        <p class="team-member-title text-sm text-gray-600 mb-6">
+                            Cyber Security Specialist
+                        </p>
+                        <button class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Get Started Today!
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -969,6 +995,26 @@
                 setTimeout(function () {
                     showChatSquare();
                 }, 2000); // Show after 2 seconds to allow page to fully load
+
+                // Team Carousel Functionality
+                const teamSlides = document.querySelectorAll('.team-member-slide');
+                let currentTeamSlide = 0;
+
+                function showNextTeamMember() {
+                    // Remove active class from current slide
+                    teamSlides[currentTeamSlide].classList.remove('active');
+                    
+                    // Move to next slide
+                    currentTeamSlide = (currentTeamSlide + 1) % teamSlides.length;
+                    
+                    // Add active class to new slide
+                    teamSlides[currentTeamSlide].classList.add('active');
+                }
+
+                // Auto-cycle team members every 5 seconds
+                if (teamSlides.length > 1) {
+                    setInterval(showNextTeamMember, 5000);
+                }
             });
 
             // Service Highlights Scroll Animation - Fixed Version
