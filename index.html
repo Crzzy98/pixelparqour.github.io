@@ -182,11 +182,41 @@
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
             <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-4 md:mb-6 lg:mb-8 xl:mb-10"> At Pixel
-                Parqour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of
-                developing mobile and web applications for individuals and companies alike as we move into the next
-                stage of the technical era. We are a team of highly skilled programmers with diverse backgrounds,
-                dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools
-                and software on the market and will create tailored project plans to suit your unique needs. </p>
+                Parqour, we specialize in developing cutting-edge software solutions that prioritize both efficiency and user well-being. 
+                Our mission extends beyond traditional development—we focus on healthy tech integrations that optimize software to provide 
+                not only efficient but healthy service to as many users as possible. We are a team of highly skilled programmers with 
+                diverse backgrounds, dedicated to creating digital experiences that enhance rather than detract from human wellness. 
+                We leverage the best AI tools and methodologies on the market to create tailored, health-conscious project plans that 
+                suit your unique needs while promoting positive user engagement. </p>
+            
+            <!-- Read More Dropdown -->
+            <div class="read-more-container mb-4 md:mb-6 lg:mb-8 xl:mb-10">
+                <button id="aboutUsReadMore" 
+                        class="read-more-btn flex items-center justify-center mx-auto px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <span class="read-more-text">Read More</span>
+                    <svg class="read-more-arrow w-5 h-5 ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                
+                <div id="aboutUsDropdown" class="dropdown-content mt-4 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg shadow-inner" style="display: none;">
+                    <p class="text-base leading-relaxed text-black mb-4">
+                        <strong>Our Story:</strong> Pixel Parqour is a newly founded technology company based in Stone Mountain, Georgia. 
+                        We operate as a completely virtual organization, leveraging modern communication technologies to serve clients 
+                        worldwide with flexibility and efficiency.
+                    </p>
+                    <p class="text-base leading-relaxed text-black mb-4">
+                        <strong>Local Presence:</strong> While we maintain a fully remote operational model, we understand the value 
+                        of personal connection. For clients in the Metro-Atlanta area, we offer in-person consultation services 
+                        upon request, providing face-to-face collaboration when preferred.
+                    </p>
+                    <p class="text-base leading-relaxed text-black">
+                        <strong>Get Started:</strong> Whether you prefer virtual collaboration or in-person meetings, we're here to 
+                        help bring your vision to life. Contact us today to discover how our healthy tech approach can benefit 
+                        your project and users.
+                    </p>
+                </div>
+            </div>
         </section>
         <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content" style="background: #222;">
             <h2
@@ -829,7 +859,7 @@
         <footer class="bg-gray-100 py-6 mt-8" style="background: #222;">
             <div class="max-w-4xl mx-auto px-4">
                 <!-- Business Information -->
-                <div class="grid md:grid-cols-3 gap-6 mb-4 text-center md:text-left">
+                <div class="grid md:grid-cols-4 gap-6 mb-4 text-center md:text-left">
                     <div>
                         <h4 class="font-bold text-gray-700 mb-2">Contact</h4>
                         <p class="text-sm text-gray-600">support@pixelparqour.net</p>
@@ -847,16 +877,23 @@
                         <p class="text-sm text-gray-600">Fully Remote Operations</p>
                         <p class="text-xs text-gray-500 italic">Virtual consultations worldwide</p>
                     </div>
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-2">Business Owner</h4>
+                        <p class="text-sm text-gray-600">Hasan Corley</p>
+                        <p class="text-sm text-gray-600">Founder & CEO</p>
+                        <p class="text-xs text-gray-500 italic">Stone Mountain, GA</p>
+                    </div>
                 </div>
 
                 <!-- Legal Links -->
                 <div class="border-t border-gray-300 pt-4 text-center"
                     style="background-color: #e5e7eb; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 0.5rem;">
-                    <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+                    <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned and operated by Hasan Corley</p>
                     <div class="legal-footer text-sm">
                         <a href="faqs.html" class="font-bold text-green-400 hover:text-green-600">FAQs</a> |
                         <a href="terms-of-service.html" class="text-gray-600 hover:text-gray-800 ml-2">Legal</a> |
-                        <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a>
+                        <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a> |
+                        <a href="owner-info.html" class="text-gray-600 hover:text-gray-800 ml-2">Owner Info</a>
                     </div>
                 </div>
             </div>
@@ -1011,9 +1048,33 @@
                     teamSlides[currentTeamSlide].classList.add('active');
                 }
 
-                // Auto-cycle team members every 10 seconds
+                // Auto-cycle team members every 15 seconds
                 if (teamSlides.length > 1) {
-                    setInterval(showNextTeamMember, 10000);
+                    setInterval(showNextTeamMember, 15000);
+                }
+
+                // About Us Read More Dropdown Functionality
+                const readMoreBtn = document.getElementById('aboutUsReadMore');
+                const dropdown = document.getElementById('aboutUsDropdown');
+                const arrow = document.querySelector('.read-more-arrow');
+                const readMoreText = document.querySelector('.read-more-text');
+
+                if (readMoreBtn && dropdown) {
+                    readMoreBtn.addEventListener('click', function() {
+                        const isOpen = dropdown.style.display === 'block';
+                        
+                        if (isOpen) {
+                            // Close dropdown
+                            dropdown.style.display = 'none';
+                            arrow.style.transform = 'rotate(0deg)';
+                            readMoreText.textContent = 'Read More';
+                        } else {
+                            // Open dropdown
+                            dropdown.style.display = 'block';
+                            arrow.style.transform = 'rotate(180deg)';
+                            readMoreText.textContent = 'Read Less';
+                        }
+                    });
                 }
             });
 

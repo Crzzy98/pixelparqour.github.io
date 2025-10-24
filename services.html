@@ -24,42 +24,50 @@
         }
     });
     </script>
-    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
-        <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
-                Services
-            </h1>
+    <nav class="navbar"
+        style="background: #222; margin-bottom: 12px; position: static; width: 100vw; max-width: 100vw; margin-left: 0; margin-right: 0;">
+        <div class="nav-inner"
+            style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <div class="flex items-center"> <a href="index.html"> <img src="images/pixel_logo.png"
+                        alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 30px;"> </a> </div>
+            <div class="hamburger" id="hamburgerMenu"> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
         </div>
-        <div class="flex-shrink-0 mx-4 logo-container">
-            <a href="index.html">
-                <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img">
-            </a>
-        </div>
+    </nav> <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html#about-us" class="sidenav-link">About Us</a>
+        <a href="services.html" class="sidenav-link">Our Services</a>
+        <a href="index.html#contact-us" class="sidenav-link">Contact</a>
+        <a href="web-solutions.html" class="sidenav-link">Web Solutions</a>
+        <a href="ios-development.html" class="sidenav-link">iOS Development</a>
+        <a href="android-development.html" class="sidenav-link">Android Development</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
+    </div>
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center; background: #222;">
         <div class="flex-1 text-center">
-            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">
-                Business and Personal<br>Software Solutions
-            </h1>
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header"> Crafting
+                Software<br>Developing Dreams </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container"> <a href="index.html"> <img src="images/pixel_logo.png"
+                    alt="Pixel Parqour Logo" class="logo-img"> </a> </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header"> Business and
+                Personal<br>Software Solutions </h1>
         </div>
     </header>
-    <div id="mySidenav" class="sidenav">
-    <a href="#about-us" onclick="closeNav()">About Us</a>
-    <a href="services.html" onclick="closeNav()">Our Services</a>
-    <a href="#contact-us" onclick="closeNav()">Contact</a>
-    <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
-    <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
-    <a href="android-development.html" onclick="closeNav()">Android Development</a>
-    <a href="job-opportunities.html" onclick="closeNav()">Careers</a>
-    </div>
-    <div class="nav-outer-container" style="width: 100vw; background: #222; margin: 0 auto 12px auto; display: flex; justify-content: center; align-items: center;">
-        <div class="desktop-navbar" style="text-align:center; width: 85vw; max-width: 85vw; background: #222;">
-            <nav class="flex justify-center items-center gap-4 navbar-btns-centered" style="height: 100%; text-align: center;">
-                <a href="#about-us" class="font-bold">About Us</a>
+    <div class="desktop-navbar" style="width: 100vw; background: #222; margin: 0 auto 12px auto;">
+        <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto;">
+            <nav class="flex justify-center items-center gap-4 navbar-btns-centered"
+                style="height: 100%; text-align: center;">
+                <a href="index.html#about-us" class="font-bold">About Us</a>
                 <a href="services.html" class="font-bold">Services</a>
                 <a href="web-solutions.html" class="font-bold">Web Solutions</a>
                 <a href="ios-development.html" class="font-bold">iOS Development</a>
                 <a href="android-development.html" class="font-bold">Android Development</a>
                 <a href="job-opportunities.html" class="font-bold">Careers</a>
-                <a href="#contact-us" class="font-bold">Contact</a>
+                <a href="index.html#contact-us" class="font-bold">Contact</a>
             </nav>
         </div>
     </div>
@@ -103,7 +111,11 @@
         <!-- Healthy Tech Vision Section -->
         <section class="bg-white p-4 rounded-lg mb-8 shadow-lg">
             <div style="border: 4px solid #7FDD7F; border-radius: 1rem; padding: 2rem; background: #222; text-align:center; margin-bottom:1.5rem;">
-                <h2 class="text-3xl sm:text-4xl font-bold text-green-400 mb-4 karnivore-header text-center healthy-tech-glow">The Healthy Tech Vision</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Flexing Pixel Guy" class="pixel-flex h-12 w-12 mr-4" />
+                    <h2 class="text-3xl sm:text-4xl font-bold text-green-400 karnivore-header text-center healthy-tech-glow">The Healthy Tech Vision</h2>
+                    <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Flexing Pixel Guy" class="pixel-flex h-12 w-12 ml-4" style="transform: scaleX(-1);" />
+                </div>
                 <hr class="border-t-2 border-green-400 mx-auto mb-6" style="width: 80%;">
                 <p class="text-lg text-white text-center mb-4" style="font-size:2rem;">
                     As we head into a more digital era, Pixel Parqour is committed to helping businesses and individuals integrate software and technology into their lives in healthier, more mindful ways. With the popularity of tech like AI rising, we've taken it as part of our mission to soothe society's acceptance and integration of these softwares while also educating our clients and community about the best discovered use cases to maximize potential profits and improve quality of life in many regards.<br><br>
@@ -126,9 +138,14 @@
                 <p class="text-lg text-white text-center mb-4" style="font-size:1.5rem;">
                     We provide custom data encryption algorithms, uniquely crafted by combining proven formulas with our own custom implementations. Contact us today to find out more and learn how you can have your own personal encryption algorithm to protect your data—become the gatekeeper of your most precious digital possessions.
                 </p>
-                <p class="text-lg text-white text-center mb-4" style="font-size:1.5rem;">
+                <p class="text-lg text-white text-center mb-6" style="font-size:1.5rem;">
                     Pixel Parqour is insured by Hiscox Insurance, a leader in cyber insurance. This ensures your project is protected in a variety of ways, including: data loss, property damage, coverage for you as our client, lost business revenue due to data breach, media liability, and cyber crime. Your security and peace of mind are our top priorities.
                 </p>
+                <div class="text-center mb-4">
+                    <button id="ourCoveragesBtn" class="px-6 py-3 bg-green-600 text-white font-bold text-lg rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Our Coverages
+                    </button>
+                </div>
                 <a href="https://www.hiscox.com/" target="_blank" rel="noopener">
                     <img src="images/hiscox_logo.jpg" alt="Hiscox Insurance Logo" class="hiscox-logo-hover" style="position:absolute; bottom:12px; right:12px; width:80px; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); transition: transform 0.2s;" />
                 </a>
@@ -149,7 +166,7 @@
             <div class="bg-gray-100 rounded-lg shadow p-4 sm:p-8 mx-auto">
                 <div class="flex items-center justify-between mb-4">
                     <img src="images/icons/money_icon.png" alt="Money Icon" class="h-12 w-12 mr-2" style="position:relative; top:40px;" />
-                    <ul class="list-disc list-inside text-blue-900 text-lg flex-1 mx-2">
+                    <ul class="list-disc list-inside text-white text-lg flex-1 mx-2">
                         <li class="mb-2">We scour the market to ensure we are able to offer the latest in budget friendly AI tools including image and audio generation.</li>
                         <li class="mb-2">We offer budget friendly project planning and consultation options to accommodate every project and team size.</li>
                         <li class="mb-2">We offer free rudimentary project planning and draft creation to help you start building your dream from the ground up.</li>
@@ -162,8 +179,8 @@
                     <img src="images/icons/ai_icon.png" alt="AI Icon" class="h-12 w-12 ml-2" style="position:relative; top:-40px;" />
                 </div>
                 <div class="flex justify-center mt-4">
-                    <a href="index.html#quick-start" class="px-8 py-4 bg-blue-900 text-white font-bold text-xl rounded hover:bg-blue-800 transition">
-                        Learn More About Quick Start
+                    <a href="index.html#quick-start" class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Learn More
                         <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" />
                     </a>
                 </div>
@@ -173,13 +190,128 @@
             </div>
         </div>
     </section>
-    <p class="text-green-700">&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
-        <div class="legal-footer">
-            <a href="terms-of-service.html">Legal</a>
-           <a href="privacy-policy.html">Privacy Policy</a> |
-           <a href="faqs.html" class="font-bold text-green-700">FAQs</a>
+    
+    <!-- Business Details Footer -->
+    <div class="bg-gray-100 py-6 mt-8" style="background: #222;">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Business Information -->
+            <div class="grid md:grid-cols-4 gap-6 mb-4 text-center md:text-left">
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-2">Contact</h4>
+                    <p class="text-sm text-gray-600">support@pixelparqour.net</p>
+                    <p class="text-sm text-gray-600">(470) 305-2782</p>
+                    <p class="text-xs text-gray-500 italic">8am-8pm EDT</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-2">Business Address (PO Box)</h4>
+                    <p class="text-sm text-gray-600">971 N Hairston Rd</p>
+                    <p class="text-sm text-gray-600">Suite 230A PMB1256</p>
+                    <p class="text-xs text-gray-500 italic">Mailing address only</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-2">Service Model</h4>
+                    <p class="text-sm text-gray-600">Fully Remote Operations</p>
+                    <p class="text-xs text-gray-500 italic">Virtual consultations worldwide</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-2">Business Owner</h4>
+                    <p class="text-sm text-gray-600">Hasan Corley</p>
+                    <p class="text-sm text-gray-600">Founder & CEO</p>
+                    <p class="text-xs text-gray-500 italic">Stone Mountain, GA</p>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="border-t border-gray-300 pt-4 text-center"
+                style="background-color: #e5e7eb; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 0.5rem;">
+                <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned and operated by Hasan Corley</p>
+                <div class="legal-footer text-sm">
+                    <a href="faqs.html" class="font-bold text-green-400 hover:text-green-600">FAQs</a> |
+                    <a href="terms-of-service.html" class="text-gray-600 hover:text-gray-800 ml-2">Legal</a> |
+                    <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a> |
+                    <a href="owner-info.html" class="text-gray-600 hover:text-gray-800 ml-2">Owner Info</a>
+                </div>
+            </div>
         </div>
+    </div>
     </footer>
+
+    <!-- Insurance Coverage Modal -->
+    <div id="coverageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-gray-800 karnivore-header">Our Commitment to Your Security: Insurance Highlights</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-3xl">&times;</button>
+            </div>
+            <div class="p-6 space-y-6">
+                <p class="text-gray-700 leading-relaxed">
+                    To ensure the highest level of trust and protection, Pixel Parqour LLC DBA Pixel Parqour holds a comprehensive CYBERCLEAR Cyber and Data Risk insurance policy with Hiscox Insurance Company Inc.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    This policy is designed to immediately cover the costs and liability associated with protecting client data and maintaining business continuity following a cyber event.
+                </p>
+                
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-green-700">1. Robust Financial Protection</h3>
+                    <div class="pl-4 space-y-2">
+                        <p><strong>Overall Limit of Liability:</strong> The policy provides a substantial overall limit of $250,000 to cover expenses and damages resulting from covered cyber events and digital liability claims.</p>
+                        <p><strong>Expert Response Funding:</strong> This coverage is specifically designed to pay for the immediate, specialized response required to investigate and resolve an event.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-green-700">2. Comprehensive Data and Network Protection</h3>
+                    <p class="text-gray-700">Our policy includes critical coverage features that provide peace of mind in the event of a security failure or data breach:</p>
+                    <div class="pl-4 space-y-3">
+                        <div>
+                            <p><strong>Data Breach Response & Regulatory Defense:</strong> Covers damages, claim expenses, and penalties resulting from a regulatory proceeding for a consumer privacy violation. This ensures we have the resources to meet compliance requirements and defend against legal actions related to your data.</p>
+                        </div>
+                        <div>
+                            <p><strong>Ransomware Defense:</strong> Includes a dedicated sub-limit of $25,000 to cover loss incurred from a covered ransomware event, ensuring a rapid, effective resolution to cyber extortion threats.</p>
+                        </div>
+                        <div>
+                            <p><strong>Business Interruption Coverage:</strong> Provides financial support to minimize the impact of downtime caused by a system failure.</p>
+                        </div>
+                        <div>
+                            <p><strong>Reputation Management:</strong> Includes a $50,000 sub-limit to cover costs associated with restoring the company's and our clients' reputations following a damaging cyber event.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-green-700">3. Immediate Access to Breach Experts</h3>
+                    <p class="text-gray-700">Following an event, the speed and expertise of the response are critical. Our policy guarantees immediate access to a professional breach team:</p>
+                    <div class="pl-4 space-y-3">
+                        <div>
+                            <p><strong>24/7 Breach Coach® Access:</strong> We have direct, 24/7 access to a specialized "Breach Coach®" hotline to immediately report a cyber event and launch a professional response team.</p>
+                        </div>
+                        <div>
+                            <p><strong>Value-Added Response Services:</strong> Our policy includes a comprehensive panel of breach response resources, featuring:</p>
+                            <ul class="list-disc list-inside pl-4 mt-2 space-y-1">
+                                <li>Legal Services and Public Relations Support to manage all communication and legal requirements.</li>
+                                <li>Credit Monitoring and Extortion Protection services for affected individuals.</li>
+                                <li>Access to the eRisk Hub® for best-in-class response information.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-green-700">4. Digital Media Liability (Reputation and Content)</h3>
+                    <p class="text-gray-700">The policy also protects against claims arising from our digital media activities, covering:</p>
+                    <div class="pl-4 space-y-2">
+                        <p><strong>Intellectual Property Claims:</strong> Damages and expenses related to alleged copyright, trademark, or content infringement.</p>
+                        <p><strong>Defamation and Privacy Violations:</strong> Coverage for claims alleging libel, slander, or invasion of privacy.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 italic"><strong>Disclaimer:</strong> This is a simplified summary for client assurance. Full terms, conditions, and exclusions are contained within the Hiscox CYBERCLEAR Policy documents.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -187,6 +319,25 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
+        // Insurance Coverage Modal Functionality
+        document.getElementById('ourCoveragesBtn').addEventListener('click', function() {
+            document.getElementById('coverageModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('coverageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('coverageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
     </script>
 </body>
     <script>

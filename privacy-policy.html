@@ -36,18 +36,38 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <div class="custom-cursor" id="customCursor"></div>
-    <!-- Side Navigation -->
+    <script>
+    // Custom Cursor Logic
+    document.addEventListener('mousemove', function(e) {
+        const cursor = document.getElementById('customCursor');
+        if (cursor) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    });
+    </script>
+    <nav class="navbar"
+        style="background: #222; margin-bottom: 12px; position: static; width: 100vw; max-width: 100vw; margin-left: 0; margin-right: 0;">
+        <div class="nav-inner"
+            style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <div class="flex items-center"> <a href="index.html"> <img src="images/pixel_logo.png"
+                        alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 30px;"> </a> </div>
+            <div class="hamburger" id="hamburgerMenu"> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
+        </div>
+    </nav> <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
-        <a href="index.html" onclick="closeNav()">Home</a>
-        <a href="index.html#about-us" onclick="closeNav()">About Us</a>
-        <a href="index.html#crafting-dreams" onclick="closeNav()">Our Services</a>
-        <a href="index.html#contact-us" onclick="closeNav()">Contact</a>
-        <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
-        <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
-        <a href="android-development.html" onclick="closeNav()">Android Development</a>
+        <a href="index.html#about-us" class="sidenav-link">About Us</a>
+        <a href="services.html" class="sidenav-link">Our Services</a>
+        <a href="index.html#contact-us" class="sidenav-link">Contact</a>
+        <a href="web-solutions.html" class="sidenav-link">Web Solutions</a>
+        <a href="ios-development.html" class="sidenav-link">iOS Development</a>
+        <a href="android-development.html" class="sidenav-link">Android Development</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
     </div>
-
-    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center; background: #222;">
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
                 Crafting Software<br>Developing Dreams
@@ -64,10 +84,20 @@
             </h1>
         </div>
     </header>
-
-    <!-- Desktop Navigation Bar -->
-    <div class="desktop-navbar">
-            <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto;">
+    <div class="desktop-navbar" style="width: 100vw; background: #222; margin: 0 auto 12px auto;">
+        <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto;">
+            <nav class="flex justify-center items-center gap-4 navbar-btns-centered"
+                style="height: 100%; text-align: center;">
+                <a href="index.html#about-us" class="font-bold">About Us</a>
+                <a href="services.html" class="font-bold">Services</a>
+                <a href="web-solutions.html" class="font-bold">Web Solutions</a>
+                <a href="ios-development.html" class="font-bold">iOS Development</a>
+                <a href="android-development.html" class="font-bold">Android Development</a>
+                <a href="job-opportunities.html" class="font-bold">Careers</a>
+                <a href="index.html#contact-us" class="font-bold">Contact</a>
+            </nav>
+        </div>
+    </div>
                 <nav class="flex justify-center items-center gap-4 navbar-btns-centered" style="height: 100%; text-align: center;">
                     <a href="#about-us" class="font-bold">About Us</a>
                     <a href="services.html" class="font-bold">Services</a>
