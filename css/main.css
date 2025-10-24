@@ -1517,7 +1517,7 @@ header {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
