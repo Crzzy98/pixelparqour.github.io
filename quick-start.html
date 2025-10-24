@@ -86,164 +86,67 @@
         </div>
     <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
     <form id="quickStartForm" action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
-    <p class="text-xs text-green-600 mb-4 text-center">
-        Fields marked with <span class="text-red-500">*</span> are required. Entering more information speeds up the development process by helping us get you in contact with the right developers for your project sooner.
-    </p>
-    <p class="text-xs sm:text-4xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for applying! <br>An email will be sent to our team. We will review your profile and reach out to you in 1-2 business days with the next steps.</p>
-            <!-- General Info -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">General Info</h2>
+    <p class="text-xs sm:text-2xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for your interest! <br>An email will be sent to our team. We will review your information and reach out to you in 1-2 business days with the next steps.</p>
+    
+    <!-- Simplified Contact Form -->
+    <div class="space-y-4">
+        <div>
+            <label for="fullName" class="block font-semibold mb-2 text-lg">Full Name <span class="text-red-500">*</span></label>
+            <input type="text" id="fullName" name="Full Name" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none">
+        </div>
+        
+        <div>
+            <label for="email" class="block font-semibold mb-2 text-lg">Email Address <span class="text-red-500">*</span></label>
+            <input type="email" id="email" name="Email" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none">
+        </div>
+        
+        <div>
+            <label for="projectNeeds" class="block font-semibold mb-2 text-lg">Your Project/Service Needs <span class="text-red-500">*</span></label>
+            <textarea id="projectNeeds" name="Project Service Needs" required rows="4" placeholder="Tell us about your project goals, what type of solution you need (website, mobile app, etc.), and any specific requirements..." class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none resize-vertical"></textarea>
+        </div>
+
+        <div>
+            <label for="tier" class="block font-semibold mb-2 text-lg quickstart-options">Requested Tier <span class="text-red-500">*</span></label>
+            <select id="tier" name="Requested Tier" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none quickstart-options">
+                <option value="starter">Starter - Landing Pages & Simple Sites</option>
+                <option value="growth">Growth - Multi-page Business Solutions</option>
+                <option value="enterprise">Enterprise - Full-Stack Web & Mobile</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Comprehensive Form Link -->
+    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg mt-6 mb-6">
+        <div class="flex items-center">
+            <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-8 w-8 mr-3">
             <div>
-                <label for="fullName" class="block font-semibold mb-1">Full Name <span class="text-red-500">*</span>:</label>
-                <input type="text" id="fullName" name="Full Name" required class="w-full p-2 rounded border border-gray-300">
+                <p class="text-blue-800 font-semibold text-lg mb-2">Have an ongoing idea or detailed project plan?</p>
+                <p class="text-blue-700 mb-3">Fill out our comprehensive form to get helped even faster with detailed project planning and faster turnaround times!</p>
+                <a href="#" onclick="showComprehensiveForm()" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                    <span>Access Comprehensive Form</span>
+                    <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
             </div>
-            <div>
-                <label for="businessName" class="block font-semibold mb-1">Business/Entity Name:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="text" id="businessName" name="Business/Entity Name" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <div>
-                <label for="email" class="block font-semibold mb-1">Email Address <span class="text-red-500">*</span>:</label>
-                <input type="email" id="email" name="Email" required class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <div>
-                <label for="phone" class="block font-semibold mb-1">Phone Number:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="tel" id="phone" name="Phone" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <!-- Project Basics -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Project Basics</h2>
-            <div>
-                <label for="projectName" class="block font-semibold mb-1">Project / Website / App Name:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="text" id="projectName" name="Project Name" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <div>
-                <label for="projectDescription" class="block font-semibold mb-1">Short Project Description:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <textarea id="projectDescription" name="Project Description" class="w-full p-2 rounded border border-gray-300"></textarea>
-            </div>
-            <div>
-                <label for="primaryGoal" class="block font-semibold mb-1">Primary Goal of the Project:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="text" id="primaryGoal" name="Primary Goal" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <div>
-                            <label for="tier" class="block font-semibold mb-1 quickstart-options text-base sm:text-2xl">Requested Tier <span class="text-red-500">*</span>:</label>
-                            <select id="tier" name="Requested Tier" required class="w-full p-2 rounded border border-gray-300 quickstart-options text-base sm:text-2xl">
-                                <option value="starter" class="sm:text-2xl text-base">Starter</option>
-                                <option value="growth" class="sm:text-2xl text-base">Growth</option>
-                                <option value="enterprise" class="sm:text-2xl text-base">Enterprise</option>
-                            </select>
-            </div>
-            <!-- Timeline & Budget -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Timeline & Budget</h2>
-            <div>
-                <label for="deadline" class="block font-semibold mb-1">Requested Deadline / Target Launch Date:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="date" id="deadline" name="Deadline" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <div>
-                <label for="budget" class="block font-semibold mb-1">Do you have a budget range in mind?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="budget" name="Budget Range" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-            </div>
-            <div>
-                <label for="budgetDetails" class="block font-semibold mb-1">If Yes, please specify:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="text" id="budgetDetails" name="Budget Details" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <!-- Features & Requirements -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Features & Requirements</h2>
-            <div>
-                <label for="solutionType" class="block font-semibold mb-1">Which type of solution are you interested in?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="solutionType" name="Solution Type" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="single-page">Single-page site / Landing page (Starter)</option>
-                  <option value="multi-page">Multi-page business app or dashboard (Growth)</option>
-                  <option value="full-stack">Full-stack web + mobile solution (Enterprise)</option>
-                </select>
-            </div>
-            <div>
-                <label for="mustHave" class="block font-semibold mb-1">Must-have features:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <textarea id="mustHave" name="Must-have Features" class="w-full p-2 rounded border border-gray-300"></textarea>
-            </div>
-            <div>
-                <label for="techStack" class="block font-semibold mb-1">Preferred Tech Stack:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <input type="text" id="techStack" name="Preferred Tech Stack" class="w-full p-2 rounded border border-gray-300">
-            </div>
-            <!-- Hosting & Deployment -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Hosting & Deployment</h2>
-            <div>
-                <label for="hosting" class="block font-semibold mb-1">Do you already have hosting/domain set up?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="hosting" name="Hosting" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="not-sure">Not sure</option>
-                </select>
-            </div>
-            <div>
-                <label for="cloudProvider" class="block font-semibold mb-1">Preferred Cloud Provider:</label>
-                <span class="text-xs text-gray-600">optional</span>
-                                <select id="cloudProvider" name="Cloud Provider" class="w-full p-2 rounded border border-gray-300">
-                                    <option value="">--Select--</option>
-                                    <option value="aws">AWS</option>
-                                    <option value="azure">Azure</option>
-                                    <option value="no-preference">No Preference</option>
-                                    <option value="other">Other</option>
-                                </select>
-            </div>
-            <!-- Design & Content -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Design & Content</h2>
-            <div>
-                <label for="branding" class="block font-semibold mb-1">Do you already have branding?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="branding" name="Branding" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-            </div>
-            <div>
-                <label for="contentHelp" class="block font-semibold mb-1">Do you need help with content?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="contentHelp" name="Content Help" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-            </div>
-            <!-- Post-Launch & Support -->
-            <h2 class="text-2xl font-bold text-blue-800 mb-2">Post-Launch & Support</h2>
-            <div>
-                <label for="maintenance" class="block font-semibold mb-1">Do you need ongoing support/maintenance?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="maintenance" name="Ongoing Support" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="maybe">Maybe</option>
-                </select>
-            </div>
-            <div>
-                <label for="training" class="block font-semibold mb-1">Do you need consulting/training for your team?</label>
-                <span class="text-xs text-gray-600">optional</span>
-                <select id="training" name="Consulting/Training" class="w-full p-2 rounded border border-gray-300">
-                  <option value="">--Select--</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-            </div>
-            <div class="flex justify-center">
-                <button type="submit" class="mt-6 px-10 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition">Submit</button>
+        </div>
+    </div>
+
+    <!-- Payment Security Information -->
+    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-6">
+        <div class="flex items-center mb-3">
+            <svg class="h-6 w-6 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <h3 class="font-semibold text-gray-800">Secure Payment Processing</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+            All payments are processed securely through <strong>Stripe</strong>, the industry-leading payment platform trusted by millions of businesses worldwide. Your financial information is protected with bank-level security, end-to-end encryption, and PCI DSS compliance. We never store or have access to your payment details.
+        </p>
+    </div>
+
+    <div class="flex justify-center">
+        <button type="submit" class="mt-6 px-10 py-4 bg-green-600 text-white font-bold text-xl rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">Get Started</button>
 </form>
 
 <!-- Confirmation Modal -->
@@ -263,20 +166,28 @@
     const yesBtn = document.getElementById('confirmYes');
     const noBtn = document.getElementById('confirmNo');
     let submitPending = false;
+    
     form.addEventListener('submit', function(e) {
         if (!submitPending) {
             e.preventDefault();
             modal.classList.remove('hidden');
         }
     });
+    
     yesBtn.onclick = function() {
         submitPending = true;
         modal.classList.add('hidden');
         form.submit();
     };
+    
     noBtn.onclick = function() {
         modal.classList.add('hidden');
     };
+
+    // Function to show comprehensive form (placeholder for future implementation)
+    function showComprehensiveForm() {
+        alert('Comprehensive form coming soon! For now, please use the contact information below or fill out this quick form and mention "comprehensive planning" in your project needs.');
+    }
 </script>
             </div>
         </form>
