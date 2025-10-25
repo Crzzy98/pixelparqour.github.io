@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Make submit button text much brighter on hover */
+        button[type="submit"]:hover {
+            color: #fff700 !important;
+            text-shadow: 0 0 8px #fff700, 0 0 16px #fff700;
+        }
+        /* Make all form text black */
+        form, form * {
+            color: #111827 !important; /* Tailwind gray-900 (almost black) */
+        }
+        /* Make form background same as page bg */
+        form.bg-green-50 {
+            background-color: #f9fafb !important; /* Tailwind bg-gray-50 */
+        }
+        /* Always show standard mouse cursor on this page */
+        html, body, *, *:hover {
+            cursor: auto !important;
+        }
+        /* Underline and center all subheaders (h2) in the form */
+        form h2 {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            text-align: center;
+        }
+        /* Progress bar styling */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: width 0.3s ease;
+        }
+        /* Section styling */
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .form-section.active {
+            animation: slideIn 0.3s ease-in;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Pixel Parqour Comprehensive Project Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/13/00/20250913002639-6H3O1YNC.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Desktop Navigation Bar -->
+    <div class="nav-outer-container" style="width: 100vw; background: #222; margin: 0 auto 12px auto; display: flex; justify-content: center; align-items: center;">
+        <div class="desktop-navbar" style="text-align:center; width: 85vw; max-width: 85vw; background: #222;">
+            <nav class="flex justify-center items-center gap-4" style="height: 100%;">
+                <a href="index.html">Home</a>
+                <a href="index.html#about-us">About Us</a>
+                <a href="index.html#crafting-dreams">Our Services</a>
+                <a href="web-solutions.html">Web Solutions</a>
+                <a href="ios-development.html">iOS Development</a>
+                <a href="android-development.html">Android Development</a>
+                <a href="index.html#contact-us">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-4xl w-full">
+        <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16">
+            <h1 class="text-3xl md:text-4xl font-bold text-center karnivore-header m-0 p-0" style="color: #15803d;">
+                Comprehensive Project Planning Form
+            </h1>
+            <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16" style="transform: scaleX(-1);">
+        </div>
+
+        <a href="quick-start.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Quick Start</a>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill" style="width: 14%;"></div>
+        </div>
+        <p class="text-center text-sm text-gray-600 mb-6">Step <span id="currentStep">1</span> of 7</p>
+
+        <form id="comprehensiveForm" action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+            
+            <!-- Hidden FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="Comprehensive Project Planning Submission">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <p class="text-sm text-gray-500 mb-4 text-center">
+                This detailed form helps us understand your project requirements thoroughly, enabling us to provide accurate estimates and tailored solutions.
+            </p>
+
+            <!-- Section 1: Contact Information -->
+            <div class="form-section active" id="section1">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Contact Information</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fullName" class="block font-semibold mb-1">Full Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullName" name="Full Name" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block font-semibold mb-1">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="Email" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="phone" class="block font-semibold mb-1">Phone Number <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="Phone" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="businessName" class="block font-semibold mb-1">Business/Organization Name</label>
+                        <input type="text" id="businessName" name="Business Name" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="website" class="block font-semibold mb-1">Current Website/Portfolio</label>
+                        <input type="url" id="website" name="Current Website" placeholder="https://" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="linkedin" class="block font-semibold mb-1">LinkedIn Profile</label>
+                        <input type="url" id="linkedin" name="LinkedIn Profile" placeholder="https://linkedin.com/in/" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Project Overview -->
+            <div class="form-section" id="section2">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Project Overview</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="projectName" class="block font-semibold mb-1">Project Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="projectName" name="Project Name" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="projectType" class="block font-semibold mb-1">Project Type <span class="text-red-500">*</span></label>
+                        <select id="projectType" name="Project Type" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Project Type --</option>
+                            <option value="website">Website/Web Application</option>
+                            <option value="mobile-app">Mobile Application</option>
+                            <option value="desktop-app">Desktop Application</option>
+                            <option value="api">API/Backend Service</option>
+                            <option value="ecommerce">E-commerce Platform</option>
+                            <option value="cms">Content Management System</option>
+                            <option value="saas">SaaS Platform</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="projectDescription" class="block font-semibold mb-1">Detailed Project Description <span class="text-red-500">*</span></label>
+                        <textarea id="projectDescription" name="Project Description" required rows="4" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Describe your project goals, target audience, key features, and what problem it solves..."></textarea>
+                    </div>
+                    <div>
+                        <label for="targetAudience" class="block font-semibold mb-1">Target Audience</label>
+                        <input type="text" id="targetAudience" name="Target Audience" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none" placeholder="Who will use this application?">
+                    </div>
+                    <div>
+                        <label for="tier" class="block font-semibold mb-1">Service Tier <span class="text-red-500">*</span></label>
+                        <select id="tier" name="Service Tier" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="starter">Starter - Landing Pages & Simple Sites</option>
+                            <option value="growth">Growth - Multi-page Business Solutions</option>
+                            <option value="enterprise">Enterprise - Full-Stack Web & Mobile</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Technical Requirements -->
+            <div class="form-section" id="section3">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Technical Requirements</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="currentStack" class="block font-semibold mb-1">Current Tech Stack (if any)</label>
+                        <textarea id="currentStack" name="Current Tech Stack" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="List technologies, frameworks, databases currently in use..."></textarea>
+                    </div>
+                    <div>
+                        <label for="preferredStack" class="block font-semibold mb-1">Preferred Tech Stack</label>
+                        <div class="grid md:grid-cols-2 gap-4 mt-2">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Frontend Technologies:</label>
+                                <div class="space-y-1">
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="React" class="mr-2"> React</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="Angular" class="mr-2"> Angular</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="Next.js" class="mr-2"> Next.js</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="Vue.js" class="mr-2"> Vue.js</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="TypeScript" class="mr-2"> TypeScript</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Frontend Tech" value="No Preference" class="mr-2"> No Preference</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Backend Technologies:</label>
+                                <div class="space-y-1">
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value="Node.js" class="mr-2"> Node.js</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value=".NET" class="mr-2"> .NET/C#</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value="Python" class="mr-2"> Python</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value="Java" class="mr-2"> Java</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value="PHP" class="mr-2"> PHP</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Backend Tech" value="No Preference" class="mr-2"> No Preference</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="database" class="block font-semibold mb-1">Database Requirements</label>
+                        <select id="database" name="Database Preference" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Database Type --</option>
+                            <option value="sql-server">SQL Server</option>
+                            <option value="mysql">MySQL</option>
+                            <option value="postgresql">PostgreSQL</option>
+                            <option value="mongodb">MongoDB</option>
+                            <option value="dynamodb">DynamoDB</option>
+                            <option value="firebase">Firebase</option>
+                            <option value="no-preference">No Preference</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="integrations" class="block font-semibold mb-1">Required Integrations</label>
+                        <textarea id="integrations" name="Required Integrations" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Payment processing, CRM systems, APIs, third-party services..."></textarea>
+                    </div>
+                    <div>
+                        <label for="performance" class="block font-semibold mb-1">Performance Requirements</label>
+                        <textarea id="performance" name="Performance Requirements" rows="2" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Expected traffic, load requirements, speed expectations..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Features & Functionality -->
+            <div class="form-section" id="section4">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Features & Functionality</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="coreFeatures" class="block font-semibold mb-1">Core Features <span class="text-red-500">*</span></label>
+                        <textarea id="coreFeatures" name="Core Features" required rows="4" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="List all essential features your application must have..."></textarea>
+                    </div>
+                    <div>
+                        <label for="niceToHave" class="block font-semibold mb-1">Nice-to-Have Features</label>
+                        <textarea id="niceToHave" name="Nice to Have Features" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Features that would be great to include if budget/time allows..."></textarea>
+                    </div>
+                    <div>
+                        <label for="userRoles" class="block font-semibold mb-1">User Roles & Permissions</label>
+                        <textarea id="userRoles" name="User Roles" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Admin, user, guest, moderator, etc. and their permissions..."></textarea>
+                    </div>
+                    <div>
+                        <label for="security" class="block font-semibold mb-1">Security Requirements</label>
+                        <div class="space-y-2 mt-2">
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="User Authentication" class="mr-2"> User Authentication</label>
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="Two-Factor Authentication" class="mr-2"> Two-Factor Authentication</label>
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="Data Encryption" class="mr-2"> Data Encryption</label>
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="GDPR Compliance" class="mr-2"> GDPR Compliance</label>
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="PCI DSS Compliance" class="mr-2"> PCI DSS Compliance</label>
+                            <label class="flex items-center"><input type="checkbox" name="Security Features" value="Role-based Access" class="mr-2"> Role-based Access Control</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Timeline & Budget -->
+            <div class="form-section" id="section5">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Timeline & Budget</h2>
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="deadline" class="block font-semibold mb-1">Target Launch Date</label>
+                            <input type="date" id="deadline" name="Target Launch Date" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="urgency" class="block font-semibold mb-1">Project Urgency</label>
+                            <select id="urgency" name="Project Urgency" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Urgency --</option>
+                                <option value="flexible">Flexible - Quality over speed</option>
+                                <option value="moderate">Moderate - Balanced timeline</option>
+                                <option value="urgent">Urgent - Fast delivery needed</option>
+                                <option value="critical">Critical - Emergency timeline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="budget" class="block font-semibold mb-1">Budget Range <span class="text-red-500">*</span></label>
+                        <select id="budget" name="Budget Range" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Budget Range --</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="10k-25k">$10,000 - $25,000</option>
+                            <option value="25k-50k">$25,000 - $50,000</option>
+                            <option value="50k-100k">$50,000 - $100,000</option>
+                            <option value="over-100k">Over $100,000</option>
+                            <option value="discuss">Prefer to discuss</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="budgetFlexibility" class="block font-semibold mb-1">Budget Flexibility</label>
+                        <textarea id="budgetFlexibility" name="Budget Flexibility" rows="2" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Any flexibility in budget for additional features or timeline adjustments..."></textarea>
+                    </div>
+                    <div>
+                        <label for="paymentStructure" class="block font-semibold mb-1">Preferred Payment Structure</label>
+                        <select id="paymentStructure" name="Payment Structure" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Payment Structure --</option>
+                            <option value="milestone">Milestone-based payments</option>
+                            <option value="monthly">Monthly payments</option>
+                            <option value="upfront-50">50% upfront, 50% on completion</option>
+                            <option value="upfront-full">Full payment upfront (discount available)</option>
+                            <option value="discuss">Open to discussion</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Design & Content -->
+            <div class="form-section" id="section6">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Design & Content</h2>
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="branding" class="block font-semibold mb-1">Existing Branding</label>
+                            <select id="branding" name="Existing Branding" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Status --</option>
+                                <option value="complete">Complete branding guidelines</option>
+                                <option value="partial">Some branding elements</option>
+                                <option value="none">No existing branding</option>
+                                <option value="rebrand">Need rebranding</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="designStyle" class="block font-semibold mb-1">Preferred Design Style</label>
+                            <select id="designStyle" name="Design Style" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Style --</option>
+                                <option value="modern">Modern/Minimalist</option>
+                                <option value="corporate">Corporate/Professional</option>
+                                <option value="creative">Creative/Artistic</option>
+                                <option value="playful">Playful/Fun</option>
+                                <option value="elegant">Elegant/Luxury</option>
+                                <option value="technical">Technical/Industrial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="colorScheme" class="block font-semibold mb-1">Color Preferences</label>
+                        <input type="text" id="colorScheme" name="Color Preferences" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none" placeholder="Preferred colors, hex codes, or color schemes...">
+                    </div>
+                    <div>
+                        <label for="inspiration" class="block font-semibold mb-1">Design Inspiration</label>
+                        <textarea id="inspiration" name="Design Inspiration" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Websites, apps, or designs you admire (include URLs if possible)..."></textarea>
+                    </div>
+                    <div>
+                        <label for="content" class="block font-semibold mb-1">Content Status</label>
+                        <select id="content" name="Content Status" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Status --</option>
+                            <option value="ready">Content is ready</option>
+                            <option value="partial">Some content available</option>
+                            <option value="need-help">Need help creating content</option>
+                            <option value="copywriting">Need professional copywriting</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Support & Next Steps -->
+            <div class="form-section" id="section7">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Support & Additional Information</h2>
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="teamSize" class="block font-semibold mb-1">Your Team Size</label>
+                            <select id="teamSize" name="Team Size" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Team Size --</option>
+                                <option value="solo">Solo/Individual</option>
+                                <option value="2-5">Small team (2-5 people)</option>
+                                <option value="6-15">Medium team (6-15 people)</option>
+                                <option value="16+">Large team (16+ people)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="techExpertise" class="block font-semibold mb-1">Technical Expertise Level</label>
+                            <select id="techExpertise" name="Technical Expertise" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Level --</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="expert">Expert/Developer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="training" class="block font-semibold mb-1">Training & Support Needs</label>
+                        <div class="space-y-2 mt-2">
+                            <label class="flex items-center"><input type="checkbox" name="Support Needs" value="Training Sessions" class="mr-2"> Training sessions for your team</label>
+                            <label class="flex items-center"><input type="checkbox" name="Support Needs" value="Documentation" class="mr-2"> Comprehensive documentation</label>
+                            <label class="flex items-center"><input type="checkbox" name="Support Needs" value="Ongoing Support" class="mr-2"> Ongoing technical support</label>
+                            <label class="flex items-center"><input type="checkbox" name="Support Needs" value="Maintenance" class="mr-2"> Regular maintenance & updates</label>
+                            <label class="flex items-center"><input type="checkbox" name="Support Needs" value="Hosting Management" class="mr-2"> Hosting & server management</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="communication" class="block font-semibold mb-1">Preferred Communication Method</label>
+                        <select id="communication" name="Communication Preference" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Method --</option>
+                            <option value="email">Email</option>
+                            <option value="video-calls">Video calls (Zoom, Teams, etc.)</option>
+                            <option value="phone">Phone calls</option>
+                            <option value="slack">Slack/Discord</option>
+                            <option value="project-management">Project management tools</option>
+                            <option value="combination">Combination of methods</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="additionalInfo" class="block font-semibold mb-1">Additional Information</label>
+                        <textarea id="additionalInfo" name="Additional Information" rows="4" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Any other details, concerns, or requirements we should know about..."></textarea>
+                    </div>
+                    <div>
+                        <label for="hearAboutUs" class="block font-semibold mb-1">How did you hear about us?</label>
+                        <select id="hearAboutUs" name="How Did You Hear About Us" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                            <option value="">-- Select Source --</option>
+                            <option value="google">Google Search</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="referral">Referral from friend/colleague</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="github">GitHub</option>
+                            <option value="portfolio">Our portfolio/website</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-300">
+                <button type="button" id="prevBtn" class="px-6 py-3 bg-gray-500 text-white font-bold rounded-lg hover:bg-gray-600 transition" style="display: none;">Previous</button>
+                <button type="button" id="nextBtn" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition ml-auto">Next</button>
+                <button type="submit" id="submitBtn" class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded-lg hover:bg-green-700 transition shadow-lg hover:shadow-xl ml-auto" style="display: none;">Submit Comprehensive Form</button>
+            </div>
+
+        </form>
+
+        <!-- Payment Security Information -->
+        <div class="bg-white border border-green-200 rounded-lg p-4 mt-6 shadow-md">
+            <div class="flex items-center justify-center mb-3">
+                <svg class="h-6 w-6 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <h4 class="font-bold text-green-800 text-lg">Secure Payment Processing</h4>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed text-center">
+                All payments are processed securely through <strong class="text-white">Stripe</strong>, the industry-leading payment platform trusted by millions of businesses worldwide. Your financial information is protected with bank-level security, end-to-end encryption, and PCI DSS compliance.
+            </p>
+        </div>
+
+    </main>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7;
+        
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressFill = document.getElementById('progressFill');
+        const currentStepSpan = document.getElementById('currentStep');
+
+        function showSection(step) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show current section
+            document.getElementById(`section${step}`).classList.add('active');
+            
+            // Update progress bar
+            const progress = (step / totalSteps) * 100;
+            progressFill.style.width = `${progress}%`;
+            currentStepSpan.textContent = step;
+            
+            // Update button visibility
+            prevBtn.style.display = step === 1 ? 'none' : 'inline-block';
+            
+            if (step === totalSteps) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        nextBtn.addEventListener('click', function() {
+            if (validateCurrentSection()) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showSection(currentStep);
+                }
+            }
+        });
+
+        prevBtn.addEventListener('click', function() {
+            if (currentStep > 1) {
+                currentStep--;
+                showSection(currentStep);
+            }
+        });
+
+        function validateCurrentSection() {
+            const currentSection = document.getElementById(`section${currentStep}`);
+            const requiredFields = currentSection.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#10b981';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all required fields before proceeding.');
+            }
+            
+            return isValid;
+        }
+
+        // Form submission
+        document.getElementById('comprehensiveForm').addEventListener('submit', function(e) {
+            if (!validateCurrentSection()) {
+                e.preventDefault();
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = 'Submitting...';
+            submitBtn.disabled = true;
+        });
+
+        // Initialize
+        showSection(1);
+        
+        // Auto-save to localStorage (optional)
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                localStorage.setItem(`comprehensive_form_${input.name}`, input.value);
+            });
+            
+            // Restore saved values
+            const savedValue = localStorage.getItem(`comprehensive_form_${input.name}`);
+            if (savedValue) {
+                input.value = savedValue;
+            }
+        });
+    </script>
+</body>
+</html>
