@@ -91,9 +91,21 @@
 
         <!-- Progress Bar -->
         <div class="progress-bar">
-            <div id="progressFill" class="progress-fill" style="width: 14%;"></div>
+            <div id="progressFill" class="progress-fill" style="width: 12.5%;"></div>
         </div>
-        <p class="text-center text-sm text-gray-600 mb-6">Step <span id="currentStep">1</span> of 7</p>
+        <p class="text-center text-sm text-gray-600 mb-4">Step <span id="currentStep">1</span> of 8</p>
+
+        <!-- Section Navigator (for testing) -->
+        <div class="flex justify-center gap-2 mb-6">
+            <button type="button" onclick="goToSection(1)" class="section-nav-btn px-3 py-1 text-sm bg-blue-100 hover:bg-blue-200 rounded" data-section="1">1</button>
+            <button type="button" onclick="goToSection(2)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="2">2</button>
+            <button type="button" onclick="goToSection(3)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="3">3</button>
+            <button type="button" onclick="goToSection(4)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="4">4</button>
+            <button type="button" onclick="goToSection(5)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="5">5</button>
+            <button type="button" onclick="goToSection(6)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="6">6</button>
+            <button type="button" onclick="goToSection(7)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="7">7</button>
+            <button type="button" onclick="goToSection(8)" class="section-nav-btn px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded" data-section="8">8</button>
+        </div>
 
         <form id="comprehensiveForm" action="https://formsubmit.co/projects@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
             
@@ -186,6 +198,92 @@
                         <label for="currentStack" class="block font-semibold mb-1">Current Tech Stack (if any)</label>
                         <textarea id="currentStack" name="Current Tech Stack" rows="3" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="List technologies, frameworks, databases currently in use..."></textarea>
                     </div>
+                    
+                    <!-- Current Hosting & Infrastructure -->
+                    <div class="bg-gray-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">Current Hosting & Infrastructure</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="currentHosting" class="block font-semibold mb-1">Current Hosting Provider</label>
+                                <select id="currentHosting" name="Current Hosting Provider" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Current Host --</option>
+                                    <option value="aws">Amazon Web Services (AWS)</option>
+                                    <option value="azure">Microsoft Azure</option>
+                                    <option value="google-cloud">Google Cloud Platform</option>
+                                    <option value="digital-ocean">DigitalOcean</option>
+                                    <option value="heroku">Heroku</option>
+                                    <option value="netlify">Netlify</option>
+                                    <option value="vercel">Vercel</option>
+                                    <option value="godaddy">GoDaddy</option>
+                                    <option value="bluehost">Bluehost</option>
+                                    <option value="hostgator">HostGator</option>
+                                    <option value="siteground">SiteGround</option>
+                                    <option value="shared-hosting">Other Shared Hosting</option>
+                                    <option value="vps">VPS/Dedicated Server</option>
+                                    <option value="none">No Current Hosting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="domainStatus" class="block font-semibold mb-1">Domain Status</label>
+                                <select id="domainStatus" name="Domain Status" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Status --</option>
+                                    <option value="have-domain">Have domain, ready to use</option>
+                                    <option value="have-need-setup">Have domain, need setup</option>
+                                    <option value="need-purchase">Need to purchase domain</option>
+                                    <option value="need-help">Need help selecting domain</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="currentDomain" class="block font-semibold mb-1">Current Domain (if applicable)</label>
+                            <input type="url" id="currentDomain" name="Current Domain" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none" placeholder="https://yourwebsite.com">
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & Libraries Currently Used -->
+                    <div class="bg-blue-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">Current Frameworks & Libraries</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Frontend Frameworks:</label>
+                                <div class="space-y-1">
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="React" class="mr-2"> React</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Angular" class="mr-2"> Angular</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Vue.js" class="mr-2"> Vue.js</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Next.js" class="mr-2"> Next.js</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Svelte" class="mr-2"> Svelte</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="jQuery" class="mr-2"> jQuery</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Bootstrap" class="mr-2"> Bootstrap</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Frontend" value="Tailwind CSS" class="mr-2"> Tailwind CSS</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Backend Frameworks:</label>
+                                <div class="space-y-1">
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="ASP.NET Core" class="mr-2"> ASP.NET Core</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Express.js" class="mr-2"> Express.js (Node.js)</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Django" class="mr-2"> Django (Python)</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Flask" class="mr-2"> Flask (Python)</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Spring Boot" class="mr-2"> Spring Boot (Java)</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Laravel" class="mr-2"> Laravel (PHP)</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Backend" value="Ruby on Rails" class="mr-2"> Ruby on Rails</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Development Tools:</label>
+                                <div class="space-y-1">
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="Docker" class="mr-2"> Docker</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="Kubernetes" class="mr-2"> Kubernetes</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="Git/GitHub" class="mr-2"> Git/GitHub</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="CI/CD Pipeline" class="mr-2"> CI/CD Pipeline</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="Webpack" class="mr-2"> Webpack</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="Vite" class="mr-2"> Vite</label>
+                                    <label class="flex items-center text-sm"><input type="checkbox" name="Current Tools" value="ESLint/Prettier" class="mr-2"> ESLint/Prettier</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div>
                         <label for="preferredStack" class="block font-semibold mb-1">Preferred Tech Stack</label>
                         <div class="grid md:grid-cols-2 gap-4 mt-2">
@@ -213,18 +311,60 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <label for="database" class="block font-semibold mb-1">Database Requirements</label>
-                        <select id="database" name="Database Preference" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
-                            <option value="">-- Select Database Type --</option>
-                            <option value="sql-server">SQL Server</option>
-                            <option value="mysql">MySQL</option>
-                            <option value="postgresql">PostgreSQL</option>
-                            <option value="mongodb">MongoDB</option>
-                            <option value="dynamodb">DynamoDB</option>
-                            <option value="firebase">Firebase</option>
-                            <option value="no-preference">No Preference</option>
-                        </select>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="database" class="block font-semibold mb-1">Database Requirements</label>
+                            <select id="database" name="Database Preference" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Database Type --</option>
+                                <option value="sql-server">SQL Server</option>
+                                <option value="mysql">MySQL</option>
+                                <option value="postgresql">PostgreSQL</option>
+                                <option value="mongodb">MongoDB</option>
+                                <option value="dynamodb">DynamoDB (AWS)</option>
+                                <option value="cosmosdb">CosmosDB (Azure)</option>
+                                <option value="firebase">Firebase Firestore</option>
+                                <option value="redis">Redis (Caching)</option>
+                                <option value="elasticsearch">Elasticsearch</option>
+                                <option value="no-preference">No Preference</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="currentDatabase" class="block font-semibold mb-1">Current Database (if migrating)</label>
+                            <input type="text" id="currentDatabase" name="Current Database" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none" placeholder="e.g., MySQL 8.0, PostgreSQL 14">
+                        </div>
+                    </div>
+                    
+                    <!-- API & Microservices -->
+                    <div class="bg-purple-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">API & Architecture Requirements</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="apiType" class="block font-semibold mb-1">API Architecture</label>
+                                <select id="apiType" name="API Architecture" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Architecture --</option>
+                                    <option value="rest">REST API</option>
+                                    <option value="graphql">GraphQL</option>
+                                    <option value="grpc">gRPC</option>
+                                    <option value="soap">SOAP</option>
+                                    <option value="microservices">Microservices</option>
+                                    <option value="monolith">Monolithic</option>
+                                    <option value="serverless">Serverless Functions</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="authMethod" class="block font-semibold mb-1">Authentication Method</label>
+                                <select id="authMethod" name="Authentication Method" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Method --</option>
+                                    <option value="jwt">JWT Tokens</option>
+                                    <option value="oauth2">OAuth 2.0</option>
+                                    <option value="saml">SAML</option>
+                                    <option value="basic">Basic Authentication</option>
+                                    <option value="api-key">API Key</option>
+                                    <option value="active-directory">Active Directory</option>
+                                    <option value="social-auth">Social Authentication</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <label for="integrations" class="block font-semibold mb-1">Required Integrations</label>
@@ -267,8 +407,98 @@
                 </div>
             </div>
 
-            <!-- Section 5: Timeline & Budget -->
+            <!-- Section 5: Hosting & Deployment Preferences -->
             <div class="form-section" id="section5">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Hosting & Deployment Preferences</h2>
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="preferredHosting" class="block font-semibold mb-1">Preferred Hosting Provider <span class="text-red-500">*</span></label>
+                            <select id="preferredHosting" name="Preferred Hosting Provider" required class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Hosting Preference --</option>
+                                <option value="aws">Amazon Web Services (AWS)</option>
+                                <option value="azure">Microsoft Azure</option>
+                                <option value="google-cloud">Google Cloud Platform</option>
+                                <option value="digital-ocean">DigitalOcean</option>
+                                <option value="heroku">Heroku</option>
+                                <option value="netlify">Netlify</option>
+                                <option value="vercel">Vercel</option>
+                                <option value="cloudflare">Cloudflare Pages</option>
+                                <option value="managed-hosting">Managed Hosting (we choose)</option>
+                                <option value="no-preference">No Preference</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="deploymentType" class="block font-semibold mb-1">Deployment Type</label>
+                            <select id="deploymentType" name="Deployment Type" class="w-full p-3 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                <option value="">-- Select Type --</option>
+                                <option value="static">Static Site</option>
+                                <option value="server-side">Server-Side Rendered</option>
+                                <option value="spa">Single Page Application</option>
+                                <option value="hybrid">Hybrid (SSG + SSR)</option>
+                                <option value="containerized">Containerized (Docker)</option>
+                                <option value="serverless">Serverless Functions</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">Scalability & Performance Requirements</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="expectedTraffic" class="block font-semibold mb-1">Expected Traffic Volume</label>
+                                <select id="expectedTraffic" name="Expected Traffic" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Traffic Level --</option>
+                                    <option value="low">Low (< 1,000 visits/month)</option>
+                                    <option value="moderate">Moderate (1K - 10K visits/month)</option>
+                                    <option value="high">High (10K - 100K visits/month)</option>
+                                    <option value="very-high">Very High (100K+ visits/month)</option>
+                                    <option value="enterprise">Enterprise Scale (1M+ visits/month)</option>
+                                    <option value="unknown">Unknown/Variable</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="geographicReach" class="block font-semibold mb-1">Geographic Reach</label>
+                                <select id="geographicReach" name="Geographic Reach" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Reach --</option>
+                                    <option value="local">Local/Regional</option>
+                                    <option value="national">National</option>
+                                    <option value="international">International</option>
+                                    <option value="global">Global</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="performanceGoals" class="block font-semibold mb-1">Performance Goals</label>
+                            <textarea id="performanceGoals" name="Performance Goals" rows="2" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Page load speed requirements, uptime expectations, mobile performance..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">DevOps & Maintenance</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block font-semibold mb-2">CI/CD Requirements:</label>
+                                <div class="grid md:grid-cols-2 gap-2">
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Automated Testing" class="mr-2"> Automated Testing</label>
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Automated Deployment" class="mr-2"> Automated Deployment</label>
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Code Quality Checks" class="mr-2"> Code Quality Checks</label>
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Security Scanning" class="mr-2"> Security Scanning</label>
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Performance Monitoring" class="mr-2"> Performance Monitoring</label>
+                                    <label class="flex items-center"><input type="checkbox" name="CICD Requirements" value="Rollback Capability" class="mr-2"> Rollback Capability</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="monitoringNeeds" class="block font-semibold mb-1">Monitoring & Analytics Needs</label>
+                                <textarea id="monitoringNeeds" name="Monitoring Needs" rows="2" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Application monitoring, user analytics, error tracking, performance metrics..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Timeline & Budget -->
+            <div class="form-section" id="section6">
                 <h2 class="text-2xl font-bold text-blue-800 mb-4">Timeline & Budget</h2>
                 <div class="space-y-4">
                     <div class="grid md:grid-cols-2 gap-4">
@@ -318,8 +548,8 @@
                 </div>
             </div>
 
-            <!-- Section 6: Design & Content -->
-            <div class="form-section" id="section6">
+            <!-- Section 7: Design & Content -->
+            <div class="form-section" id="section7">
                 <h2 class="text-2xl font-bold text-blue-800 mb-4">Design & Content</h2>
                 <div class="space-y-4">
                     <div class="grid md:grid-cols-2 gap-4">
@@ -367,8 +597,8 @@
                 </div>
             </div>
 
-            <!-- Section 7: Support & Next Steps -->
-            <div class="form-section" id="section7">
+            <!-- Section 8: Support & Next Steps -->
+            <div class="form-section" id="section8">
                 <h2 class="text-2xl font-bold text-blue-800 mb-4">Support & Additional Information</h2>
                 <div class="space-y-4">
                     <div class="grid md:grid-cols-2 gap-4">
@@ -432,6 +662,45 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
+                    
+                    <!-- Project Complexity Assessment -->
+                    <div class="bg-red-50 p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-3">Project Complexity & Special Requirements</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block font-semibold mb-2">Compliance Requirements:</label>
+                                <div class="grid md:grid-cols-2 gap-2">
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="HIPAA" class="mr-2"> HIPAA (Healthcare)</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="SOX" class="mr-2"> SOX (Financial)</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="GDPR" class="mr-2"> GDPR (Privacy)</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="PCI DSS" class="mr-2"> PCI DSS (Payment)</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="FedRAMP" class="mr-2"> FedRAMP (Government)</label>
+                                    <label class="flex items-center"><input type="checkbox" name="Compliance" value="ISO 27001" class="mr-2"> ISO 27001 (Security)</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="accessibility" class="block font-semibold mb-1">Accessibility Requirements</label>
+                                <select id="accessibility" name="Accessibility Requirements" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                                    <option value="">-- Select Level --</option>
+                                    <option value="wcag-a">WCAG 2.1 Level A</option>
+                                    <option value="wcag-aa">WCAG 2.1 Level AA</option>
+                                    <option value="wcag-aaa">WCAG 2.1 Level AAA</option>
+                                    <option value="ada">ADA Compliance</option>
+                                    <option value="section-508">Section 508 (Government)</option>
+                                    <option value="basic">Basic accessibility</option>
+                                    <option value="none">No specific requirements</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="multilingual" class="block font-semibold mb-1">Multi-language Support</label>
+                                <input type="text" id="multilingual" name="Languages Needed" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none" placeholder="e.g., Spanish, French, Mandarin">
+                            </div>
+                            <div>
+                                <label for="thirdPartyAPIs" class="block font-semibold mb-1">Third-party APIs/Services to Integrate</label>
+                                <textarea id="thirdPartyAPIs" name="Third Party APIs" rows="3" class="w-full p-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none resize-vertical" placeholder="Payment processors, CRM systems, email services, social media APIs, analytics tools..."></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -461,7 +730,7 @@
 
     <script>
         let currentStep = 1;
-        const totalSteps = 7;
+        const totalSteps = 8;
         
         const nextBtn = document.getElementById('nextBtn');
         const prevBtn = document.getElementById('prevBtn');
@@ -470,18 +739,37 @@
         const currentStepSpan = document.getElementById('currentStep');
 
         function showSection(step) {
+            console.log(`Showing section ${step}`);
+            
             // Hide all sections
             document.querySelectorAll('.form-section').forEach(section => {
                 section.classList.remove('active');
             });
             
             // Show current section
-            document.getElementById(`section${step}`).classList.add('active');
+            const currentSection = document.getElementById(`section${step}`);
+            if (currentSection) {
+                currentSection.classList.add('active');
+                console.log(`Section ${step} is now active`);
+            } else {
+                console.error(`Section ${step} not found!`);
+            }
             
             // Update progress bar
             const progress = (step / totalSteps) * 100;
             progressFill.style.width = `${progress}%`;
             currentStepSpan.textContent = step;
+            
+            // Update section navigator
+            document.querySelectorAll('.section-nav-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-500', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            const activeNavBtn = document.querySelector(`[data-section="${step}"]`);
+            if (activeNavBtn) {
+                activeNavBtn.classList.remove('bg-gray-100', 'text-gray-700');
+                activeNavBtn.classList.add('bg-blue-500', 'text-white');
+            }
             
             // Update button visibility
             prevBtn.style.display = step === 1 ? 'none' : 'inline-block';
@@ -495,7 +783,14 @@
             }
         }
 
+        // Function to navigate directly to a section (for testing)
+        function goToSection(step) {
+            currentStep = step;
+            showSection(currentStep);
+        }
+
         nextBtn.addEventListener('click', function() {
+            console.log(`Attempting to go to step ${currentStep + 1}`);
             if (validateCurrentSection()) {
                 if (currentStep < totalSteps) {
                     currentStep++;
@@ -505,6 +800,7 @@
         });
 
         prevBtn.addEventListener('click', function() {
+            console.log(`Going back to step ${currentStep - 1}`);
             if (currentStep > 1) {
                 currentStep--;
                 showSection(currentStep);
@@ -513,24 +809,55 @@
 
         function validateCurrentSection() {
             const currentSection = document.getElementById(`section${currentStep}`);
+            if (!currentSection) {
+                console.error(`Section ${currentStep} not found`);
+                return false;
+            }
+            
             const requiredFields = currentSection.querySelectorAll('input[required], select[required], textarea[required]');
+            console.log(`Found ${requiredFields.length} required fields in section ${currentStep}`);
+            
             let isValid = true;
+            let emptyFields = [];
             
             requiredFields.forEach(field => {
-                if (!field.value.trim()) {
+                if (!field.value || !field.value.trim()) {
                     field.style.borderColor = '#ef4444';
+                    field.style.backgroundColor = '#fef2f2';
+                    emptyFields.push(field.name || field.id);
                     isValid = false;
                 } else {
                     field.style.borderColor = '#10b981';
+                    field.style.backgroundColor = '#f0fff4';
                 }
             });
             
             if (!isValid) {
-                alert('Please fill in all required fields before proceeding.');
+                alert(`Please fill in the following required fields:\n${emptyFields.join('\n')}`);
             }
             
             return isValid;
         }
+
+        // Add a skip validation button for testing (remove in production)
+        function addSkipButton() {
+            const skipBtn = document.createElement('button');
+            skipBtn.textContent = 'Skip (Testing)';
+            skipBtn.type = 'button';
+            skipBtn.className = 'px-4 py-2 bg-yellow-500 text-white font-bold rounded hover:bg-yellow-600 transition';
+            skipBtn.onclick = function() {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showSection(currentStep);
+                }
+            };
+            
+            const buttonContainer = document.querySelector('.flex.justify-between');
+            buttonContainer.insertBefore(skipBtn, nextBtn);
+        }
+        
+        // Add skip button for testing
+        addSkipButton();
 
         // Form submission
         document.getElementById('comprehensiveForm').addEventListener('submit', function(e) {
@@ -544,22 +871,36 @@
             submitBtn.disabled = true;
         });
 
-        // Initialize
-        showSection(1);
-        
-        // Auto-save to localStorage (optional)
-        const formInputs = document.querySelectorAll('input, select, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('input', function() {
-                localStorage.setItem(`comprehensive_form_${input.name}`, input.value);
-            });
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing form...');
+            showSection(1);
             
-            // Restore saved values
-            const savedValue = localStorage.getItem(`comprehensive_form_${input.name}`);
-            if (savedValue) {
-                input.value = savedValue;
-            }
+            // Auto-save to localStorage (optional)
+            const formInputs = document.querySelectorAll('input, select, textarea');
+            console.log(`Found ${formInputs.length} form inputs`);
+            
+            formInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    localStorage.setItem(`comprehensive_form_${input.name}`, input.value);
+                });
+                
+                // Restore saved values
+                const savedValue = localStorage.getItem(`comprehensive_form_${input.name}`);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+            });
         });
+
+        // Also initialize immediately if DOM is already ready
+        if (document.readyState === 'loading') {
+            // DOM still loading
+        } else {
+            // DOM already loaded
+            console.log('DOM already ready, initializing form...');
+            showSection(1);
+        }
     </script>
 </body>
 </html>
