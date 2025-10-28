@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Enhanced Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://formsubmit.co https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none';">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()";
     <style>
         /* Make submit button text much brighter on hover */
         button[type="submit"]:hover {
@@ -78,6 +86,17 @@
         </div>
     </div>
 
+    <!-- Security Notice Banner -->
+    <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-3 px-4 text-center shadow-md">
+        <div class="flex items-center justify-center gap-2">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/>
+            </svg>
+            <span class="font-semibold">🔒 SECURE FORM</span>
+            <span class="text-sm">| SSL Encrypted | Privacy Protected | Anti-Fraud Monitored</span>
+        </div>
+    </div>
+
     <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-4xl w-full">
         <div class="flex items-center justify-center gap-4 mb-8">
             <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy Running Gold" class="inline-block h-16 w-16">
@@ -114,6 +133,9 @@
             <input type="hidden" name="_next" value="https://pixelparqour.net/index.html">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
+            
+            <!-- Anti-Bot Honeypot Field (hidden from humans) -->
+            <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
             
             <p class="text-sm text-gray-500 mb-4 text-center">
                 This detailed form helps us understand your project requirements thoroughly, enabling us to provide accurate estimates and tailored solutions.

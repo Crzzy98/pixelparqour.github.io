@@ -1,10 +1,18 @@
-  <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Intern Application | Pixel Parqour</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enhanced Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://formsubmit.co https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co; frame-ancestors 'none';">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()";
   <link rel="stylesheet" href="css/main.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -31,6 +39,7 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-50">
+  <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
   <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-3xl w-full">
     <div class="flex items-center justify-center gap-4 mb-8">
       <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy" class="inline-block h-16 w-16">
@@ -41,6 +50,9 @@
     </div>
   <form id="internForm" action="https://formsubmit.co/jobs@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
   <input type="hidden" name="_formsubmit_id" value="0b844943a700db193a0fec667f67953d">
+  
+  <!-- Anti-Bot Honeypot Field (hidden from humans) -->
+  <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="text-xs text-gray-500 mb-4 text-center">Fill out the form below to apply for an internship. We will review your application and reach out to you in 1-2 business days.</p>
       <div>
         <label for="fullName" class="block font-semibold mb-1">Full Name:</label>

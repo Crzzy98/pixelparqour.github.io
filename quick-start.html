@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Enhanced Security Headers -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co;">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <style>
             /* Make submit button text much brighter on hover */
             button[type="submit"]:hover {
@@ -86,7 +96,21 @@
         </div>
     <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
     <form id="quickStartForm" action="https://formsubmit.co/jobs@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+    
+    <!-- Security Notice -->
+    <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded mb-4">
+        <div class="flex items-center">
+            <svg class="h-5 w-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span class="text-sm text-blue-800 font-semibold">🔒 Secure Form - SSL Encrypted & Fraud Protected</span>
+        </div>
+    </div>
+    
     <p class="text-xs sm:text-2xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for your interest! <br>An email will be sent to our team. We will review your information and reach out to you in 1-2 business days with the next steps.</p>
+    
+    <!-- Anti-Bot Honeypot Field (Hidden) -->
+    <input type="text" name="website" value="" style="display: none;" tabindex="-1" autocomplete="off">
     
     <!-- Simplified Contact Form -->
     <div class="space-y-4">

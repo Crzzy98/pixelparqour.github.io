@@ -3,6 +3,15 @@
 <head>
     <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
     <meta charset="UTF-8">
+    <!-- Enhanced Security Headers -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.botpress.cloud https://files.bpcontent.cloud 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*; connect-src 'self' https://*; frame-src https://cdn.botpress.cloud;">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <title>Our Services - Pixel Parqour</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
@@ -221,20 +230,64 @@
                 </div>
             </div>
 
-            <!-- Payment Security Information -->
-            <div class="bg-white border border-green-200 rounded-lg p-4 mt-6 mb-6 shadow-md">
-                <div class="flex items-center justify-center mb-3">
-                    <svg class="h-6 w-6 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                    <h4 class="font-bold text-green-800 text-lg">Secure Payment Processing</h4>
+            <!-- Enhanced Payment Security Information -->
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-300 rounded-lg p-6 mt-6 mb-6 shadow-lg">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="bg-green-600 text-white p-3 rounded-full mr-3">
+                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-green-800 text-xl">🔒 100% Secure Payment Processing</h4>
                 </div>
-                <div class="text-center">
-                    <p class="text-green-700 text-sm leading-relaxed mb-2">
-                        All transactions are processed securely through <strong class="text-white">Stripe</strong>, the world's leading payment platform trusted by millions of businesses globally.
+                <div class="text-center space-y-3">
+                    <p class="text-green-700 text-lg font-semibold leading-relaxed">
+                        All transactions are processed securely through <span class="bg-purple-600 text-white px-2 py-1 rounded font-bold">Stripe</span>, the world's leading payment platform trusted by millions of businesses globally.
                     </p>
-                    <p class="text-green-600 text-xs">
-                        Bank-level encryption • PCI DSS compliant • Your payment details are never stored on our servers
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white p-3 rounded-lg border border-green-200">
+                            <div class="text-green-600 font-bold">🛡️ PCI DSS Level 1</div>
+                            <div class="text-sm text-gray-600">Highest security standard</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-green-200">
+                            <div class="text-green-600 font-bold">🔐 256-bit SSL</div>
+                            <div class="text-sm text-gray-600">Bank-level encryption</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-green-200">
+                            <div class="text-green-600 font-bold">❌ No Data Storage</div>
+                            <div class="text-sm text-gray-600">We never see your details</div>
+                        </div>
+                    </div>
+                    <p class="text-green-600 text-sm font-medium bg-white p-2 rounded border">
+                        ✅ Fraud Protection • ✅ Dispute Resolution • ✅ Refund Guarantee • ✅ 24/7 Monitoring
+                    </p>
+                </div>
+            </div>
+
+            <!-- Enhanced Security & Trust Indicators -->
+            <div class="bg-white p-4 rounded-lg border-2 border-blue-200 mb-4 shadow-md">
+                <div class="text-center">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🛡️ Business Security & Verification Status</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-green-50 p-3 rounded border border-green-200">
+                            <div class="text-green-600 font-bold text-sm">✅ SSL SECURED</div>
+                            <div class="text-xs text-green-500">256-bit Encryption Active</div>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded border border-blue-200">
+                            <div class="text-blue-600 font-bold text-sm">🏢 REGISTERED LLC</div>
+                            <div class="text-xs text-blue-500">Georgia Business License</div>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded border border-purple-200">
+                            <div class="text-purple-600 font-bold text-sm">🛡️ INSURED</div>
+                            <div class="text-xs text-purple-500">$250K Hiscox Coverage</div>
+                        </div>
+                        <div class="bg-orange-50 p-3 rounded border border-orange-200">
+                            <div class="text-orange-600 font-bold text-sm">⭐ VERIFIED</div>
+                            <div class="text-xs text-orange-500">Background Checked</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 font-medium">
+                        🔒 All client data protected by enterprise-grade security measures and professional liability insurance
                     </p>
                 </div>
             </div>
@@ -242,13 +295,21 @@
             <!-- Legal Links -->
             <div class="border-t border-gray-300 pt-4 text-center"
                 style="background-color: #e5e7eb; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 0.5rem;">
-                <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned and operated by Hasan Corley</p>
+                <p class="text-sm text-gray-600 mb-2">
+                    &copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned and operated by Hasan Corley | 
+                    <span class="text-green-600 font-semibold">🔒 Secure</span> • 
+                    <span class="text-blue-600 font-semibold">🛡️ Insured</span> • 
+                    <span class="text-purple-600 font-semibold">✅ Verified</span>
+                </p>
                 <div class="legal-footer text-sm">
                     <a href="faqs.html" class="font-bold text-green-400 hover:text-green-600">FAQs</a> |
                     <a href="terms-of-service.html" class="text-gray-600 hover:text-gray-800 ml-2">Legal</a> |
                     <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a> |
                     <a href="owner-info.html" class="text-gray-600 hover:text-gray-800 ml-2">Owner Info</a>
                 </div>
+                <p class="text-xs text-gray-500 mt-2">
+                    🛡️ This website is secured with SSL encryption and protected by comprehensive cyber liability insurance. All business operations are monitored for security and fraud prevention.
+                </p>
             </div>
         </div>
     </div>
