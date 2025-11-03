@@ -70,16 +70,8 @@
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
         </div>
     </nav> 
-    
-    <!-- Mobile Navigation Backdrop -->
-    <div id="navBackdrop" class="nav-backdrop" onclick="closeNav()"></div>
-    
     <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
-        <div class="sidenav-header">
-            <span class="sidenav-title">Navigation</span>
-            <button class="sidenav-close" onclick="closeNav()">&times;</button>
-        </div>
         <a href="#about-us" class="sidenav-link">About Us</a>
         <a href="services.html" class="sidenav-link">Our Services</a>
         <a href="#contact-us" class="sidenav-link">Contact</a>
@@ -1072,58 +1064,19 @@
 
         <script>
             function openNav() {
-                const sidenav = document.getElementById("mySidenav");
-                const hamburger = document.getElementById('hamburgerMenu');
-                const backdrop = document.getElementById('navBackdrop');
-                
-                sidenav.style.width = "280px";
-                hamburger.classList.add('active');
-                backdrop.classList.add('active');
-                
-                // Prevent body scroll when menu is open
-                document.body.style.overflow = 'hidden';
+                document.getElementById("mySidenav").style.width = "250px";
             }
-            
             function closeNav() {
-                const sidenav = document.getElementById("mySidenav");
-                const hamburger = document.getElementById('hamburgerMenu');
-                const backdrop = document.getElementById('navBackdrop');
-                
-                sidenav.style.width = "0";
-                hamburger.classList.remove('active');
-                backdrop.classList.remove('active');
-                
-                // Restore body scroll
-                document.body.style.overflow = 'auto';
+                document.getElementById("mySidenav").style.width = "0";
             }
-            
-            // Enhanced mobile navigation handlers
+            // Move inline handlers to JS
             document.addEventListener('DOMContentLoaded', function () {
                 var hamburger = document.getElementById('hamburgerMenu');
                 if (hamburger) {
-                    hamburger.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        const sidenav = document.getElementById("mySidenav");
-                        if (sidenav.style.width === "280px" || sidenav.style.width === "280") {
-                            closeNav();
-                        } else {
-                            openNav();
-                        }
-                    });
+                    hamburger.addEventListener('click', openNav);
                 }
-                
-                // Close menu when clicking on links
                 document.querySelectorAll('.sidenav-link').forEach(function (link) {
                     link.addEventListener('click', closeNav);
-                });
-                
-                // Close menu when pressing Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') {
-                        closeNav();
-                    }
                 });
             });
             window.onclick = function (event) {
