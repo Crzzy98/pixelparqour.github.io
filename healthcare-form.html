@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Enhanced Security Headers -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co;">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <style>
+            /* Make submit button text much brighter on hover */
+            button[type="submit"]:hover {
+                color: #fff700 !important;
+                text-shadow: 0 0 8px #fff700, 0 0 16px #fff700;
+            }
+            #tierTitle {
+                line-height: 3.5rem;
+            }
+            /* Make all form text black */
+            form, form * {
+                color: #111827 !important; /* Tailwind gray-900 (almost black) */
+            }
+            /* Make form background same as page bg */
+            form.bg-green-50 {
+                background-color: #f9fafb !important; /* Tailwind bg-gray-50 */
+            }
+            /* Always show standard mouse cursor on this page */
+            * {
+                cursor: auto !important;
+            }
+        </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Partnership Form - Pixel Parqour</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta name="description"
+        content="Healthcare partnership form for Pixel Parqour's health technology initiatives and wellness integrations.">
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+<!-- Mobile Navigation -->
+<div class="mobile-nav">
+    <div class="mobile-nav-header">
+        <button class="hamburger" onclick="toggleMobileNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-logo-container">
+            <img src="images/icons/Pixel_parqour_ICON.png" alt="Pixel Parqour Icon" class="mobile-logo-icon">
+            <span class="mobile-logo-text">Pixel Parqour</span>
+        </div>
+    </div>
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav-menu">
+            <a href="index.html">Home</a>
+            <a href="index.html#about-us">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="web-solutions.html">Web Solutions</a>
+            <a href="ios-development.html">iOS Development</a>
+            <a href="android-development.html">Android Development</a>
+            <a href="job-opportunities.html">Careers</a>
+            <a href="index.html#contact-us">Contact</a>
+        </nav>
+    </div>
+</div>
+
+<!-- Desktop Navigation -->
+<div class="navbar bg-navbar-consistent">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <img src="images/icons/Pixel_parqour_ICON.png" alt="Pixel Parqour Logo" class="navbar-icon">
+            <span class="navbar-title">Pixel Parqour</span>
+        </div>
+        <nav class="flex justify-center items-center gap-1 lg:gap-2 xl:gap-3 navbar-btns-centered"
+                style="height: 100%; text-align: center;">
+            <a href="index.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Home</a>
+            <a href="index.html#about-us"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">About
+                Us</a>
+            <a href="services.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Services</a>
+            <a href="web-solutions.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Web
+                Solutions</a>
+            <a href="ios-development.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">iOS
+                Development</a>
+            <a href="android-development.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Android
+                Development</a>
+            <a href="job-opportunities.html"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Careers</a>
+            <a href="index.html#contact-us"
+                class="font-semibold text-xs lg:text-sm xl:text-base px-1 lg:px-2 xl:px-3 py-1 hover:bg-gray-700 rounded transition">Contact</a>
+        </nav>
+    </div>
+</div>
+    <main class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg flex-grow max-w-3xl w-full">
+        <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="images/icons/Pixel_guy_RUNNING_v2wDashes.png" alt="Pixel Guy Running Green" class="inline-block h-16 w-16">
+            <h1 class="text-3xl md:text-3xl font-bold text-center karnivore-header m-0 p-0 quickstart-header sm:text-8xl" style="line-height: 3.5rem;">
+                <span style="color: #15803d;">Healthcare Partnership</span>
+            </h1>
+            <img src="images/icons/Pixel_guy_RUNNING_v2wDashes.png" alt="Pixel Guy Running Green" class="inline-block h-16 w-16" style="transform: scaleX(-1);">
+        </div>
+    <a href="index.html" class="back-button" style="position:fixed;top:2rem;left:2rem;z-index:10000;">← Back to Home</a>
+    <form id="healthcareForm" action="https://formsubmit.co/healthtech@pixelparqour.net" method="POST" class="space-y-6 bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
+    
+    <!-- Security Notice -->
+    <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded mb-4">
+        <div class="flex items-center">
+            <svg class="h-5 w-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span class="text-sm text-blue-800 font-semibold">🔒 Secure Form - SSL Encrypted & Fraud Protected</span>
+        </div>
+    </div>
+    
+    <p class="text-xs sm:text-2xl text-gray-500 mb-4 text-center quickstart-desc">Thank you for your interest in healthcare partnerships! <br>We will review your information and reach out within 1-2 business days to discuss collaboration opportunities.</p>
+    
+    <!-- Anti-Bot Honeypot Field (Hidden) -->
+    <input type="text" name="website" value="" style="display: none;" tabindex="-1" autocomplete="off">
+    
+    <!-- Healthcare Partnership Form -->
+    <div class="space-y-4">
+        <div>
+            <label for="fullName" class="block font-semibold mb-2 text-lg">Full Name <span class="text-red-500">*</span></label>
+            <input type="text" id="fullName" name="Full Name" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none">
+        </div>
+        
+        <div>
+            <label for="organization" class="block font-semibold mb-2 text-lg">Organization/Company <span class="text-red-500">*</span></label>
+            <input type="text" id="organization" name="Organization" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none" placeholder="Healthcare facility, wellness center, medical practice, etc.">
+        </div>
+        
+        <div>
+            <label for="email" class="block font-semibold mb-2 text-lg">Email Address <span class="text-red-500">*</span></label>
+            <input type="email" id="email" name="Email" required class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none">
+        </div>
+        
+        <div>
+            <label for="message" class="block font-semibold mb-2 text-lg">Partnership Message <span class="text-red-500">*</span></label>
+            <textarea id="message" name="Partnership Message" required rows="5" placeholder="Please describe your healthcare organization, partnership goals, technology needs, and how we can collaborate to enhance patient wellness and outcomes..." class="w-full p-3 text-lg rounded-lg border-2 border-gray-300 focus:border-green-500 focus:outline-none resize-vertical"></textarea>
+        </div>
+    </div>
+
+    <!-- Healthcare Focus Info -->
+    <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-lg mt-6 mb-6">
+        <div class="flex items-center">
+            <svg class="h-8 w-8 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            <div>
+                <p class="text-green-800 font-semibold text-lg mb-2">Healthcare Technology Integration</p>
+                <p class="text-green-700 mb-3">We specialize in wellness-focused software development, therapeutic app integrations, and health monitoring solutions designed to improve patient outcomes and support healthcare professionals.</p>
+                <a href="healthy-tech-vision.html" class="inline-flex items-center px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                    <span class="text-white">Learn About Our Health Vision</span>
+                    <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partnership Security Information -->
+    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-6">
+        <div class="flex items-center mb-3">
+            <svg class="h-5 w-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <h3 class="text-lg font-semibold text-gray-800">HIPAA Compliance & Security</h3>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-1">
+            <li>✓ Healthcare data protection standards</li>
+            <li>✓ Encrypted communications and secure development</li>
+            <li>✓ Compliance with healthcare regulations</li>
+            <li>✓ Professional medical technology partnerships</li>
+        </ul>
+    </div>
+
+    <!-- FormSubmit Configuration -->
+    <input type="hidden" name="_next" value="https://pixelparqour.net/healthcare-form.html#success">
+    <input type="hidden" name="_subject" value="Healthcare Partnership Inquiry">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit" class="w-full py-4 bg-green-600 text-white font-bold text-xl rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+        Submit Healthcare Partnership Request
+    </button>
+    
+    </form>
+
+    <!-- Success Message (Hidden by default) -->
+    <div id="success" class="hidden bg-green-50 border-l-4 border-green-400 p-4 rounded-lg mt-6">
+        <div class="flex items-center">
+            <svg class="h-5 w-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-green-800 font-semibold">Healthcare partnership inquiry submitted successfully! We'll be in touch soon.</span>
+        </div>
+    </div>
+
+    </main>
+    
+    <!-- Trust Indicators -->
+    <footer class="mt-12 bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center items-center space-x-8 mb-6">
+                    <div class="flex items-center">
+                        <svg class="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold">SSL Secured</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold">HIPAA Compliant</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-semibold">Insured Development</span>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 pt-6">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600">support@pixelparqour.net</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        function toggleMobileNav() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Show success message if redirected with success hash
+        if (window.location.hash === '#success') {
+            document.getElementById('success').classList.remove('hidden');
+            document.getElementById('healthcareForm').style.display = 'none';
+        }
+
+        // Form submission handling
+        document.getElementById('healthcareForm').addEventListener('submit', function(e) {
+            // Add any additional form validation here if needed
+        });
+    </script>
+</body>
+</html>
