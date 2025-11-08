@@ -75,9 +75,9 @@
     .desktop-navbar nav a,
     .navbar a,
     #mySidenav a {
-        font-size: 0.5em;
-        padding: 0.5em 1.2em;
-        margin-right: 0.1em;
+        font-size: 1.0em;
+        padding: 1.0em 2.4em;
+        margin-right: 0.2em;
     }
     
     .logo-img,
@@ -99,9 +99,9 @@
     .desktop-navbar nav a,
     .navbar a,
     #mySidenav a {
-        font-size: 0.6em;
-        padding: 0.6em 1.4em;
-        margin-right: 0.08em;
+        font-size: 1.2em;
+        padding: 1.2em 2.8em;
+        margin-right: 0.16em;
     }
     
     .logo-img,
@@ -123,9 +123,9 @@
     .desktop-navbar nav a,
     .navbar a,
     #mySidenav a {
-        font-size: 0.65em;
-        padding: 0.65em 1.6em;
-        margin-right: 0.08em;
+        font-size: 1.3em;
+        padding: 1.3em 3.2em;
+        margin-right: 0.16em;
     }
     
     .logo-img,
@@ -142,15 +142,15 @@
     .nav-inner {
         width: 90vw;
         max-width: 90vw;
-        padding: 0 0.25em;
+        padding: 0 0.5em;
     }
     
     .desktop-navbar nav a,
     .navbar a,
     #mySidenav a {
-        font-size: 0.55em;
-        padding: 0.5em 1.2em;
-        margin-right: 0.05em;
+        font-size: 1.1em;
+        padding: 1.0em 2.4em;
+        margin-right: 0.1em;
     }
     
     .logo-img,
@@ -694,6 +694,15 @@ main {
     color: #fff !important;
 }
 
+/* Green Button Override for Tailwind */
+.bg-green-600 {
+    background-color: #059669 !important;
+}
+
+.hover\:bg-green-700:hover {
+    background-color: #047857 !important;
+}
+
 /* Hero Image Styles */
 .hero-image-container {
     width: 100%;
@@ -1205,7 +1214,7 @@ header {
 
 /* Ensure proper spacing */
 .service-highlight + .service-highlight {
-    margin-top: 4rem;
+    margin-top: 0.75rem;
 }
 
 /* Custom icon animations */
