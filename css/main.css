@@ -765,10 +765,41 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Healthy Vision CTA Button (brighter + larger hover) */
+.healthy-vision-cta {
+    background-color: #34D399 !important; /* brighter green */
+    color: #000 !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 0.75rem !important;
+    transition: transform 0.22s cubic-bezier(.2,.9,.2,1), box-shadow 0.22s ease, background-color 0.18s ease !important;
+}
+.healthy-vision-cta:hover {
+    transform: scale(1.12) !important; /* larger on hover */
+    background-color: #10B981 !important; /* slightly deeper green on hover */
+    box-shadow: 0 12px 30px rgba(16,185,129,0.18) !important;
+}
+
 .back-button:hover {
     background-color: var(--secondary-green);
     transform: translateY(-2px) scale(1.5);
     font-size: 1.5em;
+}
+
+/* Healthy Vision CTA - brighter and larger hover effect */
+.healthy-vision-cta {
+    background-color: #68D391 !important; /* brighter mint green */
+    color: #000 !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 1.25rem !important;
+    border-radius: 0.6rem !important;
+    transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms ease, background-color 180ms ease;
+}
+.healthy-vision-cta:hover,
+.healthy-vision-cta:focus {
+    background-color: #48BB78 !important; /* slightly deeper on hover */
+    transform: scale(1.12) !important; /* larger enlargement */
+    box-shadow: 0 14px 40px rgba(72,187,120,0.18) !important;
 }
 
 /* Navigation Styles */
