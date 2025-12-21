@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> <!-- Google tag (gtag.js) -->
+<head>
+    <script>
+        if (location.hostname === "pixelparqour.net" || location.hostname === "www.pixelparqour.net") {
+            location.replace("https://pixelparqour.com" + location.pathname + location.search + location.hash);
+        }
+    </script> <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNGRLSS5SE"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-TNGRLSS5SE'); </script>
     <meta charset="UTF-8">
