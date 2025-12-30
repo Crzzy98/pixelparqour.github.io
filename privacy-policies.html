@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Privacy Policies - Pixel Parqour</title>
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Only make the page subtitle (description) and the policy header white */
+    .privacy-description, .policy-header { color: #ffffff !important; }
+
+    /* Do not globally override other text colors — leave rest to site stylesheet */
+  </style>
+  <style>
+  [data-custom-class='body'], [data-custom-class='body'] * {
+          background: transparent !important;
+        }
+[data-custom-class='title'], [data-custom-class='title'] * {
+          font-family: Arial !important;
+font-size: 26px !important;
+color: #000000 !important;
+        }
+[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
+          font-family: Arial !important;
+color: #595959 !important;
+font-size: 14px !important;
+        }
+[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
+          font-family: Arial !important;
+font-size: 19px !important;
+color: #000000 !important;
+        }
+[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
+          font-family: Arial !important;
+font-size: 17px !important;
+color: #000000 !important;
+        }
+[data-custom-class='body_text'], [data-custom-class='body_text'] * {
+          color: #595959 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+        }
+[data-custom-class='link'], [data-custom-class='link'] * {
+          color: #3030F1 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+word-break: break-word !important;
+        }
+
+  details > summary { cursor: pointer; font-weight: bold; padding: 0.5rem 0; }
+  details { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
+  .container { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+  .back-link { margin-top: 1rem; display:inline-block }
+  </style>
+  <style>
+    /* Make general page content green (site primary) except the subtitle description and the policy header which stay white */
+    main :is(p, li, span, div, h3, summary, a, ul, ol):not(.privacy-description):not(.policy-header) {
+      color: var(--primary-green) !important;
+    }
+  </style>
+  <style>
+    /* NUday content: force white for the container and all descendants to override other rules */
+    .nuday-content, .nuday-content * {
+      color: #ffffff !important;
+    }
+  </style>
+  <style>
+    /* ID-level override to ensure nothing inside the NUday details block is colored by other selectors */
+    #nudayDetails, #nudayDetails * { color: #ffffff !important; }
+  </style>
+  <style>
+    /* Title-level override to ensure page title is white */
+    #appPrivacyTitle { color: #ffffff !important; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <div class="custom-cursor" id="customCursor"></div>
+  <div id="pixelChatContainer" class="pixel-chat-container">
+    <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+    <div id="pixelChatSquare" class="pixel-chat-square"></div>
+  </div>
+
+  <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
+    <section class="max-w-4xl mx-auto text-left">
+      <h1 id="appPrivacyTitle" data-custom-class="title">App Privacy Policies</h1>
+      <p data-custom-class="subtitle privacy-description">Privacy policies for apps included in the Healthy Tech suite. Expand an app to view its policy.</p>
+
+      <details id="nudayDetails" open class="mb-4">
+        <summary class="text-lg">NUday — Privacy Policy</summary>
+        <div data-custom-class="body" style="margin-top:1rem;">
+          <div><strong><span style="font-size: 26px;"><span data-custom-class="title"><h2 class="policy-header">PRIVACY POLICY</h2></span></span></strong></div>
+          <div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span data-custom-class="subtitle">Last updated December 29, 2025</span></span></strong></span></div>
+          <div class="nuday-content" style="margin-top:1rem;" data-custom-class="body_text">
+            <p>This Privacy Notice for Pixel Parqour LLC (doing business as Pixel Parqour) ("we","us", or "our") describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services, including when you download and use our mobile application NUday, or any other application of ours that links to this Privacy Notice.</p>
+
+            <p>By using NUday you agree to the practices described in this policy. If you have questions, contact <a href="mailto:support@pixelparqour.net" class="text-green-500">support@pixelparqour.net</a>.</p>
+
+            <h3 data-custom-class="heading_2">Summary of Key Points</h3>
+            <ul>
+              <li data-custom-class="body_text">We collect information you provide and information from the device as required to operate NUday.</li>
+              <li data-custom-class="body_text">We do not process sensitive personal information.</li>
+              <li data-custom-class="body_text">We use information to provide, improve, and secure the app and to communicate with you.</li>
+            </ul>
+
+            <p data-custom-class="body_text">The full privacy notice used across our apps is available in the main company Privacy Policy. Contact us if you need a copy specific to NUday.</p>
+          </div>
+        </div>
+      </details>
+
+      <p class="mt-4">
+        <a class="back-link" href="healthy-tech-vision.html">← Back to Healthy Vision</a>
+      </p>
+    </section>
+  </main>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cursor = document.getElementById('customCursor');
+      if (cursor) {
+        document.addEventListener('mousemove', function (e) {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+        });
+        document.addEventListener('mouseleave', function () { cursor.style.display = 'none'; });
+        document.addEventListener('mouseenter', function () { cursor.style.display = 'block'; });
+      }
+
+      // Pixel Chat Square behavior (same pattern used across site)
+      const chatContainer = document.getElementById('pixelChatContainer');
+      const chatSquare = document.getElementById('pixelChatSquare');
+      const chatHoverZone = document.getElementById('chatIconHover');
+      let isSquareVisible = false;
+
+      function showChatSquare() {
+        if (!isSquareVisible && chatSquare) { chatSquare.classList.add('show'); isSquareVisible = true; }
+      }
+      function hideChatSquare() {
+        if (isSquareVisible && chatSquare) { chatSquare.classList.remove('show'); isSquareVisible = false; }
+      }
+
+      function positionHoverZone() {
+        const bpChatIcon = document.querySelector('#bp-web-widget-icon, [data-testid="widget-icon"], .bpw-floating-button, .bp-widget-icon');
+        if (bpChatIcon && chatHoverZone) {
+          const rect = bpChatIcon.getBoundingClientRect();
+          chatHoverZone.style.width = (rect.width * 1.2) + 'px';
+          chatHoverZone.style.height = (rect.height * 1.2) + 'px';
+          chatHoverZone.style.bottom = '20px';
+          chatHoverZone.style.right = '20px';
+        } else {
+          setTimeout(positionHoverZone, 1000);
+        }
+      }
+
+      setTimeout(positionHoverZone, 1000);
+      setTimeout(positionHoverZone, 3000);
+
+      if (chatHoverZone) {
+        chatHoverZone.addEventListener('mouseenter', showChatSquare);
+        chatHoverZone.addEventListener('click', function () { isSquareVisible ? hideChatSquare() : showChatSquare(); });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (isSquareVisible && chatContainer && !chatContainer.contains(e.target) && !chatHoverZone.contains(e.target)) {
+          hideChatSquare();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
