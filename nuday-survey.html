@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NUday Beta Survey — Pixel Parqour</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Dynamic survey styles */
+      .step { display: none; }
+      .step.active { display: block; animation: fadeIn 0.4s ease; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      .question-container { background: var(--section-bg); border: 1px solid rgba(127,221,127,0.1); border-radius: 16px; padding: 2.5rem 2rem; min-height: 340px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+      .question-title { font-size: 2rem; color: var(--primary-green); margin-bottom: 1rem; }
+      .question-desc { font-size: 1.25rem; color: #ccc; margin-bottom: 1.5rem; }
+      .option-group { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; width: 100%; max-width: 480px; }
+      .option-label { display: flex; align-items: center; gap: 0.75rem; font-size: 1.125rem; padding: 0.75rem 1.25rem; background: var(--card-bg); border: 1px solid rgba(127,221,127,0.08); border-radius: 8px; cursor: pointer; transition: all 0.2s ease; width: 100%; justify-content: center; }
+      .option-label:hover { border-color: var(--primary-green); transform: scale(1.02); }
+      .option-label input { accent-color: var(--primary-green); width: 18px; height: 18px; }
+      .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 560px; }
+      .checkbox-label { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; padding: 0.5rem 1rem; background: var(--card-bg); border: 1px solid rgba(127,221,127,0.08); border-radius: 6px; cursor: pointer; transition: all 0.2s ease; }
+      .checkbox-label:hover { border-color: var(--primary-green); }
+      .checkbox-label input { accent-color: var(--primary-green); }
+      .input-field { background: var(--card-bg); color: #fff; border: 1px solid rgba(127,221,127,0.1); padding: 0.75rem 1rem; border-radius: 8px; font-size: 1rem; width: 100%; max-width: 480px; text-align: center; }
+      .input-field:focus { outline: none; border-color: var(--primary-green); box-shadow: 0 0 12px rgba(127,221,127,0.15); }
+      .nav-btn { font-family: 'Karnivore-Light', 'Inter', sans-serif; font-size: 1.125rem; padding: 0.875rem 2.5rem; border-radius: 10px; font-weight: 700; transition: all 0.25s cubic-bezier(.2,.8,.2,1); border: none; cursor: pointer; }
+      .btn-continue { background: var(--primary-green); color: #000; }
+      .btn-continue:hover { background: #6BC26B; transform: scale(1.06); box-shadow: 0 8px 24px rgba(127,221,127,0.2); }
+      .btn-back { background: transparent; color: var(--primary-green); border: 2px solid var(--primary-green); margin-right: 1rem; }
+      .btn-back:hover { background: rgba(127,221,127,0.1); }
+      .btn-submit { background: linear-gradient(135deg, #34D399, #059669); color: #fff; }
+      .btn-submit:hover { transform: scale(1.06); box-shadow: 0 8px 24px rgba(52,211,153,0.3); }
+      .nav-btn:disabled { background: #555; color: #888; cursor: not-allowed; opacity: 0.6; transform: none !important; box-shadow: none !important; }
+      .success-message { background: linear-gradient(135deg, #34D399, #059669); color: #fff; padding: 2rem; border-radius: 16px; text-align: center; animation: fadeIn 0.5s ease; }
+      .success-message h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+      .success-message p { font-size: 1.125rem; opacity: 0.9; }
+      .progress-bar { height: 6px; background: var(--card-bg); border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+      .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary-green), #34D399); transition: width 0.4s ease; }
+      .step-indicator { font-size: 0.875rem; color: #888; margin-bottom: 0.5rem; }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <div class="custom-cursor" id="customCursor"></div>
+    <div id="pixelChatContainer" class="pixel-chat-container">
+      <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+      <div id="pixelChatSquare" class="pixel-chat-square"></div>
+    </div>
+
+    <header class="py-6">
+      <div class="max-w-4xl mx-auto px-4">
+        <a href="index.html" class="text-xl font-bold karnivore-header">Pixel Parqour</a>
+      </div>
+    </header>
+
+    <main class="mx-auto mt-4 p-6 bg-white rounded-lg shadow-lg flex-grow" style="width: 90vw; max-width: 720px;">
+      <h1 class="text-center karnivore-header" style="font-size: 2.25rem; color: var(--primary-green); margin-bottom: 0.5rem;">NUday Feedback Survey</h1>
+      <p class="text-center" style="color: #aaa; margin-bottom: 1.5rem;">Your feedback helps us improve — thank you!</p>
+
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 16.66%;"></div></div>
+      <p class="step-indicator text-center" id="stepIndicator">Question 1 of 6</p>
+
+      <form id="nudayFullForm" action="https://formsubmit.co/support@pixelparqour.com" method="POST">
+        <input type="hidden" name="_subject" value="NUday User Feedback Survey">
+        <input type="hidden" name="_next" value="nuday-survey.html?success=1">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Step 1: Overall Experience -->
+        <div class="step active" data-step="1">
+          <div class="question-container">
+            <h2 class="question-title">Overall Experience</h2>
+            <p class="question-desc">How would you rate your overall experience with NUday?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Overall Experience" value="1" required> ⭐ Poor</label>
+              <label class="option-label"><input type="radio" name="Overall Experience" value="2"> ⭐⭐ Fair</label>
+              <label class="option-label"><input type="radio" name="Overall Experience" value="3"> ⭐⭐⭐ Good</label>
+              <label class="option-label"><input type="radio" name="Overall Experience" value="4"> ⭐⭐⭐⭐ Very Good</label>
+              <label class="option-label"><input type="radio" name="Overall Experience" value="5"> ⭐⭐⭐⭐⭐ Excellent</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Ambient Button Sounds -->
+        <div class="step" data-step="2">
+          <div class="question-container">
+            <h2 class="question-title">Ambient Button Sounds</h2>
+            <p class="question-desc">Did you notice the <span style="color: var(--primary-green); font-weight: bold;">Ambient Sounds</span> when tapping buttons?(wind, fire crackling, etc)</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Ambient Notice" value="Noticed Right Away" required> Yes, right away</label>
+              <label class="option-label"><input type="radio" name="Ambient Notice" value="Noticed After A While"> Yes, after using for a while</label>
+              <label class="option-label"><input type="radio" name="Ambient Notice" value="Did Not Notice"> No, I didn't notice</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Sound Enjoyment -->
+        <div class="step" data-step="3">
+          <div class="question-container">
+            <h2 class="question-title">Sound Enjoyment & Suggestions</h2>
+            <p class="question-desc">Did you enjoy the ambient button sounds?</p>
+            <div class="option-group" style="margin-bottom: 1.5rem;">
+              <label class="option-label"><input type="radio" name="Sound Enjoyment" value="Yes I enjoyed them"> Yes, I enjoyed them</label>
+              <label class="option-label"><input type="radio" name="Sound Enjoyment" value="They were okay"> They were okay</label>
+              <label class="option-label"><input type="radio" name="Sound Enjoyment" value="No I didn't enjoy"> No, I didn't enjoy them</label>
+              <label class="option-label"><input type="radio" name="Sound Enjoyment" value="Prefer no sounds"> I'd prefer no sounds</label>
+            </div>
+            <p class="question-desc" style="font-size: 1rem; margin-bottom: 0.75rem;">What types of sounds would you like added?</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="Sound Types[]" value="Nature sounds"> Nature</label>
+              <label class="checkbox-label"><input type="checkbox" name="Sound Types[]" value="Soft chimes"> Chimes</label>
+              <label class="checkbox-label"><input type="checkbox" name="Sound Types[]" value="Mechanical clicks"> Clicks</label>
+              <label class="checkbox-label"><input type="checkbox" name="Sound Types[]" value="Futuristic sounds"> Sci-fi</label>
+              <label class="checkbox-label"><input type="checkbox" name="Sound Types[]" value="Musical notes"> Musical</label>
+            </div>
+            <input type="text" name="Sound Other" class="input-field mt-4" placeholder="Other sounds...">
+          </div>
+        </div>
+
+        <!-- Step 4: Dynamic Backgrounds -->
+        <div class="step" data-step="4">
+          <div class="question-container">
+            <h2 class="question-title">Dynamic Backgrounds</h2>
+            <p class="question-desc">Did you enjoy the <span style="color: var(--primary-green); font-weight: bold;">Animated Backgrounds</span> in the app?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Backgrounds" value="Yes engaging" required> Yes, more engaging</label>
+              <label class="option-label"><input type="radio" name="Backgrounds" value="Nice but not essential"> Nice but not essential</label>
+              <label class="option-label"><input type="radio" name="Backgrounds" value="Distracting"> No, distracting</label>
+              <label class="option-label"><input type="radio" name="Backgrounds" value="Did not notice"> I didn't notice</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Theme Preference -->
+        <div class="step" data-step="5">
+          <div class="question-container">
+            <h2 class="question-title">Background Theme Preference</h2>
+            <p class="question-desc">Which background theme do you prefer?</p>
+            <div class="option-group" style="margin-bottom: 1.5rem;">
+              <label class="option-label"><input type="radio" name="Theme Preference" value="Dark"> 🌙 Dark theme</label>
+              <label class="option-label"><input type="radio" name="Theme Preference" value="Light"> ☀️ Light theme</label>
+              <label class="option-label"><input type="radio" name="Theme Preference" value="Both"> 🔄 Both</label>
+              <label class="option-label"><input type="radio" name="Theme Preference" value="No preference"> 🚫 No preference</label>
+            </div>
+            <p class="question-desc" style="font-size: 1rem;">Favorite background style? (optional)</p>
+            <input type="text" name="Specific Background" class="input-field" placeholder="e.g. Starry night, Gradient waves...">
+          </div>
+        </div>
+
+        <!-- Step 6: Additional Feedback -->
+        <div class="step" data-step="6">
+          <div class="question-container">
+            <h2 class="question-title">Any Other Feedback?</h2>
+            <p class="question-desc">Anything else you'd like to share about NUday?</p>
+            <textarea name="Additional Feedback" rows="5" class="input-field" style="max-width: 520px; text-align: left;" placeholder="Your thoughts, suggestions, or ideas..."></textarea>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-center mt-6" id="navButtons">
+          <button type="button" class="nav-btn btn-back" id="btnBack" style="display: none;">Back</button>
+          <button type="button" class="nav-btn btn-continue" id="btnContinue">Continue</button>
+          <button type="submit" class="nav-btn btn-submit" id="btnSubmit" style="display: none;">Submit Survey</button>
+        </div>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display: none;">
+        <h2>🎉 Thank You!</h2>
+        <p>Your feedback has been submitted successfully.</p>
+        <p style="margin-top: 1rem;"><a href="surveys.html" style="color: #fff; text-decoration: underline;">Return to surveys</a></p>
+      </div>
+
+      <p class="text-center mt-4" id="backLink"><a href="surveys.html" style="color: var(--primary-green); font-size: 0.875rem;">← Back to surveys</a></p>
+    </main>
+
+    <script>
+      // Dynamic multi-step survey logic
+      const steps = document.querySelectorAll('.step');
+      const totalSteps = steps.length;
+      let currentStep = 1;
+
+      const btnBack = document.getElementById('btnBack');
+      const btnContinue = document.getElementById('btnContinue');
+      const btnSubmit = document.getElementById('btnSubmit');
+      const progressFill = document.getElementById('progressFill');
+      const stepIndicator = document.getElementById('stepIndicator');
+      const form = document.getElementById('nudayFullForm');
+      const successMessage = document.getElementById('successMessage');
+      const backLink = document.getElementById('backLink');
+
+      // Check if returning from successful submission
+      if (window.location.search.includes('success=1')) {
+        form.style.display = 'none';
+        document.querySelector('.progress-bar').style.display = 'none';
+        stepIndicator.style.display = 'none';
+        backLink.style.display = 'none';
+        successMessage.style.display = 'block';
+      }
+
+      // Validation: check if current step has a required selection
+      function isStepValid(stepNum) {
+        const stepEl = document.querySelector(`[data-step="${stepNum}"]`);
+        const radios = stepEl.querySelectorAll('input[type="radio"][required]');
+        if (radios.length === 0) return true; // No required radios, allow continue
+        const radioName = radios[0].name;
+        return stepEl.querySelector(`input[name="${radioName}"]:checked`) !== null;
+      }
+
+      function updateContinueState() {
+        if (currentStep < totalSteps) {
+          btnContinue.disabled = !isStepValid(currentStep);
+        }
+      }
+
+      function showStep(n) {
+        steps.forEach(s => s.classList.remove('active'));
+        document.querySelector(`[data-step="${n}"]`).classList.add('active');
+        progressFill.style.width = ((n / totalSteps) * 100) + '%';
+        stepIndicator.textContent = `Question ${n} of ${totalSteps}`;
+        btnBack.style.display = n > 1 ? 'inline-block' : 'none';
+        btnContinue.style.display = n < totalSteps ? 'inline-block' : 'none';
+        btnSubmit.style.display = n === totalSteps ? 'inline-block' : 'none';
+        updateContinueState();
+      }
+
+      // Listen for input changes to enable Continue
+      form.addEventListener('change', updateContinueState);
+
+      btnContinue.addEventListener('click', () => {
+        if (!btnContinue.disabled && currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+      btnBack.addEventListener('click', () => { if (currentStep > 1) { currentStep--; showStep(currentStep); } });
+
+      // Initialize button state
+      updateContinueState();
+
+      // Cursor
+      document.addEventListener('mousemove', e => {
+        const c = document.getElementById('customCursor');
+        if (c) { c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px'; }
+      });
+    </script>
+  </body>
+</html>

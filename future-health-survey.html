@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Future Health Software Survey — Pixel Parqour</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Dynamic survey styles */
+      .step { display: none; }
+      .step.active { display: block; animation: fadeIn 0.4s ease; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      .question-container { background: var(--section-bg); border: 1px solid rgba(127,221,127,0.1); border-radius: 16px; padding: 2.5rem 2rem; min-height: 340px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+      .question-title { font-size: 2rem; color: var(--primary-green); margin-bottom: 1rem; }
+      .question-desc { font-size: 1.25rem; color: #ccc; margin-bottom: 1.5rem; }
+      .option-group { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; width: 100%; max-width: 520px; }
+      .option-label { display: flex; align-items: center; gap: 0.75rem; font-size: 1.125rem; padding: 0.75rem 1.25rem; background: var(--card-bg); border: 1px solid rgba(127,221,127,0.08); border-radius: 8px; cursor: pointer; transition: all 0.2s ease; width: 100%; justify-content: center; }
+      .option-label:hover { border-color: var(--primary-green); transform: scale(1.02); }
+      .option-label input { accent-color: var(--primary-green); width: 18px; height: 18px; }
+      .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 600px; }
+      .checkbox-label { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; padding: 0.5rem 1rem; background: var(--card-bg); border: 1px solid rgba(127,221,127,0.08); border-radius: 6px; cursor: pointer; transition: all 0.2s ease; }
+      .checkbox-label:hover { border-color: var(--primary-green); }
+      .checkbox-label input { accent-color: var(--primary-green); }
+      .input-field { background: var(--card-bg); color: #fff; border: 1px solid rgba(127,221,127,0.1); padding: 0.75rem 1rem; border-radius: 8px; font-size: 1rem; width: 100%; max-width: 520px; text-align: center; }
+      .input-field:focus { outline: none; border-color: var(--primary-green); box-shadow: 0 0 12px rgba(127,221,127,0.15); }
+      .nav-btn { font-family: 'Karnivore-Light', 'Inter', sans-serif; font-size: 1.125rem; padding: 0.875rem 2.5rem; border-radius: 10px; font-weight: 700; transition: all 0.25s cubic-bezier(.2,.8,.2,1); border: none; cursor: pointer; }
+      .btn-continue { background: var(--primary-green); color: #000; }
+      .btn-continue:hover { background: #6BC26B; transform: scale(1.06); box-shadow: 0 8px 24px rgba(127,221,127,0.2); }
+      .btn-back { background: transparent; color: var(--primary-green); border: 2px solid var(--primary-green); margin-right: 1rem; }
+      .btn-back:hover { background: rgba(127,221,127,0.1); }
+      .btn-submit { background: linear-gradient(135deg, #34D399, #059669); color: #fff; }
+      .btn-submit:hover { transform: scale(1.06); box-shadow: 0 8px 24px rgba(52,211,153,0.3); }
+      .nav-btn:disabled { background: #555; color: #888; cursor: not-allowed; opacity: 0.6; transform: none !important; box-shadow: none !important; }
+      .success-message { background: linear-gradient(135deg, #34D399, #059669); color: #fff; padding: 2rem; border-radius: 16px; text-align: center; animation: fadeIn 0.5s ease; }
+      .success-message h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+      .success-message p { font-size: 1.125rem; opacity: 0.9; }
+      .progress-bar { height: 6px; background: var(--card-bg); border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+      .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary-green), #34D399); transition: width 0.4s ease; }
+      .step-indicator { font-size: 0.875rem; color: #888; margin-bottom: 0.5rem; }
+      .highlight { color: var(--primary-green); font-weight: bold; }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <div class="custom-cursor" id="customCursor"></div>
+    <div id="pixelChatContainer" class="pixel-chat-container">
+      <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+      <div id="pixelChatSquare" class="pixel-chat-square"></div>
+    </div>
+
+    <header class="py-6">
+      <div class="max-w-4xl mx-auto px-4">
+        <a href="index.html" class="text-xl font-bold karnivore-header">Pixel Parqour</a>
+      </div>
+    </header>
+
+    <main class="mx-auto mt-4 p-6 bg-white rounded-lg shadow-lg flex-grow" style="width: 90vw; max-width: 780px;">
+      <h1 class="text-center karnivore-header" style="font-size: 2.25rem; color: var(--primary-green); margin-bottom: 0.5rem;">Future Health Software Survey</h1>
+      <p class="text-center" style="color: #aaa; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">Help shape the next generation of digital health assistants. This survey takes approximately 5–7 minutes.</p>
+
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 10%;"></div></div>
+      <p class="step-indicator text-center" id="stepIndicator">Question 1 of 10</p>
+
+      <form id="futureHealthForm" action="https://formsubmit.co/support@pixelparqour.com" method="POST">
+        <input type="hidden" name="_subject" value="Future Health Software Survey Response">
+        <input type="hidden" name="_next" value="future-health-survey.html?success=1">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Step 1: Current App Usage -->
+        <div class="step active" data-step="1">
+          <div class="question-container">
+            <h2 class="question-title">Current App Usage</h2>
+            <p class="question-desc">Which types of <span class="highlight">Health & Wellness Apps</span> do you currently use?</p>
+            <p style="font-size: 0.875rem; color: #888; margin-bottom: 1rem;">(Select all that apply)</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="Meditation/Mindfulness" required> Meditation / Mindfulness</label>
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="Mental Health/Therapy"> Mental Health / Therapy</label>
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="Habit/Productivity"> Habit / Productivity</label>
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="Sleep/Breathing"> Sleep / Breathing</label>
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="Fitness/Wearable"> Fitness / Wearable</label>
+              <label class="checkbox-label"><input type="checkbox" name="App Types[]" value="None"> None of the above</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Usage Frequency -->
+        <div class="step" data-step="2">
+          <div class="question-container">
+            <h2 class="question-title">Usage Frequency</h2>
+            <p class="question-desc">How often do you use <span class="highlight">Wellness or Mental Health Apps</span>?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Usage Frequency" value="Multiple times per day" required> Multiple times per day</label>
+              <label class="option-label"><input type="radio" name="Usage Frequency" value="Once per day"> Once per day</label>
+              <label class="option-label"><input type="radio" name="Usage Frequency" value="A few times per week"> A few times per week</label>
+              <label class="option-label"><input type="radio" name="Usage Frequency" value="A few times per month"> A few times per month</label>
+              <label class="option-label"><input type="radio" name="Usage Frequency" value="Rarely"> Rarely</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Primary Goals -->
+        <div class="step" data-step="3">
+          <div class="question-container">
+            <h2 class="question-title">Goals & Motivations</h2>
+            <p class="question-desc">What are your <span class="highlight">Primary Reasons</span> for using these apps?</p>
+            <p style="font-size: 0.875rem; color: #888; margin-bottom: 1rem;">(Select up to 3)</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Reduce stress/anxiety"> Reduce stress / anxiety</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Improve focus"> Improve focus</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Build healthier habits"> Build healthier habits</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Improve sleep"> Improve sleep</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Emotional support"> Emotional support</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Physical reminders"> Physical reminders</label>
+              <label class="checkbox-label"><input type="checkbox" name="Goals[]" value="Breathing/meditation"> Breathing / meditation</label>
+            </div>
+            <input type="text" name="Goals Other" class="input-field mt-4" placeholder="Other goals...">
+          </div>
+        </div>
+
+        <!-- Step 4: Current App Effectiveness -->
+        <div class="step" data-step="4">
+          <div class="question-container">
+            <h2 class="question-title">App Effectiveness</h2>
+            <p class="question-desc">How well do your <span class="highlight">Current Apps</span> support your goals?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="App Effectiveness" value="Extremely well" required> ⭐⭐⭐⭐⭐ Extremely well</label>
+              <label class="option-label"><input type="radio" name="App Effectiveness" value="Moderately well"> ⭐⭐⭐⭐ Moderately well</label>
+              <label class="option-label"><input type="radio" name="App Effectiveness" value="Slightly well"> ⭐⭐⭐ Slightly well</label>
+              <label class="option-label"><input type="radio" name="App Effectiveness" value="Not well at all"> ⭐ Not well at all</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Frustrations -->
+        <div class="step" data-step="5">
+          <div class="question-container">
+            <h2 class="question-title">Current Frustrations</h2>
+            <p class="question-desc">What <span class="highlight">Frustrates You Most</span> about your current wellness apps?</p>
+            <p style="font-size: 0.875rem; color: #888; margin-bottom: 1rem;">(Select all that apply)</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Repetitive notifications"> Repetitive notifications</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Lack of personalization"> Lack of personalization</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Too many steps"> Too many steps</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Feels disconnected"> Feels disconnected</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Generic content"> Generic content</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Too much manual input"> Too much manual input</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Too expensive"> Too expensive</label>
+              <label class="checkbox-label"><input type="checkbox" name="Frustrations[]" value="Privacy concerns"> Privacy concerns</label>
+            </div>
+            <input type="text" name="Frustrations Other" class="input-field mt-4" placeholder="Other frustrations...">
+          </div>
+        </div>
+
+        <!-- Step 6: Missing Features -->
+        <div class="step" data-step="6">
+          <div class="question-container">
+            <h2 class="question-title">Missing Features</h2>
+            <p class="question-desc">What features do you wish your <span class="highlight">Current Apps Had</span>, but don't?</p>
+            <textarea name="Missing Features" rows="4" class="input-field" style="max-width: 520px; text-align: left;" placeholder="Describe features you'd love to see..."></textarea>
+          </div>
+        </div>
+
+        <!-- Step 7: Adaptive Assistant Value -->
+        <div class="step" data-step="7">
+          <div class="question-container">
+            <h2 class="question-title">Adaptive Assistance</h2>
+            <p class="question-desc">Would you find value in an assistant that <span class="highlight">Adapts Based On</span> how you use your phone?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Adaptive Value" value="Very valuable" required> 🌟 Very valuable</label>
+              <label class="option-label"><input type="radio" name="Adaptive Value" value="Somewhat valuable"> 👍 Somewhat valuable</label>
+              <label class="option-label"><input type="radio" name="Adaptive Value" value="Neutral"> 😐 Neutral</label>
+              <label class="option-label"><input type="radio" name="Adaptive Value" value="Not valuable"> 👎 Not valuable</label>
+              <label class="option-label"><input type="radio" name="Adaptive Value" value="Uncomfortable"> ⚠️ Uncomfortable with this</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 8: Contextual Triggers -->
+        <div class="step" data-step="8">
+          <div class="question-container">
+            <h2 class="question-title">Contextual Triggers</h2>
+            <p class="question-desc">Which <span class="highlight">Contextual Triggers</span> would you want an app to respond to?</p>
+            <p style="font-size: 0.875rem; color: #888; margin-bottom: 1rem;">(Select all that apply)</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="Extended screen time"> Extended screen time</label>
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="Repetitive app usage"> Repetitive app usage</label>
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="Late-night usage"> Late-night usage</label>
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="Missed breaks"> Missed breaks during work</label>
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="High-stress patterns"> High-stress patterns</label>
+              <label class="checkbox-label"><input type="checkbox" name="Triggers[]" value="None"> None of the above</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 9: Avatar Preference -->
+        <div class="step" data-step="9">
+          <div class="question-container">
+            <h2 class="question-title">Interface Preference</h2>
+            <p class="question-desc">How do you feel about a <span class="highlight">Character or Avatar</span> delivering wellness prompts?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Avatar Preference" value="Strongly prefer" required> 💚 Strongly prefer it</label>
+              <label class="option-label"><input type="radio" name="Avatar Preference" value="Somewhat like"> 👍 Somewhat like it</label>
+              <label class="option-label"><input type="radio" name="Avatar Preference" value="Neutral"> 😐 Neutral</label>
+              <label class="option-label"><input type="radio" name="Avatar Preference" value="Prefer text only"> 📝 Prefer text only</label>
+              <label class="option-label"><input type="radio" name="Avatar Preference" value="Dislike avatars"> ❌ Dislike avatars entirely</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 10: Likelihood to Try & Final Thoughts -->
+        <div class="step" data-step="10">
+          <div class="question-container">
+            <h2 class="question-title">Final Thoughts</h2>
+            <p class="question-desc">How likely would you be to try a new <span class="highlight">AI-Based Health Assistant</span>?</p>
+            <div class="option-group" style="margin-bottom: 1.5rem;">
+              <label class="option-label"><input type="radio" name="Likelihood" value="Very likely" required> 🚀 Very likely</label>
+              <label class="option-label"><input type="radio" name="Likelihood" value="Likely"> 👍 Likely</label>
+              <label class="option-label"><input type="radio" name="Likelihood" value="Neutral"> 😐 Neutral</label>
+              <label class="option-label"><input type="radio" name="Likelihood" value="Unlikely"> 👎 Unlikely</label>
+              <label class="option-label"><input type="radio" name="Likelihood" value="Very unlikely"> ❌ Very unlikely</label>
+            </div>
+            <p class="question-desc" style="font-size: 1rem;">If you could design the perfect digital health assistant, what would it do differently?</p>
+            <textarea name="Perfect Assistant" rows="4" class="input-field" style="max-width: 520px; text-align: left;" placeholder="Your vision for the ideal health assistant..."></textarea>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-center mt-6" id="navButtons">
+          <button type="button" class="nav-btn btn-back" id="btnBack" style="display: none;">Back</button>
+          <button type="button" class="nav-btn btn-continue" id="btnContinue">Continue</button>
+          <button type="submit" class="nav-btn btn-submit" id="btnSubmit" style="display: none;">Submit Survey</button>
+        </div>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display: none;">
+        <h2>🎉 Thank You!</h2>
+        <p>Your feedback has been submitted successfully.</p>
+        <p style="margin-top: 0.5rem; font-size: 1rem;">Your insights will help shape the future of digital health.</p>
+        <p style="margin-top: 1rem;"><a href="surveys.html" style="color: #fff; text-decoration: underline;">Return to surveys</a></p>
+      </div>
+
+      <p class="text-center mt-4" id="backLink"><a href="surveys.html" style="color: var(--primary-green); font-size: 0.875rem;">← Back to surveys</a></p>
+    </main>
+
+    <script>
+      // Dynamic multi-step survey logic
+      const steps = document.querySelectorAll('.step');
+      const totalSteps = steps.length;
+      let currentStep = 1;
+
+      const btnBack = document.getElementById('btnBack');
+      const btnContinue = document.getElementById('btnContinue');
+      const btnSubmit = document.getElementById('btnSubmit');
+      const progressFill = document.getElementById('progressFill');
+      const stepIndicator = document.getElementById('stepIndicator');
+      const form = document.getElementById('futureHealthForm');
+      const successMessage = document.getElementById('successMessage');
+      const backLink = document.getElementById('backLink');
+
+      // Check if returning from successful submission
+      if (window.location.search.includes('success=1')) {
+        form.style.display = 'none';
+        document.querySelector('.progress-bar').style.display = 'none';
+        stepIndicator.style.display = 'none';
+        backLink.style.display = 'none';
+        successMessage.style.display = 'block';
+      }
+
+      // Validation: check if current step has required inputs
+      function isStepValid(stepNum) {
+        const stepEl = document.querySelector(`[data-step="${stepNum}"]`);
+        
+        // Check for required radio buttons
+        const radios = stepEl.querySelectorAll('input[type="radio"][required]');
+        if (radios.length > 0) {
+          const radioName = radios[0].name;
+          if (!stepEl.querySelector(`input[name="${radioName}"]:checked`)) return false;
+        }
+        
+        // Check for required checkboxes (at least one must be checked)
+        const checkboxes = stepEl.querySelectorAll('input[type="checkbox"][required]');
+        if (checkboxes.length > 0) {
+          const checkboxName = checkboxes[0].name;
+          if (!stepEl.querySelector(`input[name="${checkboxName}"]:checked`)) return false;
+        }
+        
+        return true;
+      }
+
+      function updateContinueState() {
+        if (currentStep < totalSteps) {
+          btnContinue.disabled = !isStepValid(currentStep);
+        }
+      }
+
+      function showStep(n) {
+        steps.forEach(s => s.classList.remove('active'));
+        document.querySelector(`[data-step="${n}"]`).classList.add('active');
+        progressFill.style.width = ((n / totalSteps) * 100) + '%';
+        stepIndicator.textContent = `Question ${n} of ${totalSteps}`;
+        btnBack.style.display = n > 1 ? 'inline-block' : 'none';
+        btnContinue.style.display = n < totalSteps ? 'inline-block' : 'none';
+        btnSubmit.style.display = n === totalSteps ? 'inline-block' : 'none';
+        updateContinueState();
+      }
+
+      // Listen for input changes to enable Continue
+      form.addEventListener('change', updateContinueState);
+
+      btnContinue.addEventListener('click', () => {
+        if (!btnContinue.disabled && currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+      btnBack.addEventListener('click', () => { if (currentStep > 1) { currentStep--; showStep(currentStep); } });
+
+      // Initialize button state
+      updateContinueState();
+
+      // Cursor
+      document.addEventListener('mousemove', e => {
+        const c = document.getElementById('customCursor');
+        if (c) { c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px'; }
+      });
+    </script>
+  </body>
+</html>

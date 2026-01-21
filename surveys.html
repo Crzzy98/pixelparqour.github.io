@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surveys - Pixel Parqour</title>
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Tailwind-style utility to apply the Karnivore custom font declared in css/main.css */
+      .font-karnivore { font-family: 'Karnivore-Light', 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <div class="custom-cursor" id="customCursor"></div>
+  <div id="pixelChatContainer" class="pixel-chat-container">
+    <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+    <div id="pixelChatSquare" class="pixel-chat-square"></div>
+  </div>
+
+  <nav class="navbar" style="background: #222; margin-bottom: 12px; position: static; width: 100vw;">
+    <div class="nav-inner" style="width: 85vw; max-width: 85vw; margin: 0 auto; display:flex; align-items:center; justify-content:space-between;">
+      <div class="flex items-center"> <a href="index.html"> <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="w-auto object-contain" style="height:60px"> </a> </div>
+      <div class="hamburger" id="hamburgerMenu"> <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0"></span> <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0"></span> <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0"></span> </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center; background:#222;">
+    <div class="flex-1 text-center">
+      <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Pixel Parqour</h1>
+    </div>
+    <div class="flex-shrink-0 mx-4 logo-container"> <a href="index.html"> <img src="images/pixel_logo.png" alt="Pixel Parqour Logo" class="logo-img"> </a> </div>
+    <div class="flex-1 text-center">
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header font-karnivore">Surveys</h2>
+    </div>
+  </header>
+
+  <div class="desktop-navbar" style="width:100vw; background:#222; margin:0 auto 12px auto;">
+    <div class="nav-inner" style="width:85vw; max-width:85vw; margin:0 auto;">
+      <nav class="flex justify-center items-center gap-4 navbar-btns-centered" style="height:100%; text-align:center;">
+        <a href="index.html" class="font-bold">Home</a>
+        <a href="services.html" class="font-bold">Services</a>
+        <a href="healthy-tech-vision.html" class="font-bold">Healthy Vision</a>
+        <a href="privacy-policies.html" class="font-bold">Privacy</a>
+        <a href="job-opportunities.html" class="font-bold">Careers</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width:95vw; min-width:95vw;">
+    <section class="max-w-4xl mx-auto text-left">
+      <h1 data-custom-class="title" class="flex mb-12 font-karnivore text-3xl items-center justify-center">Surveys</h1>
+      <p class="subtitle">We appreciate all your feedback! — Please choose a survey below.</p>
+
+      <section id="nuday-survey" class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+        <h2 class="text-2xl font-bold">NU Day Beta Survey</h2>
+        <p class="mt-2">Help us improve NU Day by answering a few quick questions about your experience with the beta.</p>
+        <div class="mt-4">
+          <a href="nuday-survey.html" class="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700">NU Day Beta Survey</a>
+        </div>
+      </section>
+
+      <section id="future-health-survey" class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+        <h2 class="text-2xl font-bold">Future Health Software Survey</h2>
+        <p class="mt-2">Share your priorities for future health-focused products and features.</p>
+        <div class="mt-4">
+          <a href="future-health-survey.html" class="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700">Future Health Survey</a>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <script>
+    // mirror site cursor behavior
+    document.addEventListener('mousemove', function (e) {
+      const cursor = document.getElementById('customCursor');
+      if (cursor) { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; }
+    });
+  </script>
+</body>
+</html>
