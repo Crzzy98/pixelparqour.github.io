@@ -112,72 +112,214 @@
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center"
         style="width: 95vw; min-width: 95vw; background: #222;">
         
-        <!-- Service Highlights Section -->
-        <section class="service-highlights mb-12">
-            <!-- Service 1: Custom Budget Tailored Development (Slide from Left) -->
-            <div class="service-highlight slide-in-left" data-direction="left">
-                <div class="service-content">
-                    <div class="service-with-icon">
-                        <img src="images/icons/Pixel_PIGGYBANK.png" alt="Budget Icon" class="service-icon service-icon-left piggybank-icon">
-                        <div class="service-text">
-                            <h2 class="service-title karnivore-header">Custom Budget Tailored Development</h2>
-                            <p class="service-description">Maximum value within your budget.</p>
+        <!-- Service Highlights Carousel Section -->
+        <section class="service-carousel-section mb-12">
+            <style>
+                .service-carousel-section {
+                    padding: 1.5rem 0;
+                    width: 100%;
+                }
+                .service-carousel-container {
+                    position: relative;
+                    height: 180px;
+                    max-width: 1500px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+                .service-slide {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transform: translateY(100%);
+                    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                    padding: 1rem 2rem;
+                }
+                .service-slide.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .service-slide.exit-up {
+                    opacity: 0;
+                    transform: translateY(-100%);
+                }
+                .service-slide-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2rem;
+                    width: 100%;
+                }
+                .service-slide-icon {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: contain;
+                    flex-shrink: 0;
+                    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+                }
+                .service-slide-icon.piggybank-icon {
+                    animation: pulseScale 3s ease-in-out infinite;
+                }
+                .service-slide-icon.ai-icon {
+                    width: 140px;
+                    height: 140px;
+                    animation: rotateIcon 8s linear infinite;
+                }
+                .service-slide-icon.running-icon {
+                    animation: bounceRun 1.5s ease-in-out infinite;
+                }
+                .service-slide-icon.flexing-icon {
+                    animation: flexPump 2s ease-in-out infinite;
+                }
+                .service-slide-icon.lock-icon {
+                    animation: lockShake 4s ease-in-out infinite;
+                }
+                .service-slide-text {
+                    text-align: left;
+                    flex: 1;
+                    max-width: 600px;
+                }
+                .service-slide-title {
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                    color: #7FDD7F;
+                    margin-bottom: 0.5rem;
+                    line-height: 1.2;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+                }
+                .service-slide-description {
+                    font-size: 1rem;
+                    color: #ffffff;
+                    line-height: 1.5;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                }
+                @keyframes rotateIcon {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                @keyframes pulseScale {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                }
+                @keyframes bounceRun {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+                @keyframes flexPump {
+                    0%, 100% { transform: scale(1); }
+                    25% { transform: scale(1.05) rotate(-3deg); }
+                    75% { transform: scale(1.05) rotate(3deg); }
+                }
+                @keyframes lockShake {
+                    0%, 90%, 100% { transform: rotate(0deg); }
+                    92%, 96% { transform: rotate(-5deg); }
+                    94%, 98% { transform: rotate(5deg); }
+                }
+                @media (max-width: 768px) {
+                    .service-carousel-container { height: 220px; }
+                    .service-slide-content { flex-direction: column; gap: 1rem; text-align: center; }
+                    .service-slide-text { text-align: center; }
+                    .service-slide-title { font-size: 1.4rem; }
+                    .service-slide-description { font-size: 0.9rem; }
+                    .service-slide-icon { width: 70px; height: 70px; }
+                    .service-slide-icon.ai-icon { width: 90px; height: 90px; }
+                }
+            </style>
+            
+            <div class="service-carousel-container" id="serviceCarousel">
+                <!-- Service 1: Custom Budget Tailored Development -->
+                <div class="service-slide active" data-index="0">
+                    <div class="service-slide-content">
+                        <img src="images/icons/Pixel_PIGGYBANK.png" alt="Budget Icon" class="service-slide-icon piggybank-icon">
+                        <div class="service-slide-text">
+                            <h2 class="service-slide-title karnivore-header">Custom Budget Tailored Development</h2>
+                            <p class="service-slide-description">Maximum value within your budget.</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 2: AI Integrations (Slide from Right) -->
-            <div class="service-highlight slide-in-right" data-direction="right">
-                <div class="service-content">
-                    <div class="service-with-icon">
-                        <div class="service-text">
-                            <h2 class="service-title karnivore-header">AI Integrations</h2>
-                            <p class="service-description">Cutting-edge AI solutions.</p>
+                <!-- Service 2: AI Integrations -->
+                <div class="service-slide" data-index="1">
+                    <div class="service-slide-content">
+                        <img src="images/icons/ai_icon.png" alt="AI Icon" class="service-slide-icon ai-icon">
+                        <div class="service-slide-text">
+                            <h2 class="service-slide-title karnivore-header">AI Integrations</h2>
+                            <p class="service-slide-description">Cutting-edge AI solutions for modern applications.</p>
                         </div>
-                        <img src="images/icons/ai_icon.png" alt="AI Icon" class="service-icon service-icon-right ai-icon">
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 3: Health-Focused App Integrations (Slide from Left) -->
-            <div class="service-highlight slide-in-left" data-direction="left">
-                <div class="service-content">
-                    <div class="service-with-icon">
-                        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Health Icon" class="service-icon service-icon-left running-gold-icon">
-                        <div class="service-text">
-                            <h2 class="service-title karnivore-header">Health-Focused App Integrations</h2>
-                            <p class="service-description">Ensuring the best mental and physical features for your app, supporting wellness and user health.</p>
+                <!-- Service 3: Health-Focused App Integrations -->
+                <div class="service-slide" data-index="2">
+                    <div class="service-slide-content">
+                        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Health Icon" class="service-slide-icon running-icon">
+                        <div class="service-slide-text">
+                            <h2 class="service-slide-title karnivore-header">Health-Focused App Integrations</h2>
+                            <p class="service-slide-description">Supporting wellness and user health with the best mental and physical features.</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 4: UX/UI Design (Slide from Right) -->
-            <div class="service-highlight slide-in-right" data-direction="right">
-                <div class="service-content">
-                    <div class="service-with-icon">
-                        <div class="service-text">
-                            <h2 class="service-title karnivore-header">UX/UI Design</h2>
-                            <p class="service-description">Beautiful, intuitive interfaces.</p>
+                <!-- Service 4: UX/UI Design -->
+                <div class="service-slide" data-index="3">
+                    <div class="service-slide-content">
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Design Icon" class="service-slide-icon flexing-icon">
+                        <div class="service-slide-text">
+                            <h2 class="service-slide-title karnivore-header">UX/UI Design</h2>
+                            <p class="service-slide-description">Beautiful, intuitive interfaces that users love.</p>
                         </div>
-                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Design Icon" class="service-icon service-icon-right flexing-icon">
                     </div>
                 </div>
-            </div>
 
-            <!-- Service 5: Insured Development & Guaranteed Delivery (Slide from Left) -->
-            <div class="service-highlight slide-in-left" data-direction="left">
-                <div class="service-content">
-                    <div class="service-with-icon">
-                        <img src="images/icons/Pixel_Lock.png" alt="Insurance Icon" class="service-icon service-icon-left lock-icon">
-                        <div class="service-text">
-                            <h2 class="service-title karnivore-header">Insured Development and Security</h2>
-                            <p class="service-description">Comprehensively insured by Hiscox Business Insurance with guaranteed project delivery and professional cyber data protection</p>
+                <!-- Service 5: Insured Development & Security -->
+                <div class="service-slide" data-index="4">
+                    <div class="service-slide-content">
+                        <img src="images/icons/Pixel_Lock.png" alt="Insurance Icon" class="service-slide-icon lock-icon">
+                        <div class="service-slide-text">
+                            <h2 class="service-slide-title karnivore-header">Insured Development & Security</h2>
+                            <p class="service-slide-description">Hiscox insured with guaranteed delivery and cyber protection.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <script>
+                (function() {
+                    const slides = document.querySelectorAll('#serviceCarousel .service-slide');
+                    let currentSlide = 0;
+                    let autoPlayInterval;
+
+                    function goToSlide(index) {
+                        slides[currentSlide].classList.remove('active');
+                        slides[currentSlide].classList.add('exit-up');
+                        
+                        setTimeout(() => {
+                            slides[currentSlide].classList.remove('exit-up');
+                        }, 600);
+                        
+                        currentSlide = index;
+                        slides[currentSlide].classList.add('active');
+                    }
+
+                    function nextSlide() {
+                        const nextIndex = (currentSlide + 1) % slides.length;
+                        goToSlide(nextIndex);
+                    }
+
+                    function startAutoPlay() {
+                        autoPlayInterval = setInterval(nextSlide, 4000);
+                    }
+
+                    startAutoPlay();
+
+                    const carousel = document.getElementById('serviceCarousel');
+                    carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                    carousel.addEventListener('mouseleave', startAutoPlay);
+                })();
+            </script>
         </section>
 
         <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm" style="background: #222;">
