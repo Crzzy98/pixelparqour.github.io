@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Start your project with Pixel Parqour - Quick Start form for web and mobile development services.">
-    <title>Quick Start — Pixel Parqour</title>
+    <meta name="description" content="Schedule a call with Pixel Parqour to discuss your software development needs.">
+    <title>Schedule a Call — Pixel Parqour</title>
     <link href="css/main.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/icons/NEW_PP_logo_V1.png">
     <link rel="apple-touch-icon" href="images/icons/NEW_PP_logo_V1.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Dynamic form styles matching schedule-call/nuday-survey */
+      /* Dynamic form styles matching nuday-survey */
       .step { display: none; }
       .step.active { display: block; animation: fadeIn 0.4s ease; }
       @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -40,15 +40,6 @@
       .step-indicator { font-size: 0.875rem; color: #888; margin-bottom: 0.5rem; }
       .highlight { color: var(--primary-green); font-weight: bold; }
       select.input-field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237FDD7F' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.5rem; padding-right: 3rem; }
-      .tier-card { background: var(--card-bg); border: 2px solid rgba(127,221,127,0.15); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.25s ease; text-align: left; }
-      .tier-card:hover { border-color: var(--primary-green); transform: scale(1.02); }
-      .tier-card.selected { border-color: var(--primary-green); background: rgba(127,221,127,0.1); }
-      .tier-card input[type="radio"] { accent-color: var(--primary-green); width: 18px; height: 18px; }
-      .tier-title { font-size: 1.25rem; color: var(--primary-green); font-weight: bold; }
-      .tier-desc { font-size: 0.9rem; color: #aaa; margin-top: 0.25rem; }
-      .info-box { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 1rem; margin-top: 1.5rem; }
-      .info-box p { color: #93c5fd; font-size: 0.9rem; margin: 0; }
-      .info-box a { color: #60a5fa; text-decoration: underline; }
     </style>
   </head>
   <body class="min-h-screen flex flex-col">
@@ -65,19 +56,15 @@
     </header>
 
     <main class="mx-auto mt-4 p-6 bg-white rounded-lg shadow-lg flex-grow" style="width: 90vw; max-width: 720px;">
-      <div class="flex items-center justify-center gap-3 mb-2">
-        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-12 w-12">
-        <h1 class="text-center karnivore-header" style="font-size: 2.25rem; color: var(--primary-green);">Quick Start</h1>
-        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-12 w-12" style="transform: scaleX(-1);">
-      </div>
-      <p class="text-center" style="color: #aaa; margin-bottom: 1.5rem;">Tell us about your project — we'll reach out within 1-2 business days!</p>
+      <h1 class="text-center karnivore-header" style="font-size: 2.25rem; color: var(--primary-green); margin-bottom: 0.5rem;">📞 Schedule a Call</h1>
+      <p class="text-center" style="color: #aaa; margin-bottom: 1.5rem;">Let us know what you need — we'll reach out within 1-2 business days!</p>
 
-      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 25%;"></div></div>
-      <p class="step-indicator text-center" id="stepIndicator">Step 1 of 4</p>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 33.33%;"></div></div>
+      <p class="step-indicator text-center" id="stepIndicator">Step 1 of 3</p>
 
-      <form id="quickStartForm" action="https://formsubmit.co/healthtech@pixelparqour.net" method="POST">
-        <input type="hidden" name="_subject" value="New Quick Start Project Request - Pixel Parqour">
-        <input type="hidden" name="_next" value="quick-start.html?success=1">
+      <form id="scheduleCallForm" action="https://formsubmit.co/support@pixelparqour.com" method="POST">
+        <input type="hidden" name="_subject" value="New Call Schedule Request - Pixel Parqour">
+        <input type="hidden" name="_next" value="schedule-call.html?success=1">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <!-- Anti-Bot Honeypot Field (Hidden) -->
@@ -87,76 +74,42 @@
         <div class="step active" data-step="1">
           <div class="question-container">
             <h2 class="question-title">Contact Information</h2>
-            <p class="question-desc">Please provide your <span class="highlight">Name</span> and <span class="highlight">Email</span></p>
+            <p class="question-desc">Please provide your <span class="highlight">Name</span> and <span class="highlight">Work Email</span></p>
             <div class="option-group" style="gap: 1rem;">
-              <input type="text" name="Full Name" class="input-field" placeholder="Full Name *" required>
-              <input type="email" name="Email" class="input-field" placeholder="Email Address *" required>
+              <input type="text" name="Name" class="input-field" placeholder="Your Name *" required>
+              <input type="email" name="Work Email" class="input-field" placeholder="Work Email *" required>
             </div>
           </div>
         </div>
 
-        <!-- Step 2: Service Tier Selection -->
+        <!-- Step 2: Service Selection -->
         <div class="step" data-step="2">
           <div class="question-container">
-            <h2 class="question-title">Select Your Tier</h2>
-            <p class="question-desc">Choose the <span class="highlight">Service Tier</span> that fits your needs</p>
-            <div class="option-group" style="gap: 1rem; max-width: 520px;">
-              <label class="tier-card">
-                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                  <input type="radio" name="Requested Tier" value="Starter" required style="margin-top: 4px;">
-                  <div>
-                    <div class="tier-title">🚀 Starter</div>
-                    <div class="tier-desc">Landing Pages & Simple Sites — Perfect for getting started</div>
-                  </div>
-                </div>
-              </label>
-              <label class="tier-card">
-                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                  <input type="radio" name="Requested Tier" value="Growth" style="margin-top: 4px;">
-                  <div>
-                    <div class="tier-title">📈 Growth</div>
-                    <div class="tier-desc">Multi-page Business Solutions — For growing businesses</div>
-                  </div>
-                </div>
-              </label>
-              <label class="tier-card">
-                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                  <input type="radio" name="Requested Tier" value="Enterprise" style="margin-top: 4px;">
-                  <div>
-                    <div class="tier-title">🏢 Enterprise</div>
-                    <div class="tier-desc">Full-Stack Web & Mobile — Complete digital transformation</div>
-                  </div>
-                </div>
-              </label>
+            <h2 class="question-title">Service Desired</h2>
+            <p class="question-desc">What <span class="highlight">Service</span> are you interested in?</p>
+            <div class="option-group">
+              <label class="option-label"><input type="radio" name="Service Desired" value="iOS Development" required> 📱 iOS Development</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="Android Development"> 🤖 Android Development</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="Web Development"> 🌐 Web Development</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="Site Maintenance/Updates"> 🔧 Site Maintenance / Updates</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="AI Integrations"> 🧠 AI Integrations</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="Multiple Services"> 📦 Multiple Services</label>
+              <label class="option-label"><input type="radio" name="Service Desired" value="Other"> ❓ Other</label>
             </div>
           </div>
         </div>
 
-        <!-- Step 3: Project Details -->
+        <!-- Step 3: Additional Information (Optional) -->
         <div class="step" data-step="3">
           <div class="question-container">
-            <h2 class="question-title">Project Details</h2>
-            <p class="question-desc">Tell us about your <span class="highlight">Project Goals</span></p>
-            <div class="option-group" style="gap: 1rem;">
-              <textarea name="Project Service Needs" rows="5" class="input-field" style="text-align: left; max-width: 520px;" placeholder="Tell us about your project goals, what type of solution you need (website, mobile app, etc.), and any specific requirements..." required></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 4: Additional Information (Optional) -->
-        <div class="step" data-step="4">
-          <div class="question-container">
-            <h2 class="question-title">Additional Information</h2>
-            <p class="question-desc">Optional: Any other details to share?</p>
+            <h2 class="question-title">Additional Details</h2>
+            <p class="question-desc">Optional: Tell us more about your <span class="highlight">Project</span></p>
             <div class="option-group" style="gap: 1rem;">
               <input type="text" name="Company Name" class="input-field" placeholder="Company Name (optional)">
               <input type="tel" name="Phone Number" class="input-field" placeholder="Phone Number (optional)">
-              <input type="text" name="Timeline" class="input-field" placeholder="Desired Timeline (optional)">
+              <textarea name="Additional Notes" rows="3" class="input-field" style="text-align: left; max-width: 480px;" placeholder="Tell us about your project or what you'd like to discuss..."></textarea>
             </div>
-            <div class="info-box">
-              <p>🔒 <strong>Secure & Encrypted</strong> — Your information is protected with SSL encryption.</p>
-              <p style="margin-top: 0.5rem;">Have a detailed project plan? <a href="comprehensive-form.html">Use our comprehensive form</a> for faster turnaround.</p>
-            </div>
+            <p style="font-size: 0.875rem; color: #888; margin-top: 1rem;">🕐 Business Hours: Mon-Fri, 8am-8pm EDT</p>
           </div>
         </div>
 
@@ -164,13 +117,13 @@
         <div class="flex justify-center mt-6" id="navButtons">
           <button type="button" class="nav-btn btn-back" id="btnBack" style="display: none;">Back</button>
           <button type="button" class="nav-btn btn-continue" id="btnContinue">Continue</button>
-          <button type="submit" class="nav-btn btn-submit" id="btnSubmit" style="display: none;">Get Started</button>
+          <button type="submit" class="nav-btn btn-submit" id="btnSubmit" style="display: none;">Request Call</button>
         </div>
       </form>
 
       <div id="successMessage" class="success-message" style="display: none;">
         <h2>🎉 Request Submitted!</h2>
-        <p>Thank you! Our team will review your project details and reach out within 1-2 business days.</p>
+        <p>Thank you! One of our consultants will reach out within 1-2 business days.</p>
         <p style="margin-top: 1rem;"><a href="index.html" style="color: #fff; text-decoration: underline;">Return to Home</a></p>
       </div>
 
@@ -188,21 +141,9 @@
       const btnSubmit = document.getElementById('btnSubmit');
       const progressFill = document.getElementById('progressFill');
       const stepIndicator = document.getElementById('stepIndicator');
-      const form = document.getElementById('quickStartForm');
+      const form = document.getElementById('scheduleCallForm');
       const successMessage = document.getElementById('successMessage');
       const backLink = document.getElementById('backLink');
-
-      // Check URL for tier parameter
-      const urlParams = new URLSearchParams(window.location.search);
-      const tierParam = urlParams.get('tier');
-      if (tierParam) {
-        const tierMap = { starter: 'Starter', growth: 'Growth', enterprise: 'Enterprise' };
-        const radioVal = tierMap[tierParam.toLowerCase()];
-        if (radioVal) {
-          const radio = document.querySelector(`input[name="Requested Tier"][value="${radioVal}"]`);
-          if (radio) radio.checked = true;
-        }
-      }
 
       // Check if returning from successful submission
       if (window.location.search.includes('success=1')) {
@@ -218,7 +159,7 @@
         const stepEl = document.querySelector(`[data-step="${stepNum}"]`);
         
         // Check required text/email inputs
-        const textInputs = stepEl.querySelectorAll('input[type="text"][required], input[type="email"][required], textarea[required]');
+        const textInputs = stepEl.querySelectorAll('input[type="text"][required], input[type="email"][required]');
         for (let input of textInputs) {
           if (!input.value.trim()) return false;
         }
@@ -249,14 +190,6 @@
         btnSubmit.style.display = n === totalSteps ? 'inline-block' : 'none';
         updateContinueState();
       }
-
-      // Tier card selection visual feedback
-      document.querySelectorAll('.tier-card').forEach(card => {
-        card.addEventListener('click', () => {
-          document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
-          card.classList.add('selected');
-        });
-      });
 
       // Listen for input changes to enable Continue
       form.addEventListener('input', updateContinueState);

@@ -35,6 +35,20 @@
     <link rel="apple-touch-icon" href="images/icons/NEW_PP_logo_V1.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Double size all green buttons on hover */
+        a[class*="bg-green-"]:hover,
+        button[class*="bg-green-"]:hover {
+            transform: scale(2) !important;
+            transition: transform 0.3s ease-in-out !important;
+            z-index: 50;
+            position: relative;
+        }
+        a[class*="bg-green-"],
+        button[class*="bg-green-"] {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -454,33 +468,7 @@
                 </div>
             </div>
         </section>
-    </main> <!-- Careers Section -->
-    <section class="p-6 bg-gray-50 rounded-lg shadow-sm mx-auto mt-16 mb-12 w-full"
-        style="min-width:75vw;max-width:1200px; background: #222;">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center">Careers at Pixel
-            Parqour</h2>
-        <div class="mb-4">
-            <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
-        </div>
-        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
-            <p class="text-base text-black mb-2 text-center"> At Pixel Parqour, we offer exciting career
-                opportunities for passionate individuals. Whether you're looking to build your portfolio, learn about
-                the tech industry firsthand, or further your career, we have a place for you! </p>
-            <p class="text-base text-black mb-2 text-center"> We offer <span
-                    class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to gain
-                real-world experience and jumpstart their careers. Interns can build their portfolio, learn from
-                industry professionals, and make valuable connections. </p>
-            <p class="text-base text-black text-center"> We also have opportunities for <span
-                    class="font-semibold text-green-700">software developers</span> with expertise in areas such as
-                security, AI, microservice architecture, mobile development, and game development. If you're interested
-                in a software position, email <a href="mailto:healthtech@pixelparqour.net"
-                    class="text-blue-700 underline">healthtech@pixelparqour.net</a>. </p>
-        </div>
-        <div class="flex justify-center mt-8"> <a href="job-opportunities.html"
-                class="px-8 py-4 bg-green-600 text-white font-bold text-xl rounded hover:bg-green-700 transition"><span
-                    class="text-xl sm:text-3xl">Learn More</span> <img src="images/icons/speech-bubble.png"
-                    alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></a> </div>
-    </section>
+    </main>
     <footer class="bg-gray-800 text-white p-4 text-center mt-8"> <!-- Quick Start Section -->
         <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm w-full max-w-3xl mx-auto mt-16 mb-10" style="background: #222;">
             <style>
@@ -634,7 +622,7 @@
 
         <!-- Get in Touch section moved to just before footer -->
         <section id="contact-us" class="p-6 bg-gray-50 rounded-lg shadow-sm mt-16 mb-12" style="background: #222;">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header">Get in Touch</h2>
+            <h2 class="text-4xl sm:text-6xl font-bold text-gray-800 mb-4 karnivore-header">Get in Touch</h2>
             <div class="mb-4">
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
@@ -760,6 +748,15 @@
                         <span class="font-semibold">Licensed Business</span>
                     </p>
                 </div>
+            </div>
+
+            <!-- Schedule a Call Button -->
+            <div class="flex justify-center mt-8">
+                <a href="schedule-call.html" 
+                   class="px-8 py-4 bg-green-400 text-black font-bold text-xl rounded-lg hover:bg-green-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                   style="background-color: #68D391 !important; color: #000 !important;">
+                    <span style="color: #d1d5db;">📞</span> Schedule a Call
+                </a>
             </div>
         </section> <!-- Quick Start Modal -->
         <div id="quickStartModal"
@@ -1192,6 +1189,35 @@
                     </a>
                 </div>
             </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section class="p-6 bg-gray-50 rounded-lg shadow-sm mx-auto mt-16 mb-12 w-full"
+            style="min-width:75vw;max-width:1200px; background: #222;">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center">Careers at Pixel
+                Parqour</h2>
+            <div class="mb-4">
+                <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
+            </div>
+            <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                <p class="text-base text-black mb-2 text-center"> At Pixel Parqour, we offer exciting career
+                    opportunities for passionate individuals. Whether you're looking to build your portfolio, learn about
+                    the tech industry firsthand, or further your career, we have a place for you! </p>
+                <p class="text-base text-black mb-2 text-center"> We offer <span
+                        class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to gain
+                    real-world experience and jumpstart their careers. Interns can build their portfolio, learn from
+                    industry professionals, and make valuable connections. </p>
+                <p class="text-base text-black text-center"> We also have opportunities for <span
+                        class="font-semibold text-green-700">software developers</span> with expertise in areas such as
+                    security, AI, microservice architecture, mobile development, and game development. If you're interested
+                    in a software position, email <a href="mailto:healthtech@pixelparqour.net"
+                        class="text-blue-700 underline">healthtech@pixelparqour.net</a>. </p>
+            </div>
+            <div class="flex justify-center mt-8"> <a href="job-opportunities.html"
+                    class="px-8 py-4 bg-green-400 text-black font-bold text-xl rounded hover:bg-green-500 transition"
+                    style="background-color: #68D391 !important; color: #000 !important;"><span
+                        class="text-xl sm:text-3xl">Learn More</span> <img src="images/icons/speech-bubble.png"
+                        alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></a> </div>
         </section>
 
         </main>
