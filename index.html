@@ -30,6 +30,7 @@
     <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
     <!-- Site favicon (Pixel Parqour logo V1) -->
     <link rel="icon" type="image/png" href="images/icons/NEW_PP_logo_V1.png">
     <link rel="apple-touch-icon" href="images/icons/NEW_PP_logo_V1.png">
@@ -44,6 +45,7 @@
             z-index: 50;
             position: relative;
         }
+
         a[class*="bg-green-"],
         button[class*="bg-green-"] {
             transition: transform 0.3s ease-in-out;
@@ -80,13 +82,15 @@
         <div class="nav-inner"
             style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
             <div class="flex items-center"> <a href="index.html"> <img src="images/icons/NEW_PP_logo_V1.png"
-                        alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 60px;"> </a> </div>
+                        data-dark-logo="images/icons/NEW_PP_logo_V1.png"
+                        data-light-logo="images/icons/New_PP_Logo_BLACK.png" alt="Pixel Parqour Logo"
+                        class="w-auto object-contain" style="height: 60px;"> </a> </div>
             <div class="hamburger" id="hamburgerMenu"> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
         </div>
-    </nav> 
+    </nav>
     <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
         <a href="#about-us" class="sidenav-link">About Us</a>
@@ -97,13 +101,16 @@
         <a href="android-development.html" class="sidenav-link">Android Development</a>
         <a href="job-opportunities.html" class="sidenav-link">Careers</a>
     </div>
-    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center; background: #222;">
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4"
+        style="text-align:center; background: #222;">
         <div class="flex-1 text-center">
             <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 karnivore-header"> Crafting
                 Software<br>Developing Dreams </h1>
         </div>
         <div class="flex-shrink-0 mx-4 logo-container"> <a href="index.html"> <img src="images/icons/NEW_PP_logo_V1.png"
-                    alt="Pixel Parqour Logo" class="logo-img"> </a> </div>
+                    data-dark-logo="images/icons/NEW_PP_logo_V1.png"
+                    data-light-logo="images/icons/New_PP_Logo_BLACK.png" alt="Pixel Parqour Logo" class="logo-img"> </a>
+        </div>
         <div class="flex-1 text-center">
             <h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 karnivore-header"> Business and
                 Personal<br>Software Solutions </h1>
@@ -125,7 +132,7 @@
     </div>
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center"
         style="width: 95vw; min-width: 95vw; background: #222;">
-        
+
         <!-- Service Highlights Carousel Section -->
         <section class="service-carousel-section mb-12">
             <style>
@@ -133,6 +140,7 @@
                     padding: 1.5rem 0;
                     width: 100%;
                 }
+
                 .service-carousel-container {
                     position: relative;
                     height: 180px;
@@ -140,6 +148,7 @@
                     margin: 0 auto;
                     overflow: hidden;
                 }
+
                 .service-slide {
                     position: absolute;
                     width: 100%;
@@ -152,14 +161,17 @@
                     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
                     padding: 1rem 2rem;
                 }
+
                 .service-slide.active {
                     opacity: 1;
                     transform: translateY(0);
                 }
+
                 .service-slide.exit-up {
                     opacity: 0;
                     transform: translateY(-100%);
                 }
+
                 .service-slide-content {
                     display: flex;
                     align-items: center;
@@ -167,6 +179,7 @@
                     gap: 2rem;
                     width: 100%;
                 }
+
                 .service-slide-icon {
                     width: 100px;
                     height: 100px;
@@ -174,28 +187,35 @@
                     flex-shrink: 0;
                     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
                 }
+
                 .service-slide-icon.piggybank-icon {
                     animation: pulseScale 3s ease-in-out infinite;
                 }
+
                 .service-slide-icon.ai-icon {
                     width: 140px;
                     height: 140px;
                     animation: rotateIcon 8s linear infinite;
                 }
+
                 .service-slide-icon.running-icon {
                     animation: bounceRun 1.5s ease-in-out infinite;
                 }
+
                 .service-slide-icon.flexing-icon {
                     animation: flexPump 2s ease-in-out infinite;
                 }
+
                 .service-slide-icon.lock-icon {
                     animation: lockShake 4s ease-in-out infinite;
                 }
+
                 .service-slide-text {
                     text-align: left;
                     flex: 1;
                     max-width: 600px;
                 }
+
                 .service-slide-title {
                     font-size: 1.75rem;
                     font-weight: bold;
@@ -204,50 +224,124 @@
                     line-height: 1.2;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
                 }
+
                 .service-slide-description {
                     font-size: 1rem;
                     color: #ffffff;
                     line-height: 1.5;
                     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
                 }
+
                 @keyframes rotateIcon {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
                 }
+
                 @keyframes pulseScale {
-                    0%, 100% { transform: scale(1); }
-                    50% { transform: scale(1.1); }
+
+                    0%,
+                    100% {
+                        transform: scale(1);
+                    }
+
+                    50% {
+                        transform: scale(1.1);
+                    }
                 }
+
                 @keyframes bounceRun {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
+
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        transform: translateY(-10px);
+                    }
                 }
+
                 @keyframes flexPump {
-                    0%, 100% { transform: scale(1); }
-                    25% { transform: scale(1.05) rotate(-3deg); }
-                    75% { transform: scale(1.05) rotate(3deg); }
+
+                    0%,
+                    100% {
+                        transform: scale(1);
+                    }
+
+                    25% {
+                        transform: scale(1.05) rotate(-3deg);
+                    }
+
+                    75% {
+                        transform: scale(1.05) rotate(3deg);
+                    }
                 }
+
                 @keyframes lockShake {
-                    0%, 90%, 100% { transform: rotate(0deg); }
-                    92%, 96% { transform: rotate(-5deg); }
-                    94%, 98% { transform: rotate(5deg); }
+
+                    0%,
+                    90%,
+                    100% {
+                        transform: rotate(0deg);
+                    }
+
+                    92%,
+                    96% {
+                        transform: rotate(-5deg);
+                    }
+
+                    94%,
+                    98% {
+                        transform: rotate(5deg);
+                    }
                 }
+
                 @media (max-width: 768px) {
-                    .service-carousel-container { height: 220px; }
-                    .service-slide-content { flex-direction: column; gap: 1rem; text-align: center; }
-                    .service-slide-text { text-align: center; }
-                    .service-slide-title { font-size: 1.4rem; }
-                    .service-slide-description { font-size: 0.9rem; }
-                    .service-slide-icon { width: 70px; height: 70px; }
-                    .service-slide-icon.ai-icon { width: 90px; height: 90px; }
+                    .service-carousel-container {
+                        height: 220px;
+                    }
+
+                    .service-slide-content {
+                        flex-direction: column;
+                        gap: 1rem;
+                        text-align: center;
+                    }
+
+                    .service-slide-text {
+                        text-align: center;
+                    }
+
+                    .service-slide-title {
+                        font-size: 1.4rem;
+                    }
+
+                    .service-slide-description {
+                        font-size: 0.9rem;
+                    }
+
+                    .service-slide-icon {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    .service-slide-icon.ai-icon {
+                        width: 90px;
+                        height: 90px;
+                    }
                 }
             </style>
-            
+
             <div class="service-carousel-container" id="serviceCarousel">
                 <!-- Service 1: Custom Budget Tailored Development -->
                 <div class="service-slide active" data-index="0">
                     <div class="service-slide-content">
-                        <img src="images/icons/Pixel_PIGGYBANK.png" alt="Budget Icon" class="service-slide-icon piggybank-icon">
+                        <img src="images/icons/Pixel_PIGGYBANK.png" alt="Budget Icon"
+                            class="service-slide-icon piggybank-icon">
                         <div class="service-slide-text">
                             <h2 class="service-slide-title karnivore-header">Custom Budget Tailored Development</h2>
                             <p class="service-slide-description">Maximum value within your budget.</p>
@@ -269,10 +363,12 @@
                 <!-- Service 3: Health-Focused App Integrations -->
                 <div class="service-slide" data-index="2">
                     <div class="service-slide-content">
-                        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Health Icon" class="service-slide-icon running-icon">
+                        <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Health Icon"
+                            class="service-slide-icon running-icon">
                         <div class="service-slide-text">
                             <h2 class="service-slide-title karnivore-header">Health-Focused App Integrations</h2>
-                            <p class="service-slide-description">Supporting wellness and user health with the best mental and physical features.</p>
+                            <p class="service-slide-description">Supporting wellness and user health with the best
+                                mental and physical features.</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +376,8 @@
                 <!-- Service 4: UX/UI Design -->
                 <div class="service-slide" data-index="3">
                     <div class="service-slide-content">
-                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Design Icon" class="service-slide-icon flexing-icon">
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Design Icon"
+                            class="service-slide-icon flexing-icon">
                         <div class="service-slide-text">
                             <h2 class="service-slide-title karnivore-header">UX/UI Design</h2>
                             <p class="service-slide-description">Beautiful, intuitive interfaces that users love.</p>
@@ -291,17 +388,19 @@
                 <!-- Service 5: Insured Development & Security -->
                 <div class="service-slide" data-index="4">
                     <div class="service-slide-content">
-                        <img src="images/icons/Pixel_Lock.png" alt="Insurance Icon" class="service-slide-icon lock-icon">
+                        <img src="images/icons/Pixel_Lock.png" alt="Insurance Icon"
+                            class="service-slide-icon lock-icon">
                         <div class="service-slide-text">
                             <h2 class="service-slide-title karnivore-header">Insured Development & Security</h2>
-                            <p class="service-slide-description">Hiscox insured with guaranteed delivery and cyber protection.</p>
+                            <p class="service-slide-description">Hiscox insured with guaranteed delivery and cyber
+                                protection.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <script>
-                (function() {
+                (function () {
                     const slides = document.querySelectorAll('#serviceCarousel .service-slide');
                     let currentSlide = 0;
                     let autoPlayInterval;
@@ -309,11 +408,11 @@
                     function goToSlide(index) {
                         slides[currentSlide].classList.remove('active');
                         slides[currentSlide].classList.add('exit-up');
-                        
+
                         setTimeout(() => {
                             slides[currentSlide].classList.remove('exit-up');
                         }, 600);
-                        
+
                         currentSlide = index;
                         slides[currentSlide].classList.add('active');
                     }
@@ -348,51 +447,68 @@
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
             <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-4 md:mb-6 lg:mb-8 xl:mb-10"> At Pixel
-                Parqour, we specialize in developing cutting-edge software solutions that prioritize both efficiency and user well-being. 
-                Our mission extends beyond traditional development—we focus on healthy tech integrations that optimize software to provide 
-                not only efficient but healthy service to as many users as possible. We are a team of highly skilled programmers with 
-                diverse backgrounds, dedicated to creating digital experiences that enhance rather than detract from human wellness. 
-                We leverage the best AI tools and methodologies on the market to create tailored, health-conscious project plans that 
+                Parqour, we specialize in developing cutting-edge software solutions that prioritize both efficiency and
+                user well-being.
+                Our mission extends beyond traditional development—we focus on healthy tech integrations that optimize
+                software to provide
+                not only efficient but healthy service to as many users as possible. We are a team of highly skilled
+                programmers with
+                diverse backgrounds, dedicated to creating digital experiences that enhance rather than detract from
+                human wellness.
+                We leverage the best AI tools and methodologies on the market to create tailored, health-conscious
+                project plans that
                 suit your unique needs while promoting positive user engagement. </p>
-            
+
             <!-- Read More Dropdown -->
             <div class="read-more-container mb-4 md:mb-6 lg:mb-8 xl:mb-10">
-                <button id="aboutUsReadMore" 
-                        class="read-more-btn flex items-center justify-center mx-auto px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button id="aboutUsReadMore"
+                    class="read-more-btn flex items-center justify-center mx-auto px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span class="read-more-text">Read More</span>
-                    <svg class="read-more-arrow w-5 h-5 ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="read-more-arrow w-5 h-5 ml-2 transform transition-transform duration-300" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                
-                <div id="aboutUsDropdown" class="dropdown-content mt-4 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg shadow-inner" style="display: none;">
+
+                <div id="aboutUsDropdown"
+                    class="dropdown-content mt-4 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg shadow-inner"
+                    style="display: none;">
                     <p class="text-base leading-relaxed text-black mb-4">
-                        <strong>Our Story:</strong> Pixel Parqour is a newly founded technology company based in Stone Mountain, Georgia. 
-                        We operate as a completely virtual organization, leveraging modern communication technologies to serve clients 
+                        <strong>Our Story:</strong> Pixel Parqour is a newly founded technology company based in Stone
+                        Mountain, Georgia.
+                        We operate as a completely virtual organization, leveraging modern communication technologies to
+                        serve clients
                         worldwide with flexibility and efficiency.
                     </p>
                     <p class="text-base leading-relaxed text-black mb-4">
-                        <strong>Local Presence:</strong> While we maintain a fully remote operational model, we understand the value 
-                        of personal connection. For clients in the Metro-Atlanta area, we offer in-person consultation services 
+                        <strong>Local Presence:</strong> While we maintain a fully remote operational model, we
+                        understand the value
+                        of personal connection. For clients in the Metro-Atlanta area, we offer in-person consultation
+                        services
                         upon request, providing face-to-face collaboration when preferred.
                     </p>
                     <p class="text-base leading-relaxed text-black mb-4">
-                        <strong>Get Started:</strong> Whether you prefer virtual collaboration or in-person meetings, we're here to 
-                        help bring your vision to life. Contact us today to discover how our healthy tech approach can benefit 
+                        <strong>Get Started:</strong> Whether you prefer virtual collaboration or in-person meetings,
+                        we're here to
+                        help bring your vision to life. Contact us today to discover how our healthy tech approach can
+                        benefit
                         your project and users.
                     </p>
-                    
+
                     <!-- Quick Start Button -->
                     <div class="flex justify-center mt-4">
-                        <a href="quick-start.html" class="px-6 py-3 bg-green-600 text-white font-bold text-lg rounded hover:bg-green-700 transition">
+                        <a href="quick-start.html"
+                            class="px-6 py-3 bg-green-600 text-white font-bold text-lg rounded hover:bg-green-700 transition">
                             <span class="text-lg sm:text-xl">Start</span>
-                            <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" />
+                            <img src="images/icons/speech-bubble.png" alt="Speech Bubble"
+                                class="inline-block align-middle h-6 w-6 ml-2" />
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content" style="background: #222;">
+        <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content"
+            style="background: #222;">
             <h2
                 class="text-4xl sm:text-6xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 responsive-text-3xl karnivore-header">
                 Develop Your Dreams</h2>
@@ -470,7 +586,8 @@
         </section>
     </main>
     <footer class="bg-gray-800 text-white p-4 text-center mt-8"> <!-- Quick Start Section -->
-        <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm w-full max-w-3xl mx-auto mt-16 mb-10" style="background: #222;">
+        <section id="quick-start" class="p-6 bg-gray-50 rounded-lg shadow-sm w-full max-w-6xl mx-auto mt-16 mb-10"
+            style="background: #222;">
             <style>
                 /* Pixel Guy Running Animation Styles */
                 .pixel-guy-container {
@@ -586,7 +703,7 @@
                 </p>
             </div>
             <div class="flex justify-center"> <button id="openQuickStartModal"
-                    class="px-16 py-6 bg-green-400 text-black font-semibold text-2xl rounded shadow hover:bg-green-500 transition" 
+                    class="px-16 py-6 bg-green-400 text-black font-semibold text-2xl rounded shadow hover:bg-green-500 transition"
                     style="background-color: #68D391 !important; color: #000 !important;"><span
                         class="text-2xl sm:text-6xl">View Options</span> <img src="images/icons/speech-bubble.png"
                         alt="Speech Bubble" class="inline-block align-middle h-7 w-7 ml-2" /></button> </div>
@@ -594,13 +711,15 @@
 
         <!-- Surveys Section -->
         <section id="surveys" class="p-6 bg-gray-50 rounded-lg shadow-sm mt-16 mb-12" style="background: #222;">
-            <h2 class="text-4xl sm:text-6xl font-bold text-gray-800 mb-4 karnivore-header">Help Shape the Future of Health Tech</h2>
+            <h2 class="text-4xl sm:text-6xl font-bold text-gray-800 mb-4 karnivore-header">Help Shape the Future of
+                Health Tech</h2>
             <div class="mb-4">
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
             <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                Your feedback is invaluable! By taking a few minutes to complete our surveys, you help Pixel Parqour improve 
-                our software products and services — and contribute to building technology that supports the health and 
+                Your feedback is invaluable! By taking a few minutes to complete our surveys, you help Pixel Parqour
+                improve
+                our software products and services — and contribute to building technology that supports the health and
                 wellness of people around the world.
             </p>
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
@@ -612,10 +731,12 @@
                 </p>
             </div>
             <div class="flex justify-center">
-                <a href="surveys.html" class="px-12 py-5 bg-green-400 text-black font-semibold text-xl rounded shadow hover:bg-green-500 transition"
-                   style="background-color: #68D391 !important; color: #000 !important;">
+                <a href="surveys.html"
+                    class="px-12 py-5 bg-green-400 text-black font-semibold text-xl rounded shadow hover:bg-green-500 transition"
+                    style="background-color: #68D391 !important; color: #000 !important;">
                     <span class="text-xl sm:text-2xl">Take Our Surveys</span>
-                    <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" />
+                    <img src="images/icons/speech-bubble.png" alt="Speech Bubble"
+                        class="inline-block align-middle h-6 w-6 ml-2" />
                 </a>
             </div>
         </section>
@@ -702,12 +823,15 @@
 
             <!-- Trust & Security Indicators -->
             <div class="mt-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
-                <h3 class="text-4xl font-bold text-green-800 mb-4 text-center karnivore-header">🛡️ Your Security & Trust</h3>
+                <h3 class="text-4xl font-bold text-green-800 mb-4 text-center karnivore-header">🛡️ Your Security &
+                    Trust</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                     <div class="flex flex-col items-center">
                         <div class="bg-green-600 text-white p-2 rounded-full mb-2">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
                             </svg>
                         </div>
                         <p class="text-sm font-semibold text-green-800">SSL Secured</p>
@@ -716,7 +840,9 @@
                     <div class="flex flex-col items-center">
                         <div class="bg-green-600 text-white p-2 rounded-full mb-2">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
                             </svg>
                         </div>
                         <p class="text-sm font-semibold text-green-800">Hiscox Insured</p>
@@ -725,7 +851,9 @@
                     <div class="flex flex-col items-center">
                         <div class="bg-green-600 text-white p-2 rounded-full mb-2">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                </path>
                             </svg>
                         </div>
                         <p class="text-sm font-semibold text-green-800">Stripe Payments</p>
@@ -734,7 +862,8 @@
                     <div class="flex flex-col items-center">
                         <div class="bg-green-600 text-white p-2 rounded-full mb-2">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                             </svg>
                         </div>
                         <p class="text-sm font-semibold text-green-800">Verified Team</p>
@@ -743,8 +872,8 @@
                 </div>
                 <div class="mt-4 text-center">
                     <p class="text-sm text-green-700">
-                        <span class="font-semibold">Established 2024</span> • 
-                        <span class="font-semibold">Stone Mountain, GA</span> • 
+                        <span class="font-semibold">Established 2024</span> •
+                        <span class="font-semibold">Stone Mountain, GA</span> •
                         <span class="font-semibold">Licensed Business</span>
                     </p>
                 </div>
@@ -752,9 +881,9 @@
 
             <!-- Schedule a Call Button -->
             <div class="flex justify-center mt-8">
-                <a href="schedule-call.html" 
-                   class="px-8 py-4 bg-green-400 text-black font-bold text-xl rounded-lg hover:bg-green-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                   style="background-color: #68D391 !important; color: #000 !important;">
+                <a href="schedule-call.html"
+                    class="px-8 py-4 bg-green-400 text-black font-bold text-xl rounded-lg hover:bg-green-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                    style="background-color: #68D391 !important; color: #000 !important;">
                     <span style="color: #d1d5db;">📞</span> Schedule a Call
                 </a>
             </div>
@@ -859,7 +988,9 @@
                                 </style>
                             </ul>
                             <div class="text-white text-sm mt-4 mb-4 text-center italic">
-                                Selecting this option indicates to our team that you are interested in the Starter quick start development package, this helps speed up the process of getting you to the right team.
+                                Selecting this option indicates to our team that you are interested in the Starter quick
+                                start development package, this helps speed up the process of getting you to the right
+                                team.
                             </div>
                         </div>
                         <div class="flex-grow"></div>
@@ -892,7 +1023,9 @@
                                     authentication and dashboard</li>
                             </ul>
                             <div class="text-white text-sm mt-4 mb-4 text-center italic">
-                                Selecting this option indicates to our team that you are interested in the Growth quick start development package, this helps speed up the process of getting you to the right team.
+                                Selecting this option indicates to our team that you are interested in the Growth quick
+                                start development package, this helps speed up the process of getting you to the right
+                                team.
                             </div>
                         </div>
                         <div class="flex-grow"></div>
@@ -924,7 +1057,9 @@
                                     support</li>
                             </ul>
                             <div class="text-white text-sm mt-4 mb-4 text-center italic">
-                                Selecting this option indicates to our team that you are interested in the Enterprise quick start development package, this helps speed up the process of getting you to the right team.
+                                Selecting this option indicates to our team that you are interested in the Enterprise
+                                quick start development package, this helps speed up the process of getting you to the
+                                right team.
                             </div>
                         </div>
                         <div class="flex-grow"></div>
@@ -935,15 +1070,17 @@
                                 class="inline-block align-middle h-6 w-6 ml-2" /></button>
                     </div>
                 </div>
-                
+
                 <!-- Pricing Breakdown Button -->
                 <div class="mt-8 pt-6 border-t border-gray-200">
                     <div class="text-center">
                         <p class="text-sm text-white mb-4">Need more detailed pricing information?</p>
-                        <a href="pricing-breakdown.html" 
-                           class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <a href="pricing-breakdown.html"
+                            class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                </path>
                             </svg>
                             View Detailed Pricing Breakdown
                         </a>
@@ -1026,35 +1163,37 @@
                         Together, we're building a healthier digital future.
                     </p>
                     <div class="flex flex-col items-center gap-3 justify-center">
-                        <a href="healthy-tech-vision.html#documents"
-                            class="healthy-vision-cta">
+                        <a href="healthy-tech-vision.html#documents" class="healthy-vision-cta">
                             Learn More About Our Vision
                         </a>
-                        <a href="healthy-tech-vision.html#documents" class="text-sm text-green-200 hover:text-green-100 underline mt-2">View Healthy Vision Standards and Initiative Documents</a>
+                        <a href="healthy-tech-vision.html#documents"
+                            class="text-sm text-green-200 hover:text-green-100 underline mt-2">View Healthy Vision
+                            Standards and Initiative Documents</a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Meet Your Team Section -->
         <section id="meet-team" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm" style="background: #222;">
-            <h2 class="text-6xl sm:text-7xl font-bold text-gray-800 mb-8 text-center responsive-text-3xl karnivore-header">
+            <h2
+                class="text-6xl sm:text-7xl font-bold text-gray-800 mb-8 text-center responsive-text-3xl karnivore-header">
                 Meet Your Team Today!
             </h2>
             <div class="mb-6">
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
-            
+
             <div class="team-carousel-container" id="teamCarousel">
                 <!-- Team Member 1 - Badi-Haki Martin -->
                 <div class="team-member-slide active" data-member="1">
                     <div class="team-member-content text-center">
                         <div class="team-photo-container mb-6">
                             <a href="https://www.badi-haki.com/" target="_blank" rel="noopener noreferrer">
-                                <img src="images/dev_headshots/haki_headshot.png" 
-                                     alt="Badi-Haki Martin - FullStack Web Developer" 
-                                     class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-                                     onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
+                                <img src="images/dev_headshots/haki_headshot.png"
+                                    alt="Badi-Haki Martin - FullStack Web Developer"
+                                    class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+                                    onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
                             </a>
                         </div>
                         <h3 class="team-member-name text-2xl font-bold text-gray-800 mb-1 karnivore-header">
@@ -1063,8 +1202,8 @@
                         <p class="team-member-title text-sm text-gray-600 mb-6">
                             Full Stack Web Developer
                         </p>
-                        <button id="teamGetStartedBtn" 
-                                class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <button id="teamGetStartedBtn"
+                            class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                             Get Started Today!
                         </button>
                     </div>
@@ -1074,10 +1213,10 @@
                 <div class="team-member-slide" data-member="2">
                     <div class="team-member-content text-center">
                         <div class="team-photo-container mb-6">
-                            <img src="images/dev_headshots/yohanees_headshot.png" 
-                                 alt="Yohanes Yigizaw - Cyber Security Specialist" 
-                                 class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
-                                 onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
+                            <img src="images/dev_headshots/yohanees_headshot.png"
+                                alt="Yohanes Yigizaw - Cyber Security Specialist"
+                                class="team-photo mx-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+                                onerror="this.src='images/icons/Pixel_guy_JUMP_SOLO_v1.png'; this.classList.add('fallback-image'); this.style.borderRadius='50%'; this.style.backgroundColor='#f0f9ff'; this.style.padding='1rem';">
                         </div>
                         <h3 class="team-member-name text-2xl font-bold text-gray-800 mb-1 karnivore-header">
                             Yohanes Yigizaw
@@ -1085,7 +1224,8 @@
                         <p class="team-member-title text-sm text-gray-600 mb-6">
                             Cyber Security Specialist
                         </p>
-                        <button class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <button
+                            class="get-started-btn px-4 py-2 text-sm bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                             Get Started Today!
                         </button>
                     </div>
@@ -1094,18 +1234,22 @@
         </section>
 
         <!-- Tech Stack Section -->
-        <section class="p-6 bg-gray-50 rounded-lg shadow-sm mx-auto mt-16 mb-12 w-full" style="min-width:75vw;max-width:1200px; background: #222;">
+        <section class="p-6 bg-gray-50 rounded-lg shadow-sm mx-auto mt-16 mb-12 w-full"
+            style="min-width:75vw;max-width:1200px; background: #222;">
             <div class="flex items-center justify-center mb-4">
                 <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-12 w-12 mr-4" />
-                <h2 class="text-4xl sm:text-6xl font-bold text-gray-800 karnivore-header text-center">Our Tech Stack</h2>
-                <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-12 w-12 ml-4" style="transform: scaleX(-1);" />
+                <h2 class="text-4xl sm:text-6xl font-bold text-gray-800 karnivore-header text-center">Our Tech Stack
+                </h2>
+                <img src="images/icons/Pixel_guy_RUNNING_v2wDashes_GOLD.png" alt="Pixel Guy" class="h-12 w-12 ml-4"
+                    style="transform: scaleX(-1);" />
             </div>
             <div class="mb-4">
                 <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
             </div>
-            
+
             <p class="text-base text-white mb-6 text-center">
-                We leverage cutting-edge technologies to build robust, scalable, and modern applications. Here are some of the key tools and frameworks in our arsenal:
+                We leverage cutting-edge technologies to build robust, scalable, and modern applications. Here are some
+                of the key tools and frameworks in our arsenal:
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -1115,15 +1259,18 @@
                     <div class="space-y-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">React 18 & Next.js</h4>
-                            <p class="text-sm text-gray-600">Modern component-based UI with server-side rendering for lightning-fast web apps</p>
+                            <p class="text-sm text-gray-600">Modern component-based UI with server-side rendering for
+                                lightning-fast web apps</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">Angular 17</h4>
-                            <p class="text-sm text-gray-600">Enterprise-grade framework for building scalable single-page applications</p>
+                            <p class="text-sm text-gray-600">Enterprise-grade framework for building scalable
+                                single-page applications</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">TypeScript & ES13</h4>
-                            <p class="text-sm text-gray-600">Type-safe JavaScript with the latest ECMAScript features for robust development</p>
+                            <p class="text-sm text-gray-600">Type-safe JavaScript with the latest ECMAScript features
+                                for robust development</p>
                         </div>
                     </div>
                 </div>
@@ -1134,15 +1281,18 @@
                     <div class="space-y-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">.NET & C#</h4>
-                            <p class="text-sm text-gray-600">Microsoft's powerful framework for building enterprise-level web APIs and services</p>
+                            <p class="text-sm text-gray-600">Microsoft's powerful framework for building
+                                enterprise-level web APIs and services</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">AWS & Azure</h4>
-                            <p class="text-sm text-gray-600">Leading cloud platforms for scalable hosting, databases, and serverless computing</p>
+                            <p class="text-sm text-gray-600">Leading cloud platforms for scalable hosting, databases,
+                                and serverless computing</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">Node.js</h4>
-                            <p class="text-sm text-gray-600">JavaScript runtime for building fast, scalable server-side applications</p>
+                            <p class="text-sm text-gray-600">JavaScript runtime for building fast, scalable server-side
+                                applications</p>
                         </div>
                     </div>
                 </div>
@@ -1153,11 +1303,13 @@
                     <div class="space-y-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">React Native</h4>
-                            <p class="text-sm text-gray-600">Build native iOS and Android apps with a single codebase using React</p>
+                            <p class="text-sm text-gray-600">Build native iOS and Android apps with a single codebase
+                                using React</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">Docker & Kubernetes</h4>
-                            <p class="text-sm text-gray-600">Containerization and orchestration for consistent deployment across environments</p>
+                            <p class="text-sm text-gray-600">Containerization and orchestration for consistent
+                                deployment across environments</p>
                         </div>
                     </div>
                 </div>
@@ -1168,11 +1320,13 @@
                     <div class="space-y-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">Jest & Cypress</h4>
-                            <p class="text-sm text-gray-600">Comprehensive testing frameworks for unit tests and end-to-end automation</p>
+                            <p class="text-sm text-gray-600">Comprehensive testing frameworks for unit tests and
+                                end-to-end automation</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-800">MongoDB & SQL Server</h4>
-                            <p class="text-sm text-gray-600">Flexible NoSQL and robust relational databases for all data storage needs</p>
+                            <p class="text-sm text-gray-600">Flexible NoSQL and robust relational databases for all data
+                                storage needs</p>
                         </div>
                     </div>
                 </div>
@@ -1181,10 +1335,12 @@
             <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg p-6 mt-8">
                 <h3 class="text-xl font-bold mb-3 text-center">Ready to Build with Modern Tech?</h3>
                 <p class="text-base mb-4 text-center">
-                    Our experienced team uses these cutting-edge technologies to bring your vision to life with performance, security, and scalability in mind.
+                    Our experienced team uses these cutting-edge technologies to bring your vision to life with
+                    performance, security, and scalability in mind.
                 </p>
                 <div class="flex justify-center">
-                    <a href="quick-start.html" class="bg-white text-green-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <a href="quick-start.html"
+                        class="bg-white text-green-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
                         Start Your Project Today
                     </a>
                 </div>
@@ -1201,17 +1357,20 @@
             </div>
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
                 <p class="text-base text-white mb-2 text-center"> At Pixel Parqour, we offer exciting career
-                    opportunities for passionate individuals. Whether you're looking to build your portfolio, learn about
+                    opportunities for passionate individuals. Whether you're looking to build your portfolio, learn
+                    about
                     the tech industry firsthand, or further your career, we have a place for you! </p>
                 <p class="text-base text-white mb-2 text-center"> We offer <span
-                        class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to gain
+                        class="font-semibold text-green-700">unpaid internship opportunities</span> for those eager to
+                    gain
                     real-world experience and jumpstart their careers. Interns can build their portfolio, learn from
                     industry professionals, and make valuable connections. </p>
                 <p class="text-base text-white text-center"> We also have opportunities for <span
                         class="font-semibold text-green-700">software developers</span> with expertise in areas such as
-                    security, AI, microservice architecture, mobile development, and game development. If you're interested
-                    in a software position, email <a href="mailto:healthtech@pixelparqour.net"
-                        class="text-white underline hover:text-green-300">healthtech@pixelparqour.net</a>. </p>
+                    security, AI, microservice architecture, mobile development, and game development. If you're
+                    interested
+                    in a software position, email <a href="mailto:support@pixelparqour.com"
+                        class="text-white underline hover:text-green-300">support@pixelparqour.com</a>. </p>
             </div>
             <div class="flex justify-center mt-8"> <a href="job-opportunities.html"
                     class="px-8 py-4 bg-green-400 text-black font-bold text-xl rounded hover:bg-green-500 transition"
@@ -1254,11 +1413,15 @@
                 <div class="mt-6 text-center">
                     <h4 class="font-bold text-white mb-2">Find us on social media</h4>
                     <div class="flex items-center justify-center gap-6">
-                        <a href="https://facebook.com/Pixelparqour" target="_blank" rel="noopener noreferrer" aria-label="Pixelparqour on Facebook" class="inline-flex items-center gap-2 hover:opacity-90">
+                        <a href="https://facebook.com/Pixelparqour" target="_blank" rel="noopener noreferrer"
+                            aria-label="Pixelparqour on Facebook"
+                            class="inline-flex items-center gap-2 hover:opacity-90">
                             <img src="images/icons/facebook_icon.png" alt="Facebook" class="h-8 w-8" />
                             <span class="text-sm text-gray-300 hidden sm:inline">Facebook: @Pixelparqour</span>
                         </a>
-                        <a href="https://instagram.com/pixelparqour" target="_blank" rel="noopener noreferrer" aria-label="Pixelparqour on Instagram" class="inline-flex items-center gap-2 hover:opacity-90">
+                        <a href="https://instagram.com/pixelparqour" target="_blank" rel="noopener noreferrer"
+                            aria-label="Pixelparqour on Instagram"
+                            class="inline-flex items-center gap-2 hover:opacity-90">
                             <img src="images/icons/insta_icon.png" alt="Instagram" class="h-8 w-8" />
                             <span class="text-sm text-gray-300 hidden sm:inline">Instagram: @pixelparqour</span>
                         </a>
@@ -1268,16 +1431,21 @@
                 <!-- Legal Links -->
                 <div class="border-t border-gray-300 pt-4 text-center"
                     style="background-color: #e5e7eb; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 0.5rem;">
-                    <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned and operated by Hasan Corley</p>
+                    <p class="text-sm text-gray-600 mb-2">&copy; 2025 Pixel Parqour LLC. All rights reserved. | Owned
+                        and operated by Hasan Corley</p>
                     <div class="legal-footer text-sm">
                         <a href="faqs.html" class="font-bold text-green-400 hover:text-green-600">FAQs</a> |
                         <a href="terms-of-service.html" class="text-gray-600 hover:text-gray-800 ml-2">Legal</a> |
-                        <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a> |
-                        <a href="privacy-policies.html" class="text-gray-600 hover:text-gray-800 ml-2">App Privacy Policies</a> |
+                        <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a>
+                        |
+                        <a href="privacy-policies.html" class="text-gray-600 hover:text-gray-800 ml-2">App Privacy
+                            Policies</a> |
                         <a href="owner-info.html" class="text-gray-600 hover:text-gray-800 ml-2">Owner Info</a>
                     </div>
                 </div>
             </div>
+            <div class="theme-toggle-wrap"> <button id="themeToggle" class="theme-toggle-btn" type="button"
+                    aria-pressed="false"> Switch Theme </button> </div>
         </footer>
 
         <script>
@@ -1421,10 +1589,10 @@
                 function showNextTeamMember() {
                     // Remove active class from current slide
                     teamSlides[currentTeamSlide].classList.remove('active');
-                    
+
                     // Move to next slide
                     currentTeamSlide = (currentTeamSlide + 1) % teamSlides.length;
-                    
+
                     // Add active class to new slide
                     teamSlides[currentTeamSlide].classList.add('active');
                 }
@@ -1441,9 +1609,9 @@
                 const readMoreText = document.querySelector('.read-more-text');
 
                 if (readMoreBtn && dropdown) {
-                    readMoreBtn.addEventListener('click', function() {
+                    readMoreBtn.addEventListener('click', function () {
                         const isOpen = dropdown.style.display === 'block';
-                        
+
                         if (isOpen) {
                             // Close dropdown
                             dropdown.style.display = 'none';
@@ -1462,23 +1630,23 @@
             // Service Highlights Scroll Animation - Fixed Version
             function initServiceHighlights() {
                 console.log('Initializing service highlights...');
-                
+
                 const serviceHighlights = document.querySelectorAll('.service-highlight');
                 console.log('Found service highlights:', serviceHighlights.length);
-                
+
                 if (serviceHighlights.length === 0) {
                     console.log('No service highlights found');
                     return;
                 }
 
                 // Create a more aggressive intersection observer
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry, index) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry, index) {
                         if (entry.isIntersecting && !entry.target.classList.contains('animate')) {
                             console.log('Animating element:', entry.target.querySelector('.service-title').textContent);
-                            
+
                             // Add a slight delay for staggered effect
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 entry.target.classList.add('animate');
                             }, index * 100);
                         }
@@ -1489,24 +1657,24 @@
                 });
 
                 // Observe all service highlights
-                serviceHighlights.forEach(function(highlight, index) {
+                serviceHighlights.forEach(function (highlight, index) {
                     observer.observe(highlight);
                     console.log('Observing highlight ' + (index + 1) + ':', highlight.querySelector('.service-title').textContent);
                 });
-                
+
                 // Fallback: Animate all elements manually after 3 seconds if none have animated
-                setTimeout(function() {
+                setTimeout(function () {
                     let animatedCount = 0;
-                    serviceHighlights.forEach(function(highlight) {
+                    serviceHighlights.forEach(function (highlight) {
                         if (highlight.classList.contains('animate')) {
                             animatedCount++;
                         }
                     });
-                    
+
                     if (animatedCount === 0) {
                         console.log('No elements animated, triggering manual animation');
-                        serviceHighlights.forEach(function(highlight, index) {
-                            setTimeout(function() {
+                        serviceHighlights.forEach(function (highlight, index) {
+                            setTimeout(function () {
                                 highlight.classList.add('animate');
                             }, index * 300);
                         });
@@ -1523,14 +1691,14 @@
             // Team section fade-in animation
             function initTeamAnimation() {
                 const teamContainer = document.querySelector('.fade-in-team');
-                
+
                 if (!teamContainer) {
                     console.log('Team container not found');
                     return;
                 }
 
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             console.log('Team section entering view');
                             entry.target.classList.add('animate');
@@ -1546,10 +1714,10 @@
             }
 
             // Team Get Started button functionality
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const teamGetStartedBtn = document.getElementById('teamGetStartedBtn');
                 if (teamGetStartedBtn) {
-                    teamGetStartedBtn.addEventListener('click', function() {
+                    teamGetStartedBtn.addEventListener('click', function () {
                         // Open the Quick Start modal
                         const quickStartModal = document.getElementById('quickStartModal');
                         if (quickStartModal) {
@@ -1564,7 +1732,7 @@
             } else {
                 startAnimations();
             }
-            
+
             window.addEventListener('load', startAnimations);
         </script>
 </body>
