@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.botpress.cloud https://files.bpcontent.cloud https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*; connect-src 'self' https://*; frame-src https://cdn.botpress.cloud;">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta name="description" content="Pixel Parqour – Academic & Professional Collaboration on the Healthy Vision Initiative Research Protocol.">
+    <meta name="robots" content="index, follow">
+    <title>Collaborate – Healthy Vision Protocol | Pixel Parqour</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
+    <link rel="icon" type="image/png" href="images/icons/NEW_PP_logo_V1.png">
+    <link rel="apple-touch-icon" href="images/icons/NEW_PP_logo_V1.png">
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/13/00/20250913002639-6H3O1YNC.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Carousel slide engine ─────────────────────── */
+        .collab-step { display: none; }
+        .collab-step.active {
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.42s ease;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Slide card ────────────────────────────────── */
+        .slide-card {
+            background: var(--section-bg);
+            border: 1.5px solid rgba(127,221,127,0.18);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+        .slide-title {
+            font-size: 2rem;
+            color: var(--primary-green);
+            font-family: 'Karnivore-Light', 'Inter', sans-serif;
+            line-height: 1.15;
+        }
+        .slide-body {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.7;
+            max-width: 680px;
+        }
+        .slide-body strong { color: var(--primary-green); }
+
+        /* ── Pill list items ───────────────────────────── */
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .pill {
+            background: var(--card-bg);
+            border: 1px solid rgba(127,221,127,0.2);
+            border-radius: 999px;
+            padding: 0.45rem 1.1rem;
+            font-size: 0.95rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        /* ── Progress bar ──────────────────────────────── */
+        .progress-bar { height: 6px; background: var(--card-bg); border-radius: 3px; overflow: hidden; margin-bottom: 1.25rem; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary-green), #34D399); transition: width 0.4s ease; }
+        .step-indicator { font-size: 0.875rem; color: #888; margin-bottom: 0.5rem; text-align: center; }
+
+        /* ── Navigation buttons ────────────────────────── */
+        .nav-btn {
+            font-family: 'Karnivore-Light', 'Inter', sans-serif;
+            font-size: 1.05rem;
+            padding: 0.8rem 2.2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.25s cubic-bezier(.2,.8,.2,1);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-next { background: var(--primary-green); color: #000; }
+        .btn-next:hover { background: #6BC26B; transform: scale(1.06); box-shadow: 0 8px 24px rgba(127,221,127,0.22); }
+        .btn-prev { background: transparent; color: var(--primary-green); border: 2px solid var(--primary-green); margin-right: 0.75rem; }
+        .btn-prev:hover { background: rgba(127,221,127,0.1); }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #34D399, #059669);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.9rem 2.4rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(52,211,153,0.3);
+            margin-top: 1rem;
+        }
+        .btn-download:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 10px 28px rgba(52,211,153,0.4); }
+
+        /* ── Pixel guy decorations ─────────────────────── */
+        .pixel-deco {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .pixel-deco img { height: 56px; width: 56px; }
+
+        /* Two-col grid for slide 4 */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+            width: 100%;
+            max-width: 640px;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 560px) { .collab-grid { grid-template-columns: 1fr; } }
+        .collab-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(127,221,127,0.15);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.92rem;
+            color: #ccc;
+        }
+        .collab-card-title { color: var(--primary-green); font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem; }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const c = document.getElementById('customCursor');
+            if (c) { c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px'; }
+        });
+    </script>
+
+    <!-- Mobile Nav -->
+    <nav class="navbar" style="background:#222; margin-bottom:12px; position:static; width:100vw; max-width:100vw; margin-left:0; margin-right:0;">
+        <div class="nav-inner" style="width:85vw; max-width:85vw; margin:0 auto; display:flex; align-items:center; justify-content:space-between;">
+            <div class="flex items-center">
+                <a href="index.html"><img src="images/icons/NEW_PP_logo_V1.png" alt="Pixel Parqour Logo" class="w-auto object-contain" style="height:60px;"></a>
+            </div>
+            <div class="hamburger" id="hamburgerMenu">
+                <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0;"></span>
+                <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0;"></span>
+                <span style="width:25px;height:3px;background:#7FDD7F;margin:3px 0;"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html" class="sidenav-link">Home</a>
+        <a href="index.html#about-us" class="sidenav-link">About Us</a>
+        <a href="services.html" class="sidenav-link">Services</a>
+        <a href="healthy-tech-vision.html" class="sidenav-link">Healthy Vision</a>
+        <a href="index.html#contact-us" class="sidenav-link">Contact</a>
+        <a href="job-opportunities.html" class="sidenav-link">Careers</a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap px-4" style="text-align:center; background:#222;">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Academic &amp; Professional</h1>
+        </div>
+        <div class="flex-shrink-0 mx-4 logo-container">
+            <a href="index.html"><img src="images/icons/NEW_PP_logo_V1.png" alt="Pixel Parqour Logo" class="logo-img"></a>
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 karnivore-header">Collaboration</h1>
+        </div>
+    </header>
+
+    <!-- Desktop Navbar -->
+    <div class="desktop-navbar" style="width:100vw; background:#222; margin:0 auto 12px auto;">
+        <div class="nav-inner" style="width:85vw; max-width:85vw; margin:0 auto;">
+            <nav class="flex justify-center items-center gap-4 navbar-btns-centered" style="height:100%; text-align:center;">
+                <a href="index.html" class="font-bold">Home</a>
+                <a href="services.html" class="font-bold">Services</a>
+                <a href="healthy-tech-vision.html" class="font-bold">Healthy Vision</a>
+                <a href="job-opportunities.html" class="font-bold">Careers</a>
+                <a href="index.html#contact-us" class="font-bold">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mx-auto mt-8 p-4 flex-grow" style="width:95vw; min-width:95vw;">
+
+        <!-- Page title -->
+        <div class="text-center mb-6">
+            <div class="pixel-deco">
+                <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy Running" style="animation: none;">
+                <h2 class="karnivore-header" style="font-size:2.6rem; color:var(--primary-green);">
+                    Healthy Vision Initiative
+                </h2>
+                <img src="images/icons/Pixel_guy_RUNNING_v1.png" alt="Pixel Guy Running" style="transform:scaleX(-1);">
+            </div>
+            <p style="color:#aaa; font-size:1rem;">Research Protocol &amp; Collaboration Opportunity — Scroll through the slides below</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-2">
+            <!-- Progress -->
+            <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:16.66%;"></div></div>
+            <p class="step-indicator" id="stepIndicator">Slide 1 of 6</p>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 1 — Introduction
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step active" data-step="1">
+                <div class="slide-card">
+                    <div class="pixel-deco">
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="pixel-flex">
+                        <span style="font-size:2.5rem;">🌿</span>
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="pixel-flex" style="transform:scaleX(-1);">
+                    </div>
+                    <h2 class="slide-title">What Is the Healthy Vision Initiative?</h2>
+                    <p class="slide-body">
+                        The <strong>Pixel Parqour Healthy Vision Initiative</strong> is a structured research protocol
+                        dedicated to understanding and improving how technology affects human well-being—physically,
+                        mentally, and financially.<br><br>
+                        As AI, mobile apps, and digital tools become embedded in daily life, we believe the software
+                        industry has a responsibility to design technology that <strong>empowers, not overwhelms</strong>.
+                        This pilot study is our first formal step toward building evidence-based standards for healthy
+                        software development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 2 — Study Goals
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step" data-step="2">
+                <div class="slide-card">
+                    <span style="font-size:2.8rem;">🎯</span>
+                    <h2 class="slide-title">Pilot Study Goals</h2>
+                    <p class="slide-body">This pilot study is designed to accomplish the following objectives:</p>
+                    <div class="pill-list">
+                        <span class="pill">📊 Quantify digital wellness metrics</span>
+                        <span class="pill">🧠 Evaluate mindfulness integration effectiveness</span>
+                        <span class="pill">⏱️ Measure tech-use behavior change over time</span>
+                        <span class="pill">🔬 Validate therapeutic software design techniques</span>
+                        <span class="pill">📱 Assess cross-platform engagement patterns</span>
+                        <span class="pill">📝 Produce a publishable standards framework</span>
+                    </div>
+                    <p class="slide-body" style="margin-top:1rem; font-size:0.95rem;">
+                        Results from this study will inform our <strong>Health First certification program</strong>
+                        and future HealthTech Suite products.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 3 — Who We're Looking For
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step" data-step="3">
+                <div class="slide-card">
+                    <div class="pixel-deco">
+                        <span style="font-size:2.5rem;">🎓</span>
+                        <img src="images/icons/Pixel_guy_JUMP_SOLO_v1.png" alt="Pixel Guy Jump" style="height:56px;width:56px;">
+                        <span style="font-size:2.5rem;">🏥</span>
+                    </div>
+                    <h2 class="slide-title">Who We're Looking For</h2>
+                    <p class="slide-body">
+                        We are actively seeking <strong>academic institutions</strong> and <strong>professionals</strong>
+                        across disciplines to collaborate on this protocol:
+                    </p>
+                    <div class="pill-list">
+                        <span class="pill">🏫 Universities &amp; Research Institutions</span>
+                        <span class="pill">🩺 Healthcare Professionals</span>
+                        <span class="pill">🧪 Behavioral &amp; Cognitive Scientists</span>
+                        <span class="pill">💻 Human-Computer Interaction Researchers</span>
+                        <span class="pill">📚 Public Health Academics</span>
+                        <span class="pill">🤝 Non-profits &amp; Wellness Organizations</span>
+                        <span class="pill">📊 Data Scientists &amp; Statisticians</span>
+                        <span class="pill">🧘 Mental Health Practitioners</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 4 — Collaboration Areas
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step" data-step="4">
+                <div class="slide-card">
+                    <span style="font-size:2.5rem;">🤝</span>
+                    <h2 class="slide-title">How You Can Collaborate</h2>
+                    <p class="slide-body" style="margin-bottom:0.5rem;">
+                        There are multiple ways to participate in the Healthy Vision research protocol:
+                    </p>
+                    <div class="collab-grid">
+                        <div class="collab-card">
+                            <div class="collab-card-title">🔬 Research Partnership</div>
+                            Co-author studies, contribute datasets, and participate in peer review of our wellness framework.
+                        </div>
+                        <div class="collab-card">
+                            <div class="collab-card-title">🧪 Pilot Program</div>
+                            Run controlled pilot programs within your institution or organization using our protocol tools.
+                        </div>
+                        <div class="collab-card">
+                            <div class="collab-card-title">📚 Curriculum Integration</div>
+                            Integrate healthy-tech principles into academic courses or professional training programs.
+                        </div>
+                        <div class="collab-card">
+                            <div class="collab-card-title">🧭 Advisory Input</div>
+                            Join our advisory board to guide protocol development and provide expert domain knowledge.
+                        </div>
+                        <div class="collab-card">
+                            <div class="collab-card-title">📣 Community Outreach</div>
+                            Help disseminate findings to broader professional or community audiences.
+                        </div>
+                        <div class="collab-card">
+                            <div class="collab-card-title">💡 Product Feedback</div>
+                            Test and evaluate our HealthTech Suite applications during development phases.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 5 — Protocol Overview
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step" data-step="5">
+                <div class="slide-card">
+                    <div class="pixel-deco">
+                        <img src="images/icons/Pixel_Lock.png" alt="Pixel Lock" style="height:52px;width:52px;">
+                        <span style="font-size:2.2rem;">📋</span>
+                        <img src="images/icons/Pixel_Lock.png" alt="Pixel Lock" style="height:52px;width:52px;">
+                    </div>
+                    <h2 class="slide-title">Protocol Overview</h2>
+                    <p class="slide-body">
+                        The <strong>Research Protocol: Healthy Vision Initiative v1</strong> covers:
+                    </p>
+                    <div class="pill-list" style="max-width:620px;">
+                        <span class="pill">🛡️ Data privacy &amp; ethical standards</span>
+                        <span class="pill">📐 Study design &amp; participant criteria</span>
+                        <span class="pill">🧩 Intervention methodology</span>
+                        <span class="pill">📈 Metrics &amp; outcome measurement</span>
+                        <span class="pill">🔄 Iterative feedback &amp; revision cycles</span>
+                        <span class="pill">📄 Reporting &amp; publication guidelines</span>
+                    </div>
+                    <p class="slide-body" style="font-size:0.95rem; margin-top:1rem;">
+                        All collaborators operate under our <strong>Health First</strong> commitment —
+                        transparent, privacy-respecting, and community-benefit driven.
+                        The full protocol document is available for download on the next slide.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 SLIDE 6 — Download & CTA (final)
+            ═══════════════════════════════════════════ -->
+            <div class="collab-step" data-step="6">
+                <div class="slide-card" style="gap:1.25rem;">
+                    <div class="pixel-deco">
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="pixel-flex">
+                        <span style="font-size:2.8rem;">🚀</span>
+                        <img src="images/icons/Pixel_guy_FLEXING_v1.png" alt="Pixel Guy Flexing" class="pixel-flex" style="transform:scaleX(-1);">
+                    </div>
+                    <h2 class="slide-title">Ready to Collaborate?</h2>
+                    <p class="slide-body">
+                        Download the full <strong>Research Protocol: Healthy Vision Initiative v1</strong>
+                        to review our methodology, standards, and collaboration terms. Then reach out —
+                        we'd love to work with you.
+                    </p>
+
+                    <!-- Primary: Download protocol -->
+                    <a href="docs/Research Protocol_ Healthy Vision Initiative v1.pdf"
+                       download
+                       class="btn-download">
+                        📄 Download Research Protocol (PDF)
+                    </a>
+
+                    <!-- Secondary: Email CTA -->
+                    <a href="mailto:support@pixelparqour.com"
+                       style="margin-top:0.5rem; color:var(--primary-green); font-weight:700; font-size:1rem; text-decoration:underline;">
+                        ✉️ Reach Out: support@pixelparqour.com
+                    </a>
+
+                    <div class="pill-list" style="margin-top:0.5rem;">
+                        <a href="healthy-tech-vision.html" class="pill" style="text-decoration:none; cursor:pointer;">← Back to Healthy Vision</a>
+                        <a href="schedule-call.html" class="pill" style="text-decoration:none; cursor:pointer;">📅 Schedule a Call</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation controls -->
+            <div class="flex justify-center items-center mt-6 mb-10">
+                <button class="nav-btn btn-prev" id="prevBtn" onclick="changeSlide(-1)" style="display:none;">← Back</button>
+                <button class="nav-btn btn-next" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-center py-4 mt-8" style="background:#222;">
+        <p class="text-sm text-gray-500">&copy; 2025 Pixel Parqour LLC. All rights reserved.</p>
+        <div class="legal-footer text-sm mt-2">
+            <a href="faqs.html" class="font-bold text-green-400 hover:text-green-600">FAQs</a> |
+            <a href="terms-of-service.html" class="text-gray-600 hover:text-gray-800 ml-2">Legal</a> |
+            <a href="privacy-policy.html" class="text-gray-600 hover:text-gray-800 ml-2">Privacy Policy</a> |
+            <a href="healthy-tech-vision.html" class="text-gray-600 hover:text-gray-800 ml-2">Healthy Vision</a>
+        </div>
+    </footer>
+
+    <script>
+        // ── Sidenav ────────────────────────────────────────────
+        function openNav()  { document.getElementById('mySidenav').style.width = '250px'; }
+        function closeNav() { document.getElementById('mySidenav').style.width = '0'; }
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburgerMenu');
+            if (hamburger) hamburger.addEventListener('click', openNav);
+            document.querySelectorAll('.sidenav-link').forEach(function (l) { l.addEventListener('click', closeNav); });
+        });
+        window.onclick = function (e) {
+            var s = document.getElementById('mySidenav');
+            if (e.target === s) closeNav();
+        };
+
+        // ── Cursor ─────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            var cursor = document.getElementById('customCursor');
+            if (!cursor) return;
+            document.addEventListener('mouseleave', function () { cursor.style.display = 'none'; });
+            document.addEventListener('mouseenter',  function () { cursor.style.display = 'block'; });
+        });
+
+        // ── Carousel ───────────────────────────────────────────
+        var TOTAL   = 6;
+        var current = 1;
+
+        function changeSlide(dir) {
+            var next = current + dir;
+            if (next < 1 || next > TOTAL) return;
+
+            document.querySelector('.collab-step[data-step="' + current + '"]').classList.remove('active');
+            current = next;
+            document.querySelector('.collab-step[data-step="' + current + '"]').classList.add('active');
+
+            // Progress
+            var pct = (current / TOTAL) * 100;
+            document.getElementById('progressFill').style.width = pct + '%';
+            document.getElementById('stepIndicator').textContent = 'Slide ' + current + ' of ' + TOTAL;
+
+            // Button visibility
+            document.getElementById('prevBtn').style.display = current === 1 ? 'none' : '';
+            var nextBtn = document.getElementById('nextBtn');
+            if (current === TOTAL) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = '';
+                nextBtn.textContent = current === TOTAL - 1 ? 'Get the Protocol →' : 'Next →';
+            }
+        }
+    </script>
+</body>
+</html>
