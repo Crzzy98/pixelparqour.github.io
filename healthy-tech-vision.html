@@ -72,16 +72,17 @@
                         style="height: 60px;">
                 </a>
             </div>
-            <div class="hamburger" id="hamburgerMenu">
+            <button class="hamburger" id="hamburgerMenu" type="button"
+             aria-label="open naviagation menu" aria-controls="mySideNav">
                 <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
                 <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
                 <span style="width: 12px; height: 1.5px; background: #7FDD7F; margin: 1.5px 0;"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Side Navigation -->
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav" aria-hidden="true">
         <a href="index.html" class="sidenav-link">Home</a>
         <a href="index.html#about-us" class="sidenav-link">About Us</a>
         <a href="index.html#crafting-dreams" class="sidenav-link">Our Services</a>
@@ -525,23 +526,78 @@
 
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            var sidenav = document.getElementById('mySidenav');
+            var hamburger = document.getElementById('hamburgerMenu');
+
+            if (!sidenav) {
+                return;
+            }
+
+            sidenav.style.width = '250px';
+            sidenav.setAttribute('aria-hidden', 'false');
+
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'true');
+            }
         }
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            var sidenav = document.getElementById('mySidenav');
+            var hamburger = document.getElementById('hamburgerMenu');
+
+            if (!sidenav) {
+                return;
+            }
+
+            sidenav.style.width = '0';
+            sidenav.setAttribute('aria-hidden', 'true');
+
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         }
         // Move inline handlers to JS
         document.addEventListener('DOMContentLoaded', function () {
             var hamburger = document.getElementById('hamburgerMenu');
-            if (hamburger) {
-                hamburger.addEventListener('click', openNav);
+            var sidenav = document.getElementById('mySidenav');
+
+            if (sidenav && !sidenav.hasAttribute('aria-hidden')) {
+                sidenav.setAttribute('aria-hidden', 'true');
             }
+
+            if (hamburger) {
+                if (!hamburger.hasAttribute('aria-expanded')) {
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+
+                hamburger.addEventListener('click', function () {
+                    var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    if (expanded) {
+                        closeNav();
+                    } else {
+                        openNav();
+                    }
+                });
+
+                hamburger.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        hamburger.click();
+                    }
+                });
+            }
+
             document.querySelectorAll('.sidenav-link').forEach(function (link) {
                 link.addEventListener('click', closeNav);
             });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeNav();
+                }
+            });
         });
         window.onclick = function (event) {
-            var sidenav = document.getElementById("mySidenav");
+            var sidenav = document.getElementById('mySidenav');
             if (event.target == sidenav) {
                 closeNav();
             }

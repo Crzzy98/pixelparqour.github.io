@@ -578,7 +578,6 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--dark-bg);
     color: var(--primary-green);
-    cursor: none;
 }
 
 /* Ensure no white backgrounds anywhere */
@@ -1184,30 +1183,42 @@ main {
     }
 }
 
-/* Reduce non-header text size for mobile */
-@media (max-width: 768px) {
+/* Double non-header text size for phones and tablets */
+@media (max-width: 1199px) {
 
-    body,
     p,
     li,
-    .text-lg,
-    .text-xl,
-    .text-2xl,
-    .text-3xl,
-    .text-gray-800,
-    .text-gray-700,
-    .text-gray-600,
-    .text-white,
+    label,
+    input,
+    textarea,
+    select,
     .banner-text,
-    .section-content,
-    .content-image {
-        font-size: 80% !important;
+    .text-base:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+    .text-lg:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+    .responsive-text-lg:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        font-size: 2rem !important;
+        line-height: 1.5 !important;
     }
 
-    /* Exclude logo header and subheaders */
+    .text-sm:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        font-size: 1.75rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .text-xl:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+    .responsive-text-xl:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        font-size: 2.5rem !important;
+        line-height: 1.5 !important;
+    }
+
     .karnivore-header,
-    .header-text {
-        font-size: inherit !important;
+    .header-text,
+    .technoid-header,
+    .digital-tech-header,
+    .neo-tech-header,
+    .spac3-tech-header,
+    .watatsuki-tech-header {
+        line-height: inherit !important;
     }
 }
 

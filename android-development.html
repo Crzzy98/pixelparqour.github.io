@@ -69,13 +69,14 @@
             style="width: 85vw; max-width: 85vw; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
             <div class="flex items-center"> <a href="index.html"> <img src="images/icons/NEW_PP_logo_V1.png"
                         alt="Pixel Parqour Logo" class="w-auto object-contain" style="height: 60px;"> </a> </div>
-            <div class="hamburger" id="hamburgerMenu"> <span
+            <button class="hamburger" id="hamburgerMenu" type="button" aria-label="Open navigation menu"
+                aria-controls="mySidenav" aria-expanded="false"> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
                     style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> <span
-                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </div>
+                    style="width: 25px; height: 3px; background: #7FDD7F; margin: 3px 0;"></span> </button>
         </div>
     </nav> <!-- Side Navigation -->
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav" aria-hidden="true">
         <a href="index.html#about-us" class="sidenav-link">About Us</a>
         <a href="services.html" class="sidenav-link">Our Services</a>
         <a href="index.html#contact-us" class="sidenav-link">Contact</a>
@@ -252,16 +253,81 @@
 
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            var sidenav = document.getElementById('mySidenav');
+            var hamburger = document.getElementById('hamburgerMenu');
+
+            if (!sidenav) {
+                return;
+            }
+
+            sidenav.style.width = '250px';
+            sidenav.setAttribute('aria-hidden', 'false');
+
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'true');
+            }
         }
 
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            var sidenav = document.getElementById('mySidenav');
+            var hamburger = document.getElementById('hamburgerMenu');
+
+            if (!sidenav) {
+                return;
+            }
+
+            sidenav.style.width = '0';
+            sidenav.setAttribute('aria-hidden', 'true');
+
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburgerMenu');
+            var sidenav = document.getElementById('mySidenav');
+
+            if (sidenav && !sidenav.hasAttribute('aria-hidden')) {
+                sidenav.setAttribute('aria-hidden', 'true');
+            }
+
+            if (hamburger) {
+                if (!hamburger.hasAttribute('aria-expanded')) {
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+
+                hamburger.addEventListener('click', function () {
+                    var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    if (expanded) {
+                        closeNav();
+                    } else {
+                        openNav();
+                    }
+                });
+
+                hamburger.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        hamburger.click();
+                    }
+                });
+            }
+
+            document.querySelectorAll('.sidenav-link').forEach(function (link) {
+                link.addEventListener('click', closeNav);
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeNav();
+                }
+            });
+        });
 
         
         window.onclick = function(event) {
-            var sidenav = document.getElementById("mySidenav");
+            var sidenav = document.getElementById('mySidenav');
             if (event.target == sidenav) {
                 closeNav();
             }
