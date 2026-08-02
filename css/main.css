@@ -542,6 +542,18 @@ header img[alt*="Logo"] {
     color: #ffffff !important;
 }
 
+:root[data-theme="light"] #startup-services .startup-criteria-card,
+:root[data-theme="light"] #startup-services .startup-criteria-card * {
+    color: #ffffff !important;
+}
+
+:root[data-theme="light"] .desktop-navbar nav a,
+:root[data-theme="light"] .navbar a,
+:root[data-theme="light"] #mySidenav a {
+    border: 3px solid #000000 !important;
+    box-shadow: 0 0 0 1px #000000 !important;
+}
+
 .theme-toggle-wrap {
         display: flex;
         justify-content: center;
@@ -1155,6 +1167,12 @@ main {
 
 .section-content {
     text-align: center;
+}
+
+body.home-page section {
+    border: 6px solid #000000 !important;
+    border-radius: 1rem !important;
+    box-sizing: border-box;
 }
 
 .text-gray-600 {
